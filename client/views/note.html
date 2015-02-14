@@ -1,0 +1,28 @@
+<template name="note">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">潜迷游记</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <!--{{#ionList}}-->
+          <!--{{#each notes}}-->
+              <!--{{> noteItem note=this path="note.detail"}}-->
+          <!--{{/each}}-->
+      <!--{{/ionList}}-->
+
+      <div id="note-carousel">
+        {{#each notes}}
+          {{>noteCarouselItem}}
+        {{/each}}
+      </div>
+
+    {{/ionContent}}
+
+    {{>tabs}}
+
+  {{/ionView}}
+
+</template>

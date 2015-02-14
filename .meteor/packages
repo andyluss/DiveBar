@@ -1,0 +1,49 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+# Packages from the release:
+
+meteor-platform
+coffeescript
+accounts-base
+accounts-password
+accounts-ui
+launch-screen
+
+# Packages from Atmosphere:
+
+mdg:camera
+mdg:geolocation
+mquandalle:jade
+mquandalle:stylus
+mquandalle:bower
+aldeed:autoform
+aldeed:collection2
+aldeed:simple-schema
+alanning:roles
+fortawesome:fontawesome
+meteoric:autoform-ionic
+useraccounts:ionic
+iron:router
+zimme:iron-router-active
+anti:fake
+matb33:collection-hooks
+dburles:collection-helpers
+reywood:publish-composite
+bengott:avatar
+momentjs:moment
+softwarerero:accounts-t9n
+fourseven:scss@=1.0.0
+meteoric:ionicons-sass
+meteoric:ionic-sass
+meteoric:ionic
+udondan:slick
+yogiben:comments
+yogiben:favorites
+
+# Packages from the app:
+
+
+

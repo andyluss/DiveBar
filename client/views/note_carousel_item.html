@@ -1,0 +1,14 @@
+<template name="noteCarouselItem">
+  <div>
+    <a href="note/{{_id}}">
+      <div class="picture-container">
+        <img class="first-picture" src="{{firstPicture}}">
+      </div>
+      <div class="title-container">
+        <label>{{title}}</label>
+        <label>{{ownerName this}}</label>
+        <label>{{dateString this}}</label>
+      </div>
+    </a>
+  </div>
+</template>

@@ -1,8 +1,16 @@
 <template name="shop">
 
-    {{#contentFor "headerTitle"}}
-      <h1 class="title">官方商城</h1>
-    {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">官方商城</h1>
+  {{/contentFor}}
 
+  {{#ionView}}
+    {{#ionContent}}
+
+    {{/ionContent}}
+
+    {{>tabs}}
+
+  {{/ionView}}
 
 </template>

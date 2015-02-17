@@ -22,6 +22,10 @@ Meteor.publishComposite 'note', (_id)->
       {
         find: (note)->
           Meteor.users.find {_id: note.owner}
+      },
+      {
+        find: (note)->
+          Comments.find {doc: note._id}
       }
     ]
   }

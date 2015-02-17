@@ -1,18 +1,21 @@
 <template name="signIn">
 
-    {{#contentFor "headerTitle"}}
-      <h1 class="title">请登录</h1>
-    {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">请登录</h1>
+  {{/contentFor}}
 
-    {{#ionView}}
-        {{#ionContent}}
-            {{#if currentUser}}
-              <div class="padding">
-                <button class="button button-positive button-block" data-action="logout">Log Out</button>
-              </div>
-            {{else}}
-                {{> atForm}}
-            {{/if}}
-        {{/ionContent}}
-    {{/ionView}}
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      {{> atForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
 </template>
+
+

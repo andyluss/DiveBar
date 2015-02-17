@@ -27,4 +27,4 @@ Router.onBeforeAction AccountsTemplates.ensureSignedIn,
 
 AccountsTemplates.configureRoute 'ensureSignedIn',
   template: 'signIn'
-  layoutTemplate: 'layout'
+  layoutTemplate: null

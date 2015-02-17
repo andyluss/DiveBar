@@ -5,13 +5,13 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="share-note" data-note-id="{{note._id}}">
+    <button class="button button-clear pull-right button-positive" data-action="share-note" data-note-id="{{_id}}">
       {{> ionIcon icon='ios-upload-outline'}}
     </button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">{{note.title}}</h1>
+    <h1 class="title">{{title}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
@@ -20,7 +20,7 @@
       <div class="note-detail">
 
         <div id="picture-carousel">
-          {{#each note.pictures}}
+          {{#each pictures}}
             <div>
               <img src="{{this}}">
             </div>
@@ -29,20 +29,20 @@
 
         {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
           <label>
-            {{note.title}}
+            {{title}}
           </label>
           <label>
-            <a href="{{ownerUrl note}}">
-              {{ownerName note}}
+            <a href="{{ownerUrl this}}">
+              {{ownerName this}}
             </a>
           </label>
           <label>
-            {{dateString note}}
+            {{dateString this}}
           </label>
         {{/ionItem}}
 
         <div>
-          {{note.content}}
+          {{content}}
         </div>
 
         <!--<div class="padding product-detail-comments">-->
@@ -52,11 +52,11 @@
           <!--</button>-->
         <!--</div>-->
 
-        <!--<div class="list">-->
-          <!--{{#each comments}}-->
-            <!--{{> _comment}}-->
-          <!--{{/each}}-->
-        <!--</div>-->
+        {{#if currentUser}}
+          {{>commentFormToggle}}
+        {{/if}}
+
+        {{>comments}}
 
       </div>
 

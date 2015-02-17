@@ -1,8 +1,16 @@
 <template name="say">
 
-    {{#contentFor "headerTitle"}}
-      <h1 class="title">七嘴八舌</h1>
-    {{/contentFor}}
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">七嘴八舌</h1>
+  {{/contentFor}}
 
+  {{#ionView}}
+    {{#ionContent}}
+
+    {{/ionContent}}
+
+    {{>tabs}}
+
+  {{/ionView}}
 
 </template>

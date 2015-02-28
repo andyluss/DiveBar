@@ -1,4 +1,4 @@
-@NoteDetailController = BaseController.extend
+@NoteDetailController = ContentController.extend
   waitOn: ->
     Meteor.subscribe 'note', @params.id
   data: ->

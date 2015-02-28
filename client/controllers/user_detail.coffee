@@ -1,4 +1,4 @@
-@UserDetailController = BaseController.extend
+@UserDetailController = ContentController.extend
   waitOn: ->
     Meteor.subscribe 'user', @params.id
   data: ->

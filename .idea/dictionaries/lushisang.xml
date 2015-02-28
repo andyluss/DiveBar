@@ -2,6 +2,8 @@
   <dictionary name="lushisang">
     <words>
       <w>exps</w>
+      <w>loadmore</w>
+      <w>textarea</w>
     </words>
   </dictionary>
 </component>

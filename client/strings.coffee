@@ -1,0 +1,1 @@
+Template.registerHelper 'stringNote', -> '游记'

@@ -1,4 +1,4 @@
-@NoteController = BaseController.extend
+@NoteListController = ContentController.extend
   waitOn: ->
     Meteor.subscribe 'notesTop'
   data: ->

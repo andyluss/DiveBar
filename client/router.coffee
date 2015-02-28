@@ -1,19 +1,17 @@
-Router.configure
-  layoutTemplate: 'layout'
-
-#Router.route 'tab/:type', ->
-#  tabPath = Session.get('path_tab_' + @params.type) ? @params.type
-
 Router.route '/', ->
-  @redirect 'note'
+  if Meteor.userId()
+    @redirect 'note_list'
+  else
+    @redirect 'login'
+
+Router.route 'login'
 
 Router.route 'user/:id',
   name: 'user.detail'
 
-Router.route 'note',
-  name: 'note'
+Router.route 'note_list'
 
-Router.route 'note/:id',
+Router.route 'note_detail/:id',
   name: 'note.detail'
 
 Router.route 'journey'
@@ -21,10 +19,3 @@ Router.route 'journey'
 Router.route 'shop'
 
 Router.route 'say'
-
-Router.onBeforeAction AccountsTemplates.ensureSignedIn,
-  only: ['say']
-
-AccountsTemplates.configureRoute 'ensureSignedIn',
-  template: 'signIn'
-  layoutTemplate: null

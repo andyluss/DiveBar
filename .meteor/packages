@@ -40,9 +40,10 @@ meteoric:ionicons-sass
 meteoric:ionic-sass
 meteoric:ionic
 udondan:slick
-yogiben:comments
 yogiben:favorites
 aldeed:template-extension
+arkham:comments-ui
+houston:admin
 
 # Packages from the app:
 

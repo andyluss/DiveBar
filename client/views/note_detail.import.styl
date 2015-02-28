@@ -1,21 +1,38 @@
-@require 'nib'
-
 .note-detail
-  size 100%
-  #picture-carousel
+  width 100%
+  .picture-carousel
     height 200px
-    .slick-list
+    .ion-slide-box
       height 100%
-      .slick-track
+      .slick-list
         height 100%
-        .slick-slide
+        .slick-track
           height 100%
-          background-color blue
-          img
-            max-width 100%
-            max-height 100%
-            width auto
-            height auto
-            clear both
-            display block
-            margin auto
+          .slick-slide
+            height 100%
+            background-color white
+            display flex
+            .picture
+              max-width 100%
+              max-height 100%
+              width auto
+              height auto
+              margin auto
+  .title-container
+    padding-top 0.35em
+    size 100% 2em
+    background-color #a3ce5f
+    label
+      color white
+      position absolute
+    .title
+      left 1em
+    .owner
+      right 7em
+    .date
+      right 1em
+  .content-container
+    padding 0.3em 1em
+    opacity 0.6
+
+  @import 'note_comment_box.import.styl'

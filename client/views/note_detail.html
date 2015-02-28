@@ -11,7 +11,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">{{title}}</h1>
+    <h1 class="title">{{stringNote}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
@@ -19,29 +19,27 @@
 
       <div class="note-detail">
 
-        <div id="picture-carousel">
-          {{#each pictures}}
-            <div>
-              <img src="{{this}}">
-            </div>
-          {{/each}}
+        <div class="picture-carousel">
+          {{#ionSlideBox showPager=true}}
+            {{#each pictures}}
+              <div class="picture-container">
+                <img class="picture" src="{{this}}">
+              </div>
+            {{/each}}
+          {{/ionSlideBox}}
         </div>
 
-        {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
-          <label>
-            {{title}}
-          </label>
-          <label>
-            <a href="{{ownerUrl this}}">
-              {{ownerName this}}
+        <div class="title-container">
+          <label class="title">{{title}}</label>
+          <label class="owner">
+            <a href="{{ownerUrl owner}}">
+              {{ownerName owner}}
             </a>
           </label>
-          <label>
-            {{dateString this}}
-          </label>
-        {{/ionItem}}
+          <label class="date">{{dateString date}}</label>
+        </div>
 
-        <div>
+        <div class="content-container ">
           {{content}}
         </div>
 
@@ -52,11 +50,7 @@
           <!--</button>-->
         <!--</div>-->
 
-        {{#if currentUser}}
-          {{>commentFormToggle}}
-        {{/if}}
-
-        {{>comments}}
+        {{> commentsBox id=_id content=commentStrings customTemplate='noteCommentBox'}}
 
       </div>
 

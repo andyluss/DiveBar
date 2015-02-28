@@ -1,7 +1,7 @@
-<template name="note">
+<template name="noteList">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">潜迷游记</h1>
+    <h1 class="title">{{stringNote}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
@@ -13,11 +13,14 @@
           <!--{{/each}}-->
       <!--{{/ionList}}-->
 
-      <div id="note-carousel">
-        {{#each notes}}
-          {{>noteCarouselItem}}
-        {{/each}}
+      <div class="note-carousel">
+        {{#ionSlideBox showPager=true}}
+          {{#each notes}}
+            {{>noteCarouselItem}}
+          {{/each}}
+        {{/ionSlideBox}}
       </div>
+
 
     {{/ionContent}}
 

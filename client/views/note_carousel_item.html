@@ -1,13 +1,13 @@
 <template name="noteCarouselItem">
   <div>
-    <a href="note/{{_id}}">
+    <a href="note_detail/{{_id}}">
       <div class="picture-container">
         <img class="first-picture" src="{{firstPicture}}">
       </div>
       <div class="title-container">
-        <label>{{title}}</label>
-        <label>{{ownerName this}}</label>
-        <label>{{dateString this}}</label>
+        <label class="title">{{title}}</label>
+        <label class="owner">{{ownerName owner}}</label>
+        <label class="date">{{dateString date}}</label>
       </div>
     </a>
   </div>

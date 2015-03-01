@@ -1,7 +1,7 @@
-Meteor.publishComposite 'notesTop', ->
+Meteor.publishComposite 'journeysTop', (category)->
   {
     find: ->
-      Notes.find({}, {limit: 10, fields: {content: 0}, sort: [['date', 'desc']]})
+      Journeys.find({category: category}, {limit: 10, fields: {content: 0}, sort: [['createdAt', 'desc']]})
     children: [
       {
         find: (doc)->
@@ -11,13 +11,13 @@ Meteor.publishComposite 'notesTop', ->
   }
 
 
-#Meteor.publish 'notes', ->
-#  Notes.find({})
+#Meteor.publish 'journeys', ->
+#  Journeys.find({})
 
-Meteor.publishComposite 'note', (_id)->
+Meteor.publishComposite 'journey', (_id)->
   {
     find: ->
-      Notes.find {_id: _id}
+      Journeys.find {_id: _id}
     children: [
       {
         find: (doc)->
@@ -26,7 +26,7 @@ Meteor.publishComposite 'note', (_id)->
     ]
   }
 
-Notes.allow
+Journeys.allow
   insert: (userId, doc) ->
     userId == doc.owner
   update: (userId, doc, fields, modifier) ->

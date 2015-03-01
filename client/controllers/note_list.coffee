@@ -3,5 +3,5 @@
     Meteor.subscribe 'notesTop'
   data: ->
     {
-      notes: Notes.find {}, {sort: {date: -1}}
+      list: Notes.find {}, {sort: {date: -1}}
     }

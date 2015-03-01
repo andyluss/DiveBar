@@ -1,26 +1,19 @@
 <template name="noteList">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">{{stringNote}}</h1>
+    <h1 class="title">{{strNote}}</h1>
   {{/contentFor}}
 
-  {{#ionView}}
+  {{#ionView class='note-list'}}
     {{#ionContent}}
-
-      <!--{{#ionList}}-->
-          <!--{{#each notes}}-->
-              <!--{{> noteItem note=this path="note.detail"}}-->
-          <!--{{/each}}-->
-      <!--{{/ionList}}-->
 
       <div class="note-carousel">
         {{#ionSlideBox showPager=true}}
-          {{#each notes}}
+          {{#each list}}
             {{>noteCarouselItem}}
           {{/each}}
         {{/ionSlideBox}}
       </div>
-
 
     {{/ionContent}}
 

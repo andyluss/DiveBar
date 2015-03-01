@@ -1,0 +1,52 @@
+<template name="journeyDetail">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="share-journey" data-journey-id="{{_id}}">
+      {{> ionIcon icon='ios-upload-outline'}}
+    </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{strJourney}}</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <!--<div class="journey-detail">-->
+
+        <!--<div class="picture-carousel">-->
+          <!--{{#ionSlideBox showPager=true}}-->
+            <!--{{#each pictures}}-->
+              <!--<div class="picture-container">-->
+                <!--<img class="picture" src="{{this}}">-->
+              <!--</div>-->
+            <!--{{/each}}-->
+          <!--{{/ionSlideBox}}-->
+        <!--</div>-->
+
+        <!--<div class="title-container">-->
+          <!--<label class="title">{{title}}</label>-->
+          <!--<label class="owner">-->
+            <!--<a href="{{ownerUrl owner}}">-->
+              <!--{{ownerName owner}}-->
+            <!--</a>-->
+          <!--</label>-->
+          <!--<label class="date">{{dateString date}}</label>-->
+        <!--</div>-->
+
+        <!--<div class="content-container ">-->
+          <!--{{content}}-->
+        <!--</div>-->
+
+        <!--{{> commentsBox id=_id content=commentStrings customTemplate='journeyCommentBox'}}-->
+
+      <!--</div>-->
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

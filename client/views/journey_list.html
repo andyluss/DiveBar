@@ -1,0 +1,30 @@
+<template name="journeyList">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{journeyTitle}}</h1>
+  {{/contentFor}}
+
+  {{#ionView class='journey-list'}}
+    {{#ionContent}}
+      <div class="category-container">
+        <a class="category official {{isSelectOfficial}}" href="/journey/list/official">
+          <label>官方</label>
+        </a>
+        <a class="category user {{isSelectUser}}" href="/journey/list/user">
+          <label>潜友</label>
+        </a>
+      </div>
+
+      <div class='journey-item-list'>
+        {{#each list}}
+          {{> journeyItem}}
+        {{/each}}
+      </div>
+
+    {{/ionContent}}
+
+    {{>tabs}}
+
+  {{/ionView}}
+
+</template>

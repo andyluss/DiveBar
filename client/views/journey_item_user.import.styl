@@ -1,0 +1,34 @@
+.journey-item.user
+  display flex
+  padding 0.5em
+  .user-box
+    flex 1
+    min-width 4em
+    text-align center
+    color #2b9ad5
+    font-weight bold
+    .avatar-container
+      size 4em
+      @import 'user_avatar.import.styl'
+  .right-box
+    margin-left 0.5em
+    flex 5
+    .title-container
+      .title
+        font-weight bold
+        color #2b9ad5
+      .date
+        position absolute
+        right 0.5em
+        color #ed9606
+    .content-container
+      display inline-block
+      width 100%
+      color #898a8b
+      table
+        width 100%
+        tr
+          width 100%
+          td
+            width 50%
+            padding-top 0.3em

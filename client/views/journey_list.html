@@ -15,11 +15,19 @@
         </a>
       </div>
 
-      <div class='journey-item-list'>
-        {{#each list}}
-          {{> journeyItem}}
-        {{/each}}
-      </div>
+      {{#if isSelectOfficial}}
+        <div class='journey-item-list official'>
+          {{#each list}}
+            {{> journeyItemOfficial}}
+          {{/each}}
+        </div>
+      {{else}}
+        {{#ionList class='journey-item-list user'}}
+          {{#each list}}
+            {{> journeyItemUser}}
+          {{/each}}
+        {{/ionList}}
+      {{/if}}
 
     {{/ionContent}}
 

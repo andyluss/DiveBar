@@ -25,14 +25,9 @@ Meteor.publish 'user', (id)->
 #	ProfilePictures.find()
 
 
-Meteor.users.allow
-  update: (userId, doc, fieldNames, modifier) ->
-    if userId == doc._id and not doc.username and fieldNames.length == 1 and fieldNames[0] == 'username'
-      true
-    else
-      false
-
-Meteor.methods
-  deleteAccount: (userId) ->
-    if @userId == userId
-      Meteor.users.remove _id: @userId
+#Meteor.users.allow
+#  update: (userId, doc, fieldNames, modifier) ->
+#    if userId == doc._id and not doc.username and fieldNames.length == 1 and fieldNames[0] == 'username'
+#      true
+#    else
+#      false

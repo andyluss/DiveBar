@@ -1,9 +1,9 @@
 App.info({
   name: 'Dive Bar',
-  description: 'A recipe sharing app made in Meteor.',
-  author: 'Percolate Studio Team',
-  email: 'us@percolatestudio.com',
-  website: 'http://percolatestudio.com',
+  description: 'Dive Bar Desc.',
+  author: 'Dive Bar Author',
+  email: 'i@divebar.com',
+  website: 'http://divebar.com',
   version: '0.0.1'
 });
 
@@ -42,6 +42,6 @@ App.launchScreens({
   'android_xhdpi_landscape': 'resources/splash/splash-1280x720.png'
 });
 
-App.setPreference('StatusBarOverlaysWebView', 'false');
-App.setPreference('StatusBarBackgroundColor', '#000000');
+//App.setPreference('StatusBarOverlaysWebView', 'false');
+//App.setPreference('StatusBarBackgroundColor', '#000000');
 

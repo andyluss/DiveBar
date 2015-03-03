@@ -3,18 +3,15 @@ UserProfileSchema = new SimpleSchema
   picture:
     type: String
     optional:true
-    label: 'Profile picture'
+    label: '头像'
     autoform:
       afFieldInput:
         type: 'fileUpload'
         collection: 'ProfilePictures'
 
-  firstName:
+  nickname:
     type: String
-    optional: true
-
-  lastName:
-    type: String
+    label: '昵称'
     optional: true
 
 UserSchema = new SimpleSchema
@@ -22,14 +19,15 @@ UserSchema = new SimpleSchema
   username:
     type: String
     regEx: /^[a-z0-9A-Z_]{3,15}$/
-    optional: false
+    optional: true
 
   emails:
     type: [Object]
-    optional: true
+    optional: false
 
   "emails.$.address":
     type: String
+    optional: false
     regEx: SimpleSchema.RegEx.Email
 
   "emails.$.verified":
@@ -42,15 +40,14 @@ UserSchema = new SimpleSchema
     type: UserProfileSchema
     optional: true
 
+  roles:
+    type: [String]
+    optional: true
+
   services:
     type: Object
     optional: true
     blackbox: true
-
-  roles:
-    type: [String]
-    blackbox: true
-    optional: true
 
 
 Meteor.users.attachSchema UserSchema

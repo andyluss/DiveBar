@@ -1,6 +1,9 @@
 T9n.setLanguage 'zh-cn'
 
 AccountsTemplates.configure
+#  showForgotPasswordLink: true
+
+#AccountsTemplates.configure
 #  onLogoutHook: myLogoutFunc
 #  onSubmitHook: (error, state)->
 #    if !error && state == 'signIn'

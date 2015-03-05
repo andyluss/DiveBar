@@ -1,9 +1,8 @@
 @JourneyListController = ContentController.extend
   template: 'journeyList'
   waitOn: ->
-    Meteor.subscribe 'journeysTop', @params.category
+    subManager.subscribe 'journeysTopOfficial'
+    subManager.subscribe 'journeysTopUser'
   data: ->
-    {
-      category: @params.category
-      list: Journeys.find {category: @params.category}, {sort: {date: -1}}
-    }
+    listOfficial: Journeys.find {category: 'official'}, {sort: {date: -1}}
+    listUser: Journeys.find {category: 'user'}, {sort: {date: -1}}

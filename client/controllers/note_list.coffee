@@ -1,7 +1,6 @@
 @NoteListController = ContentController.extend
   waitOn: ->
-    Meteor.subscribe 'notesTop'
+    subManager.subscribe 'notesTop'
+    subManager.subscribe 'favoritesByUser', Meteor.userId
   data: ->
-    {
-      list: Notes.find {}, {sort: {date: -1}}
-    }
+    list: Notes.find {}, {sort: {date: -1}}

@@ -1,13 +1,25 @@
-Meteor.publishComposite 'journeysTop', (category)->
+Meteor.publishComposite 'journeysTopOfficial', ->
   {
     find: ->
-      Journeys.find({category: category}, {limit: 10, fields: {content: 0}, sort: [['createdAt', 'desc']]})
+      Journeys.find({category: 'official'}, {limit: 10, fields: {content: 0}, sort: [['createdAt', 'desc']]})
     children: [
       {
         find: (doc)->
           Meteor.users.find {_id: doc.owner}
       }
     ]
+  }
+
+Meteor.publishComposite 'journeysTopUser', ->
+  {
+  find: ->
+    Journeys.find({category: 'user'}, {limit: 10, fields: {content: 0}, sort: [['createdAt', 'desc']]})
+  children: [
+    {
+      find: (doc)->
+        Meteor.users.find {_id: doc.owner}
+    }
+  ]
   }
 
 

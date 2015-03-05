@@ -43,8 +43,5 @@ udondan:slick
 yogiben:favorites
 aldeed:template-extension
 arkham:comments-ui
-
-# Packages from the app:
-
-
-
+meteorhacks:subs-manager
+houston:admin

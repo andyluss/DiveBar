@@ -1,6 +1,6 @@
-@JourneyCategory =
-  official: 'official'
-  user: 'user'
+#@JourneyCategory =
+#  official: 'official'
+#  user: 'user'
 
 @JourneyTitle =
   official: '官方行程'

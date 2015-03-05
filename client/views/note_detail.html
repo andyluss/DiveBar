@@ -5,8 +5,8 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="share-note" data-note-id="{{_id}}">
-      {{> ionIcon icon='ios-upload-outline'}}
+    <button class="button button-clear pull-right button-positive" data-action="userProfile">
+      {{> ionIcon icon='ios-person-outline'}}
     </button>
   {{/contentFor}}
 
@@ -28,6 +28,8 @@
             {{/each}}
           {{/ionSlideBox}}
         </div>
+
+        {{> favoriteButton _id=_id}}
 
         <div class="title-container">
           <label class="title">{{title}}</label>

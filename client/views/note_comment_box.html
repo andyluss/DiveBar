@@ -28,7 +28,7 @@
     </div>
     <div class="content">
       <div class="author-bar">
-        <a class="author" href="{{userUrl userId}}">{{user.displayName}}</a>
+        <a class="author" href="{{userUrl userId}}">{{userName userId}}</a>
         <div class="actions">
           {{#if isOwnComment}}
             <a class="remove-action">删除</a>
@@ -47,8 +47,7 @@
     <div class="field">
       <textarea
         placeholder="你有什么想表达的..."
-        class="create-comment">
-      </textarea>
+        class="create-comment"></textarea>
     </div>
     <button type="submit" class="ui blue labeled submit icon button">
       <i class="icon edit"></i> 提交

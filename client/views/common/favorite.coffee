@@ -1,0 +1,3 @@
+Template.favoriteButtonChecked.replaces("favoriteButtonFavorited")
+
+Template.favoriteButtonNotChecked.replaces("favoriteButtonNotFavorited")

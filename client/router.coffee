@@ -1,3 +1,5 @@
+@subManager = new SubsManager()
+
 Router.route '/', ->
   if Meteor.userId()
     @redirect '/note/list'
@@ -17,11 +19,8 @@ Router.route '/note/detail/:id',
   name: 'note.detail'
   controller: 'NoteDetailController'
 
-Router.route '/journey/list', ->
-  @redirect '/journey/list/official'
-
-Router.route '/journey/list/:category',
-  name: 'journey.list.category'
+Router.route '/journey/list',
+  name: 'journey.list'
   controller: 'JourneyListController'
 
 Router.route '/journey/detail/:id',

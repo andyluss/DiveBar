@@ -7,12 +7,10 @@
   {{#ionView class='note-list'}}
     {{#ionContent}}
 
-      <div class="note-carousel">
-        {{#ionSlideBox showPager=true}}
-          {{#each list}}
-            {{>noteCarouselItem}}
-          {{/each}}
-        {{/ionSlideBox}}
+      <div class='note-item-list'>
+        {{#each list}}
+          {{> imageItem list='note' id=_id owner=owner date=date image=firstPicture}}
+        {{/each}}
       </div>
 
     {{/ionContent}}

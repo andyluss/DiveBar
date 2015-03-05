@@ -7,23 +7,23 @@
   {{#ionView class='journey-list'}}
     {{#ionContent}}
       <div class="category-container">
-        <a class="category official {{isSelectOfficial}}" href="/journey/list/official">
+        <a class="category official {{isSelect 'official'}}">
           <label>官方</label>
         </a>
-        <a class="category user {{isSelectUser}}" href="/journey/list/user">
+        <a class="category user {{isSelect 'user'}}">
           <label>潜友</label>
         </a>
       </div>
 
-      {{#if isSelectOfficial}}
+      {{#if isSelect 'official'}}
         <div class='journey-item-list official'>
-          {{#each list}}
-            {{> journeyItemOfficial}}
+          {{#each listOfficial}}
+            {{> imageItem list='journey' id=_id owner=owner date=date image=firstPicture}}
           {{/each}}
         </div>
       {{else}}
         {{#ionList class='journey-item-list user'}}
-          {{#each list}}
+          {{#each listUser}}
             {{> journeyItemUser}}
           {{/each}}
         {{/ionList}}

@@ -1,5 +1,5 @@
 @NoteDetailController = ContentController.extend
   waitOn: ->
-    Meteor.subscribe 'note', @params.id
+    subManager.subscribe 'note', @params.id
   data: ->
     Notes.findOne({_id: @params.id})

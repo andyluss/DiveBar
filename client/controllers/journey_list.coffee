@@ -1,6 +1,6 @@
 @JourneyListController = ContentController.extend
   template: 'journeyList'
-  waitOn: ->
+  onAfterAction: ->
     subManager.subscribe 'journeysTopOfficial'
     subManager.subscribe 'journeysTopUser'
   data: ->

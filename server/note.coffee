@@ -7,6 +7,10 @@ Meteor.publishComposite 'notesTop', ->
         find: (doc)->
           Meteor.users.find {_id: doc.owner}
       }
+      {
+        find: (doc)->
+          Images.find {_id: doc.pictures[0]}
+      }
     ]
   }
 
@@ -23,13 +27,17 @@ Meteor.publishComposite 'note', (_id)->
         find: (doc)->
           Meteor.users.find {_id: doc.owner}
       }
+      {
+        find: (doc)->
+          Images.find {_id: {$in: doc.pictures}}
+      }
     ]
   }
 
+testFunc = (userId, doc)->
+  userId == doc.owner
+
 Notes.allow
-  insert: (userId, doc) ->
-    userId == doc.owner
-  update: (userId, doc, fields, modifier) ->
-    userId == doc.owner
-  remove: (userId, doc) ->
-    userId == doc.owner
+  insert: testFunc
+  update: testFunc
+  remove: testFunc

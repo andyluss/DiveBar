@@ -50,4 +50,5 @@ Notes.attachSchema new SimpleSchema
   pictures:
     label: '图片'
     type: [String]
+    optional: true
 

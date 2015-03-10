@@ -13,15 +13,16 @@ Router.route '/user/:id',
 
 Router.route '/note/list',
   name: 'note.list'
-  controller: 'NoteListController'
+
+Router.route '/note/creator',
+  name: 'note.creator'
+  layoutTemplate: 'layoutContent'
 
 Router.route '/note/detail/:id',
   name: 'note.detail'
-  controller: 'NoteDetailController'
 
 Router.route '/journey/list',
   name: 'journey.list'
-  controller: 'JourneyListController'
 
 Router.route '/journey/detail/:id',
   name: 'journey.detail'

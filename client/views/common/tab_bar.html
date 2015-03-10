@@ -1,10 +1,14 @@
-<template name="tabs">
+<template name="tabBar">
 
-  {{#ionTabs style="ios"}}
+  {{#ionTabs style="ios" class='tab-bar'}}
+
     {{> ionTab title=strNote path="note.list" iconOff="ios-bolt-outline" iconOn="ios-bolt" class="tab-item-positive"}}
     {{> ionTab title=strJourney path="journey.list" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}
     {{> ionTab title=strProduct path="product.list" iconOff="ios-bell-outline" iconOn="ios-bell" class="tab-item-positive"}}
     {{> ionTab title=strSay path="say.list" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
+
+    <a class="add-button button button-icon icon ion-plus" href="/{{currentRouteType}}/creator"></a>
+
   {{/ionTabs}}
 
 </template>

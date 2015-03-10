@@ -1,0 +1,11 @@
+<template name="uploadedImage">
+  <div class="image-box">
+    <div class="inner-box">
+      <img src="{{url store='thumbs' uploading='/images/uploading.png' storing='/images/storing.png'}}" alt="thumbnail">
+      {{#unless isUploaded}}
+        {{> FS.UploadProgressBar class="upload-progress-bar"}}
+      {{/unless}}
+      {{#FS.DeleteButton class="delete button button-icon icon ion-close-circled"}}{{/FS.DeleteButton}}
+    </div>
+  </div>
+</template>

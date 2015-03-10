@@ -1,0 +1,35 @@
+<template name="noteCreator">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="save-note">保存</button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">添加游记</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <div class='note-creator padding'>
+
+        <input type="text" class="title" placeholder="标题">
+        <textarea class="content" placeholder="这一刻想发表什么..."></textarea>
+        <div class="images-container">
+          {{#each uploadedImages}}
+            {{>uploadedImage}}
+          {{/each}}
+          <label class="input-label ion-plus-circled">
+            <input type="file" multiple class="image-input">
+          </label>
+        </div>
+
+      </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

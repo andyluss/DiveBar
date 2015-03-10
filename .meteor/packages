@@ -45,3 +45,8 @@ aldeed:template-extension
 arkham:comments-ui
 meteorhacks:subs-manager
 houston:admin
+cfs:standard-packages
+cfs:filesystem
+cfs:graphicsmagick
+cfs:ui
+sacha:spin

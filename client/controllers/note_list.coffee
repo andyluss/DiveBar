@@ -1,5 +1,5 @@
 @NoteListController = ContentController.extend
-  waitOn: ->
+  onAfterAction: ->
     subManager.subscribe 'notesTop'
     subManager.subscribe 'favoritesByUser', Meteor.userId
   data: ->

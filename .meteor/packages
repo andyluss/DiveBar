@@ -11,6 +11,7 @@ accounts-base
 accounts-password
 accounts-ui
 launch-screen
+reactive-var
 
 # Packages from Atmosphere:
 

@@ -1,7 +1,7 @@
-Meteor.publishComposite 'notesTop', ->
+Meteor.publishComposite 'notesTop', (limit)->
   {
     find: ->
-      Notes.find({}, {limit: 10, fields: {content: 0}, sort: [['date', 'desc']]})
+      Notes.find({}, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
     children: [
       {
         find: (doc)->

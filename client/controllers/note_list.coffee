@@ -1,6 +1,6 @@
 @NoteListController = ContentController.extend
   onAfterAction: ->
-    subManager.subscribe 'notesTop'
-    subManager.subscribe 'favoritesByUser', Meteor.userId
+    Meteor.subscribe 'notesTop', Vars.notesTopLimit.get()
+    Meteor.subscribe 'favoritesByUser', Meteor.userId
   data: ->
     list: Notes.find {}, {sort: {date: -1}}

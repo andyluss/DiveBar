@@ -4,12 +4,18 @@
     <h1 class="title">{{strNote}}</h1>
   {{/contentFor}}
 
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="userProfile">
+    {{> ionIcon icon='ios-person-outline'}}
+    </button>
+  {{/contentFor}}
+
   {{#ionView class='note-list'}}
     {{#ionContent}}
 
       <div class='note-item-list'>
         {{#each list}}
-          {{> imageItem list='note' id=_id owner=owner date=date image=firstPicture}}
+          {{> imageItem}}
         {{/each}}
       </div>
 

@@ -1,32 +1,49 @@
-creator = ''
+noteCreator = ->
+  Session.get 'noteCreator'
 
 Template.noteCreator.rendered = ->
-  creator = new Date().toString()
-  Meteor.subscribe 'imagesUploaded', Meteor.userId(), creator
+  Session.set 'noteCreator', new Date().toString()
+  Meteor.subscribe 'imagesUploaded', Meteor.userId(), noteCreator()
+
+uploadedImages = ->
+  Images.find {creator: noteCreator()}
 
 Template.noteCreator.helpers
-  uploadedImages: ->
-    Images.find()
+  uploadedImages: uploadedImages
 
 Meteor.startup ->
   Template.noteCreator.events
     'change .image-input': FS.EventHandlers.insertFiles Images,
       metadata: (fileObj)->
         owner: Meteor.userId()
-        creator: creator
+        creator: noteCreator()
       after: (error, fileObj)->
         if error
           console.log error
         else
           console.log 'Image Inserted: ', fileObj.name()
 
+back = (template)->
+  backButton = template.find '.nav-bar-block .back-button'
+  $(backButton).click()
+
 Template.ionBody.events
   'click [data-action=save-note]': (event, template)->
     title = template.find('.note-creator .title').value
+    if not title then alert '请输入标题'; return
     content = template.find('.note-creator .content').value
     pictures = [];
-    pictures.push image._id for image in Images.find().fetch()
-    Notes.insert
-      title: title
-      content: content
-      pictures: pictures
+    pictures.push image._id for image in uploadedImages().fetch()
+    Notes.insert(
+      {
+        title: title
+        content: content
+        pictures: pictures
+      },
+      (error, _id)->
+        if error
+          console.log 'Insert image error: ' + error
+        else
+          back(template)
+    )
+

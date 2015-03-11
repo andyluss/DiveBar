@@ -2,6 +2,11 @@
 
 Notes.attachSchema new SimpleSchema
 
+  category:
+    type: String
+    label: '分类'
+    defaultValue: 'note'
+
   owner:
     type: String
     label: '作者'
@@ -36,6 +41,7 @@ Notes.attachSchema new SimpleSchema
   content:
     type: String
     label: '内容'
+    optional: true
     max: 1000
     autoform:
       rows: 10
@@ -48,7 +54,7 @@ Notes.attachSchema new SimpleSchema
         new Date()
 
   pictures:
-    label: '图片'
     type: [String]
+    label: '图片'
     optional: true
 

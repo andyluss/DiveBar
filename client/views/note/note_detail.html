@@ -5,9 +5,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="userProfile">
-      {{> ionIcon icon='ios-person-outline'}}
-    </button>
+    {{> favoriteButton _id=_id}}
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
@@ -19,17 +17,17 @@
 
       <div class="note-detail">
 
-        <div class="picture-carousel">
-          {{#ionSlideBox showPager=true}}
-            {{#each pictures}}
-              <div class="picture-container">
-                <img class="picture" src="{{this}}">
-              </div>
-            {{/each}}
-          {{/ionSlideBox}}
-        </div>
-
-        {{> favoriteButton _id=_id}}
+        {{#if pictures}}
+          <div class="picture-carousel">
+            {{#ionSlideBox showPager=true}}
+              {{#each pictures}}
+                <div class="picture-container">
+                  <img class="picture" src="{{imageUrl this}}">
+                </div>
+              {{/each}}
+            {{/ionSlideBox}}
+          </div>
+        {{/if}}
 
         <div class="title-container">
           <label class="title">{{title}}</label>
@@ -41,9 +39,11 @@
           <label class="date">{{dateString date}}</label>
         </div>
 
-        <div class="content-container ">
-          {{content}}
-        </div>
+        {{#if content}}
+          <div class="content-container ">
+            {{content}}
+          </div>
+        {{/if}}
 
         {{> commentsBox id=_id content=commentStrings customTemplate='noteCommentBox'}}
 

@@ -29,13 +29,14 @@ Template.registerHelper 'userName', (userId)->
 Template.registerHelper 'userUrl', (userId)->
   '/user/' + userId
 
+imageUrl = (imageId)->
+  image = Images.findOne(imageId)
+  if image then image.url({store:'images'}) else ''
+
+Template.registerHelper 'imageUrl', imageUrl
+
 Template.registerHelper 'firstPicture', ->
     if @pictures and @pictures.length > 0
-      console.log @pictures[0]
-      image = Images.findOne(@pictures[0])
-      if image then getImageUrl(image) else ''
+      imageUrl @pictures[0]
     else
       ''
-      
-@getImageUrl = (image)->
-  'cfs/files/images/' + image.copies.images.key

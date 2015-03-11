@@ -1,7 +1,7 @@
-Meteor.startup ->
-  console.log 'Image Uploads: ', Images.find().count()
-  Images.on 'removed', (fileObj)->
-    console.log 'Removed ' + fileObj._id + 'from Images'
+#Meteor.startup ->
+#  console.log 'Image Uploads: ', Images.find().count()
+#  Images.on 'removed', (fileObj)->
+#    console.log 'Removed ' + fileObj._id + 'from Images'
 
 testFunc = (userId, fileObj)->
   userId == fileObj.owner

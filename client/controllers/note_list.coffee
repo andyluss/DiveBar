@@ -1,6 +1,5 @@
 @NoteListController = ContentController.extend
   onAfterAction: ->
-    Meteor.subscribe 'notesTop', Vars.notesTopLimit.get()
-    Meteor.subscribe 'favoritesByUser', Meteor.userId
+    subManager.subscribe 'notesTop', Vars.notesTopLimit.get(), -> Vars.loadingMoreNotes.set false
   data: ->
     list: Notes.find {}, {sort: {date: -1}}

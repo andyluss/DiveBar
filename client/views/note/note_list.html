@@ -19,6 +19,12 @@
         {{/each}}
       </div>
 
+      {{#if hasMore}}
+        <button class="loadmore-button">
+          点击加载更多
+        </button>
+      {{/if}}
+
     {{/ionContent}}
 
     {{>tabBar creator='noteCreator'}}

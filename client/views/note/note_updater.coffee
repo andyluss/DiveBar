@@ -11,18 +11,6 @@ uploadedImages = ->
 Template.noteCreator.helpers
   uploadedImages: uploadedImages
 
-Meteor.startup ->
-  Template.noteCreator.events
-    'change .image-input': FS.EventHandlers.insertFiles Images,
-      metadata: (fileObj)->
-        owner: Meteor.userId()
-        creator: noteCreator()
-      after: (error, fileObj)->
-        if error
-          console.log error
-        else
-          console.log 'Image Inserted: ', fileObj.name()
-
 Template.ionNavBar.events
   'click': (event, template)->
     if event.target == template.find '.back-button'
@@ -37,7 +25,7 @@ Template.ionNavBar.events
 #            template.confirmed = true
 #            back()
 
-  'click [data-action=save-note]': (event, template)->
+  'click [data-action=update-note]': (event, template)->
     title = $('.note-creator .title').val()
     if not title
       alert '请输入标题'
@@ -46,18 +34,24 @@ Template.ionNavBar.events
 #        template: '请输入标题'
 #        okText: '确定'
       return
-    content = $('.note-creator .content').val()
-    pictures = [];
-    pictures.push image._id for image in uploadedImages().fetch()
-    Notes.insert(
+    content = $('.note-updater .content').val()
+#    pictures = [];
+#    pictures.push image._id for image in uploadedImages().fetch()
+    Notes.update(
       {
-        title: title
-        content: content
-        pictures: pictures
+        _id: @_id
+      },
+      {
+        $set:
+          title: title
+          content: content
+      },
+      {
+        upset: false
       },
       (error, _id)->
         if error
-          console.log 'Insert note error: ' + error
+          console.log 'Update note error: ' + error
         else
           back()
     )

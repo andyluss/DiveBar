@@ -23,7 +23,7 @@ Template.ionNavBar.events
       ]
 
       destructiveButtonClicked: ->
-        deleteNote()
+        deleteNote(doc._id)
         return true
 
       buttonClicked: (index)->
@@ -32,13 +32,13 @@ Template.ionNavBar.events
             console.log 'Share'
             return true
           when 1
-            editNote()
+            editNote(doc._id)
         return true
 
-editNote = ->
-  console.log 'Edit'
+editNote = (id)->
+  Router.go 'note.updater', {id: id}
 
-deleteNote = ->
+deleteNote = (id)->
   showConfirm = ->
     IonActionSheet.show
       titleText: '确认删除？'
@@ -47,6 +47,6 @@ deleteNote = ->
       buttons: []
       destructiveButtonClicked: ->
         back()
-        Notes.remove {_id: doc._id}
+        Notes.remove {_id: id}
         return true
   Meteor.setTimeout showConfirm, 800

@@ -18,6 +18,12 @@ Router.route '/note/creator',
   name: 'note.creator'
   layoutTemplate: 'layoutContent'
 
+Router.route '/note/updater/:id',
+  name: 'note.updater'
+  layoutTemplate: 'layoutContent'
+  data: ->
+    Notes.findOne({_id: @params.id})
+
 Router.route '/note/detail/:id',
   name: 'note.detail'
 

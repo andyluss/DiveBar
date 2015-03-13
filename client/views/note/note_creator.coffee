@@ -23,10 +23,6 @@ Meteor.startup ->
         else
           console.log 'Image Inserted: ', fileObj.name()
 
-back = (template)->
-  backButton = template.find '.nav-bar-block .back-button'
-  $(backButton).click()
-
 Template.ionBody.events
   'click [data-action=save-note]': (event, template)->
     title = template.find('.note-creator .title').value
@@ -44,6 +40,6 @@ Template.ionBody.events
         if error
           console.log 'Insert image error: ' + error
         else
-          back(template)
+          back()
     )
 

@@ -40,3 +40,7 @@ Template.registerHelper 'firstPicture', ->
       imageUrl @pictures[0]
     else
       ''
+
+@back = ->
+  backButton = $('.ionic-body .nav-bar-block .back-button')[0]
+  $(backButton).click()

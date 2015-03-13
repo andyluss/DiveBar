@@ -5,8 +5,8 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="more-button button button-clear pull-right button-positive ion-more icon" data-action="noteMoreAction"></button>
     {{> favoriteButton _id=_id}}
+    <button class="more-button button button-clear pull-right button-positive ion-more icon" data-action="noteMoreAction"></button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
@@ -46,7 +46,7 @@
           </div>
         {{/if}}
 
-        {{> commentsBox id=_id content=commentStrings customTemplate='noteCommentBox'}}
+        {{>commentsBox id=_id content=commentStrings customTemplate='noteCommentBox'}}
 
       </div>
 

@@ -8,7 +8,7 @@ Template.noteDetail.helpers
   isStored: ->
     true
 
-Template.ionBody.events
+Template.ionNavBar.events
   'click [data-action=noteMoreAction]': (event, template)->
     doc = this
 
@@ -23,17 +23,7 @@ Template.ionBody.events
       ]
 
       destructiveButtonClicked: ->
-        showConfirm = ->
-          IonActionSheet.show
-            titleText: '确认删除？'
-            cancelText: '取消'
-            destructiveText: '删除'
-            buttons: []
-            destructiveButtonClicked: ->
-              back()
-              Notes.remove {_id: doc._id}
-              return true
-        Meteor.setTimeout showConfirm, 800
+        deleteNote()
         return true
 
       buttonClicked: (index)->
@@ -42,5 +32,21 @@ Template.ionBody.events
             console.log 'Share'
             return true
           when 1
-            console.log 'Edit'
+            editNote()
         return true
+
+editNote = ->
+  console.log 'Edit'
+
+deleteNote = ->
+  showConfirm = ->
+    IonActionSheet.show
+      titleText: '确认删除？'
+      cancelText: '取消'
+      destructiveText: '删除'
+      buttons: []
+      destructiveButtonClicked: ->
+        back()
+        Notes.remove {_id: doc._id}
+        return true
+  Meteor.setTimeout showConfirm, 800

@@ -26,7 +26,7 @@ Template.ionNavBar.events
 #            back()
 
   'click [data-action=update-note]': (event, template)->
-    title = $('.note-creator .title').val()
+    title = $('.note-updater .title').val()
     if not title
       alert '请输入标题'
 #      IonPopup.alert

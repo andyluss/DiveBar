@@ -24,15 +24,16 @@ Meteor.startup ->
           console.log 'Image Inserted: ', fileObj.name()
 
 Template.ionNavBar.events
-  'click': (event, template)->
-    if event.target == template.find '.back-button'
-      if not template.confirmed
-        template.confirmed = false
+#  'mousedown': (event, template)->
+#    if event.target == template.find '.back-button'
+#      if not template.confirmed
+#        template.confirmed = false
 #        event.stopImmediatePropagation()
 #        IonPopup.confirm
 #          title: '要丢弃编辑吗？'
 #          okText: '丢弃'
 #          cancelText: '取消'
+#          template: ''
 #          onOk: ->
 #            template.confirmed = true
 #            back()
@@ -40,11 +41,10 @@ Template.ionNavBar.events
   'click [data-action=save-note]': (event, template)->
     title = $('.note-creator .title').val()
     if not title
-      alert '请输入标题'
-#      IonPopup.alert
-#        title: 'sss'
-#        template: '请输入标题'
-#        okText: '确定'
+#      alert '请输入标题'
+      IonPopup.alert
+        title: '请输入标题'
+        okText: '确定'
       return
     content = $('.note-creator .content').val()
     pictures = [];

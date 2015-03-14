@@ -6,28 +6,28 @@
 
   {{#ionView class='journey-list'}}
     {{#ionContent}}
-      <div class="category-container">
-        <a class="category official {{isSelect 'official'}}">
-          <label>官方</label>
-        </a>
-        <a class="category user {{isSelect 'user'}}">
-          <label>潜友</label>
-        </a>
-      </div>
+      <!--<div class="category-container">-->
+        <!--<a class="category official {{isSelect 'official'}}">-->
+          <!--<label>官方</label>-->
+        <!--</a>-->
+        <!--<a class="category user {{isSelect 'user'}}">-->
+          <!--<label>潜友</label>-->
+        <!--</a>-->
+      <!--</div>-->
 
-      {{#if isSelect 'official'}}
-        <div class='journey-item-list official'>
-          {{#each listOfficial}}
-            {{> imageItem list='journey' id=_id owner=owner date=date image=firstPicture}}
-          {{/each}}
-        </div>
-      {{else}}
-        {{#ionList class='journey-item-list user'}}
-          {{#each listUser}}
-            {{> journeyItemUser}}
-          {{/each}}
-        {{/ionList}}
-      {{/if}}
+      <!--{{#if isSelect 'official'}}-->
+        <!--<div class='journey-item-list official'>-->
+          <!--{{#each listOfficial}}-->
+            <!--{{> imageItem list='journey' id=_id owner=owner date=date image=firstPicture}}-->
+          <!--{{/each}}-->
+        <!--</div>-->
+      <!--{{else}}-->
+        <!--{{#ionList class='journey-item-list user'}}-->
+          <!--{{#each listUser}}-->
+            <!--{{> journeyItemUser}}-->
+          <!--{{/each}}-->
+        <!--{{/ionList}}-->
+      <!--{{/if}}-->
 
     {{/ionContent}}
 

@@ -12,28 +12,39 @@ Template.ionNavBar.events
   'click [data-action=noteMoreAction]': (event, template)->
     doc = this
 
-    IonActionSheet.show
-
-      titleText: '选项'
-      cancelText: '取消'
-      destructiveText: '删除'
-      buttons: [
-        {text: '分享'}
-        {text: '编辑'}
-      ]
-
-      destructiveButtonClicked: ->
-        deleteNote(doc._id)
-        return true
-
-      buttonClicked: (index)->
-        switch index
-          when 0
-            console.log 'Share'
-            return true
-          when 1
-            editNote(doc._id)
-        return true
+    if doc.owner == Meteor.userId()
+      IonActionSheet.show
+        titleText: '选项'
+        cancelText: '取消'
+        destructiveText: '删除'
+        buttons: [
+          {text: '分享'}
+          {text: '编辑'}
+        ]
+        destructiveButtonClicked: ->
+          deleteNote(doc._id)
+          return true
+        buttonClicked: (index)->
+          switch index
+            when 0
+              console.log 'Share'
+              return true
+            when 1
+              editNote(doc._id)
+          return true
+    else
+      IonActionSheet.show
+        titleText: '选项'
+        cancelText: '取消'
+        buttons: [
+          {text: '分享'}
+        ]
+        buttonClicked: (index)->
+          switch index
+            when 0
+              console.log 'Share'
+              return true
+          return true
 
 editNote = (id)->
   Router.go 'note.updater', {id: id}

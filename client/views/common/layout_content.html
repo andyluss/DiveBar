@@ -1,13 +1,14 @@
 <template name="layoutContent">
 
-    {{#ionBody}}
+  {{#ionBody}}
 
-        {{> ionNavBar}}
+    {{> ionNavBar}}
 
-        {{#ionNavView}}
-            {{> yield}}
-        {{/ionNavView}}
+    {{#ionNavView}}
+        {{> yield}}
+    {{/ionNavView}}
 
-    {{/ionBody}}
+    {{>photoswipe}}
+  {{/ionBody}}
 
 </template>

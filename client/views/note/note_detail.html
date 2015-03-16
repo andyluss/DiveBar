@@ -46,10 +46,13 @@
           </div>
         {{/if}}
 
-        {{>commentsBox id=_id content=commentStrings customTemplate='noteCommentBox'}}
+        {{#if this}}
+          {{>commentsBox id=_id content=commentStrings customTemplate='noteCommentBox'}}
+        {{/if}}
 
       </div>
 
     {{/ionContent}}
+
   {{/ionView}}
 </template>

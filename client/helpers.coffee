@@ -1,3 +1,11 @@
+@imageUrl = (imageId)->
+  image = Images.findOne(imageId)
+  if image then image.url({store:'images'}) else ''
+
+@back = ->
+  backButton = $('.ionic-body .nav-bar-block .back-button')[0]
+  $(backButton).click()
+
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path
 
@@ -29,10 +37,6 @@ Template.registerHelper 'userName', (userId)->
 Template.registerHelper 'userUrl', (userId)->
   '/user/' + userId
 
-imageUrl = (imageId)->
-  image = Images.findOne(imageId)
-  if image then image.url({store:'images'}) else ''
-
 Template.registerHelper 'imageUrl', imageUrl
 
 Template.registerHelper 'firstPicture', ->
@@ -40,7 +44,3 @@ Template.registerHelper 'firstPicture', ->
       imageUrl @pictures[0]
     else
       ''
-
-@back = ->
-  backButton = $('.ionic-body .nav-bar-block .back-button')[0]
-  $(backButton).click()

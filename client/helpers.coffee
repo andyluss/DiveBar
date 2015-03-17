@@ -43,7 +43,10 @@ Template.registerHelper 'userUrl', (userId)->
 Template.registerHelper 'imageUrl', imageUrl
 
 Template.registerHelper 'firstPicture', ->
-    if @pictures and @pictures.length > 0
-      imageUrl @pictures[0]
-    else
-      ''
+  if @pictures and @pictures.length > 0
+    imageUrl @pictures[0]
+  else
+    ''
+
+Template.registerHelper 'backRouteToMain', ->
+  Session.get SessionKeys.preRoute

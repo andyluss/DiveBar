@@ -1,7 +1,8 @@
-Meteor.publishComposite 'notesTop', (limit)->
+Meteor.publishComposite 'notesTop', (limit, owner)->
   {
     find: ->
-      Notes.find({}, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
+      selector = if owner? then {owner: owner} else {}
+      Notes.find(selector, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
     children: [
       {
         find: (doc)->

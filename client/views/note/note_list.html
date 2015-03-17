@@ -5,7 +5,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="userProfile">
+    <button class="button button-clear pull-right button-positive" data-action="myData">
     {{> ionIcon icon='ios-person-outline'}}
     </button>
   {{/contentFor}}
@@ -13,17 +13,7 @@
   {{#ionView class='note-list'}}
     {{#ionContent}}
 
-      <div class='note-item-list'>
-        {{#each list}}
-          {{> imageItem}}
-        {{/each}}
-      </div>
-
-      {{#if hasMore}}
-        <button class="loadmore-button">
-          点击加载更多
-        </button>
-      {{/if}}
+      {{>noteLoader}}
 
     {{/ionContent}}
 

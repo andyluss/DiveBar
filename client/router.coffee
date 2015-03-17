@@ -1,5 +1,8 @@
 @subManager = new SubsManager()
 
+Router.configure
+  layoutTemplate: 'layoutContent'
+
 Router.route '/', ->
   if Meteor.userId()
     @redirect '/note/list'
@@ -7,6 +10,21 @@ Router.route '/', ->
     @redirect '/login'
 
 Router.route '/login'
+
+Router.route '/my/card',
+  name: 'my.card'
+
+Router.route '/my/note/list',
+  name: 'my.note.list'
+
+Router.route '/my/journey/list',
+  name: 'my.journey/list'
+
+Router.route '/my/product/list',
+  name: 'my.product/list'
+
+Router.route '/my/say/list',
+  name: 'my.say/list'
 
 Router.route '/user/:id',
   name: 'user.detail'
@@ -16,11 +34,9 @@ Router.route '/note/list',
 
 Router.route '/note/creator',
   name: 'note.creator'
-  layoutTemplate: 'layoutContent'
 
 Router.route '/note/updater/:id',
   name: 'note.updater'
-  layoutTemplate: 'layoutContent'
   data: ->
     Notes.findOne({_id: @params.id})
 

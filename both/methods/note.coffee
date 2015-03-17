@@ -1,4 +1,5 @@
 
 Meteor.methods
-  noteCount: ->
-    Notes.find().count()
+  noteCount: (owner)->
+    selector = if owner? then {owner: owner} else {}
+    Notes.find(selector).count()

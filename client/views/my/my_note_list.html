@@ -1,0 +1,22 @@
+<template name="myNoteList">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false href=backRouteToMain }}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{strMyNote}}</h1>
+  {{/contentFor}}
+
+  {{#ionView class='my-note-list'}}
+    {{#ionContent}}
+
+      {{>noteLoader}}
+
+    {{/ionContent}}
+
+    {{>myTabBar}}
+
+  {{/ionView}}
+
+</template>

@@ -1,1 +1,0 @@
-#FS.debug = true; # enable CFS debug logging

@@ -1,0 +1,13 @@
+<template name="noteLoader">
+  <div class='note-item-list'>
+    {{#each list}}
+      {{> imageItem}}
+    {{/each}}
+  </div>
+
+  {{#if hasMore}}
+    <button class="loadmore-button">
+      点击加载更多
+    </button>
+  {{/if}}
+</template>

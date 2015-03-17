@@ -58,3 +58,7 @@ Notes.attachSchema new SimpleSchema
     label: '图片'
     optional: true
 
+  creator:
+    type: String
+    label: '（开发辅助用）创建者标记'
+

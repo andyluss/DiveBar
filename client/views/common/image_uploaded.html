@@ -1,7 +1,7 @@
-<template name="uploadedImage">
+<template name="imageUploaded">
   <div class="image-box">
     <div class="inner-box">
-      <img src="{{url store='thumbs' uploading='/images/uploading.png' storing='/images/storing.png'}}" alt="thumbnail">
+      <img src="{{url store='thumbs'}}">
       {{#unless isUploaded}}
         {{> FS.UploadProgressBar class="upload-progress-bar"}}
       {{/unless}}

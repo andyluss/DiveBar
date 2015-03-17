@@ -6,6 +6,9 @@
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]
   $(backButton).click()
 
+@imagesUploaded = (creator)->
+  Images.find {creator: creator}
+
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path
 

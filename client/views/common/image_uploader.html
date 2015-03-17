@@ -1,0 +1,12 @@
+<template name="imageUploader">
+
+  <div class="image-uploader">
+    {{#each imagesUploaded creator}}
+      {{>imageUploaded}}
+    {{/each}}
+    <label class="input-label ion-plus-circled">
+      <input type="file" multiple class="image-input" accept="image/*">
+    </label>
+  </div>
+
+</template>

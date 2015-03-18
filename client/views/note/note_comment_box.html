@@ -4,11 +4,14 @@
       <div class="title-bar">
         <label class="ui header">点评（共{{ commentCount}}条）</label>
       </div>
-      {{#if loginAction}}
-        <div class="ui warning message">请先登录 {{loginAction}}</div>
-      {{/if}}
 
-      {{> noteCommentTextarea }}
+      <!--{{#if loginAction}}-->
+        <!--<div class="ui warning message">请先登录 {{loginAction}}</div>-->
+      <!--{{/if}}-->
+
+      {{#if currentUser}}
+        {{> noteCommentTextarea }}
+      {{/if}}
 
       {{#each comment}}
         {{> noteCommentSingle }}

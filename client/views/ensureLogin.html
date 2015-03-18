@@ -1,11 +1,11 @@
-<template name="login">
+<template name="ensureLogin">
 
   {{#contentFor "headerTitle"}}
     <h1 class="title">请先登录或注册</h1>
   {{/contentFor}}
 
-  {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="skipLogin">跳过</button>
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
   {{/contentFor}}
 
   {{#ionView}}

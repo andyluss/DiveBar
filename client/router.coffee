@@ -9,7 +9,16 @@ Router.route '/', ->
   else
     @redirect '/login'
 
-Router.route '/login'
+Router.route '/login',
+  name: 'login'
+
+Router.plugin('ensureSignedIn', {
+  only: ['my.card', 'my.note.list', 'note.creator']
+});
+
+AccountsTemplates.configureRoute 'ensureSignedIn',
+  template: 'ensureLogin'
+  layoutTemplate: 'layoutContent'
 
 Router.route '/my/card',
   name: 'my.card'

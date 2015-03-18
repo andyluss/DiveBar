@@ -1,11 +1,11 @@
 <template name="journeyDetail">
 
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton class="button-positive" text=false}}
+    {{>ionNavBackButton class="button-positive"}}
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="share-journey" data-journey-id="{{_id}}">
+    <button class="button button-clear pull-right button-positive" data-action="share-journey" data-journey-id="{{_id}}" text=false>
       {{> ionIcon icon='ios-upload-outline'}}
     </button>
   {{/contentFor}}

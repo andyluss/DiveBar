@@ -1,11 +1,15 @@
 <template name="myCard">
 
-  {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton class="button-positive" text=false href=backRouteToMain }}
-  {{/contentFor}}
-
   {{#contentFor "headerTitle"}}
     <h1 class="title">{{strMyCard}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" href=backRouteToMain text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="logout">登出</button>
   {{/contentFor}}
 
   {{#ionView class='my-card'}}

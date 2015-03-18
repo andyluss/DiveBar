@@ -1,6 +1,6 @@
 Template.ionNavBar.events
 
-  'click [data-action=myData]': (event, template)->
+  'click [data-action=my-data]': (event, template)->
     Session.set SessionKeys.preRoute, Router.current().route.getName()
     Router.go 'my.card'
 

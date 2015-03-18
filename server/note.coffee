@@ -6,7 +6,13 @@ Meteor.publishComposite 'notesTop', (limit, owner)->
     children: [
       {
         find: (doc)->
-          Meteor.users.find {_id: doc.owner}
+          Meteor.users.find {_id: doc.owner}, {fields: {profileId: 1}}
+        children: [
+          {
+            find: (doc)->
+              Profiles.find {_id: doc.profileId}, {fields: {nickname: 1}}
+          }
+        ]
       }
       {
         find: (doc)->
@@ -26,7 +32,13 @@ Meteor.publishComposite 'note', (_id)->
     children: [
       {
         find: (doc)->
-          Meteor.users.find {_id: doc.owner}
+          Meteor.users.find {_id: doc.owner}, {fields: {profileId: 1}}
+        children: [
+          {
+            find: (doc)->
+              Profiles.find {_id: doc.profileId}, {fields: {nickname: 1}}
+          }
+        ]
       }
       {
         find: (doc)->
@@ -35,10 +47,10 @@ Meteor.publishComposite 'note', (_id)->
     ]
   }
 
-testFunc = (userId, doc)->
+checkOwner = (userId, doc)->
   userId == doc.owner
 
 Notes.allow
-  insert: testFunc
-  update: testFunc
-  remove: testFunc
+  insert: checkOwner
+  update: checkOwner
+  remove: checkOwner

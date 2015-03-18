@@ -1,4 +1,4 @@
 Template.ionNavBar.events
 
-  'click [data-action=skipLogin]': (event, template)->
+  'click [data-action=skip-login]': (event, template)->
     Router.go 'note.list'

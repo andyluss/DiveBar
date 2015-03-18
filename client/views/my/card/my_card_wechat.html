@@ -1,0 +1,23 @@
+<template name="myCardWechat">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">微信</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="save-wechat">保存</button>
+  {{/contentFor}}
+
+  {{#ionView class='my-card-wechat'}}
+
+    {{#ionContent}}
+      <input class="padding" autofocus type="txt" maxlength="50" placeholder="微信号" value={{wechat}}>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

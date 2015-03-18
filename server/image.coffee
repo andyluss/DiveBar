@@ -3,13 +3,13 @@
 #  Images.on 'removed', (fileObj)->
 #    console.log 'Removed ' + fileObj._id + 'from Images'
 
-testFunc = (userId, fileObj)->
+checkOwner = (userId, fileObj)->
   userId == fileObj.owner
 
 Images.allow
-  insert: testFunc
-  update: testFunc
-  remove: testFunc
+  insert: checkOwner
+  update: checkOwner
+  remove: checkOwner
   download: ->true
 
 Meteor.publish 'imagesUploaded', (userId, creator)->

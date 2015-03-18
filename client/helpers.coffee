@@ -9,6 +9,9 @@
 @imagesUploaded = (creator)->
   Images.find {creator: creator}
 
+Template.registerHelper 'users', ->
+  Meteor.users
+
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path
 
@@ -33,7 +36,10 @@ Template.registerHelper 'firstOne', (array)->
 Template.registerHelper 'userName', (userId)->
   user = Meteor.users.findOne(userId)
   if user
-    user.nickname or user.username or user.emails[0].address.split('@')[0]
+    if user.profileId
+      Profiles.findOne({_id: user.profileId}).nickname
+    else
+      user.username or user.emails[0].address.split('@')[0]
   else
     '游客'
 

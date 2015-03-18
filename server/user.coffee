@@ -1,6 +1,28 @@
 Meteor.publish 'user', (id)->
 	Meteor.users.find {_id: id}
 
+Meteor.publish 'myUserData', ->
+  if @userId
+    Meteor.users.find {_id: @userId}, {fields: {profileId : 1}}
+  else
+    @ready()
+
+Accounts.onCreateUser (options, user)->
+  user.profileId = Profiles.insert {owner: user._id}
+  return user
+
+Meteor.publish null, ->
+  Meteor.roles.find()
+
+Meteor.startup ->
+  # Create root admin
+  if Meteor.users.find().count() == 0
+    userId = Accounts.createUser
+      email: 'root@divebar.com'
+      password: 'test1234'
+      username: 'root'
+    Roles.addUsersToRoles userId, 'admin'
+
 #Meteor.publish 'users', ->
 #	Meteor.users.find {}
 

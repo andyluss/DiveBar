@@ -1,0 +1,23 @@
+<template name="myCardNickname">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">昵称</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="save-nickname">保存</button>
+  {{/contentFor}}
+
+  {{#ionView class='my-card-nickname'}}
+
+    {{#ionContent}}
+      <input class="padding" autofocus type="txt" maxlength="10" placeholder="昵称会显示在页面上，最多十个字" value={{nickname}}>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

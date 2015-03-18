@@ -10,7 +10,7 @@ Template.noteDetail.events
     showPhotoSwipe(template.data, $('.pswp')[0], index)
 
 Template.ionNavBar.events
-  'click [data-action=noteMore]': (event, template)->
+  'click [data-action=note-more]': (event, template)->
     showActionSheet(this)
 
 showPhotoSwipe = (doc, container, index)->

@@ -1,20 +1,4 @@
-UserProfileSchema = new SimpleSchema
-
-  picture:
-    type: String
-    optional:true
-    label: '头像'
-    autoform:
-      afFieldInput:
-        type: 'fileUpload'
-        collection: 'ProfilePictures'
-
-  nickname:
-    type: String
-    label: '昵称'
-    optional: true
-
-UserSchema = new SimpleSchema
+Meteor.users.attachSchema new SimpleSchema
 
   username:
     type: String
@@ -23,11 +7,9 @@ UserSchema = new SimpleSchema
 
   emails:
     type: [Object]
-    optional: false
 
   "emails.$.address":
     type: String
-    optional: false
     regEx: SimpleSchema.RegEx.Email
 
   "emails.$.verified":
@@ -36,8 +18,9 @@ UserSchema = new SimpleSchema
   createdAt:
     type: Date
 
-  profile:
-    type: UserProfileSchema
+  profileId:
+    type: String
+    regEx: SimpleSchema.RegEx.Id
     optional: true
 
   roles:
@@ -48,8 +31,3 @@ UserSchema = new SimpleSchema
     type: Object
     optional: true
     blackbox: true
-
-
-Meteor.users.attachSchema UserSchema
-
-

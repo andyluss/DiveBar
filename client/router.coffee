@@ -9,6 +9,8 @@ Router.route '/', ->
   else
     @redirect '/login'
 
+# Login
+
 Router.route '/login',
   name: 'login'
 
@@ -20,23 +22,27 @@ AccountsTemplates.configureRoute 'ensureSignedIn',
   template: 'ensureLogin'
   layoutTemplate: 'layoutContent'
 
-Router.route '/my/card',
-  name: 'my.card'
+# My Card
+
+Router.route '/my/card'
+Router.route '/my/card/nickname',
+  data: -> Profiles.findOne {owner: Meteor.userId()}
+Router.route '/my/card/qq',
+  data: -> Profiles.findOne {owner: Meteor.userId()}
+Router.route '/my/card/wechat',
+  data: -> Profiles.findOne {owner: Meteor.userId()}
+Router.route '/my/card/mobile',
+  data: -> Profiles.findOne {owner: Meteor.userId()}
+Router.route '/my/card/signature',
+  data: -> Profiles.findOne {owner: Meteor.userId()}
+
+
 
 Router.route '/my/note/list',
   name: 'my.note.list'
 
-Router.route '/my/journey/list',
-  name: 'my.journey/list'
 
-Router.route '/my/product/list',
-  name: 'my.product/list'
-
-Router.route '/my/say/list',
-  name: 'my.say/list'
-
-Router.route '/user/:id',
-  name: 'user.detail'
+# Note
 
 Router.route '/note/list',
   name: 'note.list'
@@ -51,6 +57,22 @@ Router.route '/note/updater/:id',
 
 Router.route '/note/detail/:id',
   name: 'note.detail'
+
+
+
+
+
+Router.route '/my/journey/list',
+  name: 'my.journey/list'
+
+Router.route '/my/product/list',
+  name: 'my.product/list'
+
+Router.route '/my/say/list',
+  name: 'my.say/list'
+
+Router.route '/user/:id',
+  name: 'user.detail'
 
 Router.route '/journey/list',
   name: 'journey.list'

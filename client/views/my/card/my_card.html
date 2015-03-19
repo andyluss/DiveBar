@@ -15,12 +15,25 @@
   {{#ionView class='my-card'}}
 
     {{#ionContent}}
-      {{#ionList}}
 
-        {{#ionItem path="my.card.nickname" iconRight=true}}
-          昵称：{{nickname}}
-          {{> ionIcon icon="ios-arrow-right"}}
-        {{/ionItem}}
+      <div class="top">
+        <div class="avatar">
+          <a href="{{userUrl owner}}">
+            <img src="/images/default_avatar.png">
+          </a>
+        </div>
+        <div class="base-info">
+          <a href="/my/card/nickname">{{nickname}}</a>
+          <a href="/my/card/location">{{location}}</a>
+        </div>
+        <div class="qr-code">
+          <a href="{{userUrl owner}}">
+            <img src="/images/default_avatar.png">
+          </a>
+        </div>
+      </div>
+
+      {{#ionList}}
 
         {{#ionItem path="my.card.qq" iconRight=true}}
           QQ：{{qq}}

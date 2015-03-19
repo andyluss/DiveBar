@@ -1,0 +1,23 @@
+<template name="myCardLocation">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">地址</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="save-location">保存</button>
+  {{/contentFor}}
+
+  {{#ionView class='my-card-location'}}
+
+    {{#ionContent}}
+      <input class="padding" autofocus type="txt" maxlength="20" placeholder="请输入您的地址，最多20个字" value={{location}}>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

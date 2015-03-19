@@ -22,6 +22,12 @@ Profiles.attachSchema new SimpleSchema
     max: 10
     optional: true
 
+  location:
+    type: String
+    label: '地址'
+    max: 20
+    optional: true
+
   qq:
     type: String
     label: 'QQ'

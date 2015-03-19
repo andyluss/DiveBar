@@ -23,20 +23,17 @@ AccountsTemplates.configureRoute 'ensureSignedIn',
   layoutTemplate: 'layoutContent'
 
 # My Card
+routeCardInfo = (type)->
+  Router.route '/my/card/' + type,
+    controller: 'MyCardController'
 
 Router.route '/my/card'
-Router.route '/my/card/nickname',
-  data: -> Profiles.findOne {owner: Meteor.userId()}
-Router.route '/my/card/qq',
-  data: -> Profiles.findOne {owner: Meteor.userId()}
-Router.route '/my/card/wechat',
-  data: -> Profiles.findOne {owner: Meteor.userId()}
-Router.route '/my/card/mobile',
-  data: -> Profiles.findOne {owner: Meteor.userId()}
-Router.route '/my/card/signature',
-  data: -> Profiles.findOne {owner: Meteor.userId()}
-
-
+routeCardInfo 'nickname'
+routeCardInfo 'location'
+routeCardInfo 'qq'
+routeCardInfo 'wechat'
+routeCardInfo 'mobile'
+routeCardInfo 'signature'
 
 Router.route '/my/note/list',
   name: 'my.note.list'

@@ -6,8 +6,9 @@
 
 @userById = (userId)->
   if userId == myId()
-    return mySelf()
-  Meteor.users.findOne {_id: userId}
+    mySelf()
+  else
+    Meteor.users.findOne {_id: userId}
 
 @userProfile = (userId)->
   Profiles.findOne({owner: userId})

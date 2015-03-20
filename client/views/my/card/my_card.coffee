@@ -1,5 +1,8 @@
 Template.myCard.rendered = ->
   Session.set SessionKeys.currentTab, 'my.card'
+  console.log @find('.qr-code')
+  $('.qr-code').qrcode
+    text: myId()
 
 Template.myCard.helpers
   nickname: ->

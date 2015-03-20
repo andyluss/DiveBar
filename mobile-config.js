@@ -2,7 +2,7 @@ App.info({
   name: 'Dive Bar',
   description: 'Dive Bar Desc.',
   author: 'Dive Bar Author',
-  email: 'i@divebar.com',
+  email: 'root@divebar.com',
   website: 'http://divebar.com',
   version: '0.0.1'
 });

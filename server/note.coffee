@@ -4,7 +4,7 @@ userComposite =
   children: [
     {
       find: (user)->
-        Profiles.find {_id: user.profileId}, {fields: {nickname: 1, avatar: 1}}
+        Profiles.find {_id: user.profileId}, {fields: {nickname: 1, avatar: 1, owner: 1}}
     }
   ]
 

@@ -1,19 +1,20 @@
+userComposite =
+  find: (doc)->
+    Meteor.users.find {_id: doc.owner}, {fields: {profileId: 1}}
+  children: [
+    {
+      find: (user)->
+        Profiles.find {_id: user.profileId}, {fields: {nickname: 1}}
+    }
+  ]
+
 Meteor.publishComposite 'notesTop', (limit, owner)->
   {
     find: ->
       selector = if owner? then {owner: owner} else {}
       Notes.find(selector, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
     children: [
-      {
-        find: (doc)->
-          Meteor.users.find {_id: doc.owner}, {fields: {profileId: 1}}
-        children: [
-          {
-            find: (doc)->
-              Profiles.find {_id: doc.profileId}, {fields: {nickname: 1}}
-          }
-        ]
-      }
+      userComposite
       {
         find: (doc)->
           Images.find {_id: doc.pictures[0]}
@@ -30,16 +31,7 @@ Meteor.publishComposite 'note', (_id)->
     find: ->
       Notes.find {_id: _id}
     children: [
-      {
-        find: (doc)->
-          Meteor.users.find {_id: doc.owner}, {fields: {profileId: 1}}
-        children: [
-          {
-            find: (doc)->
-              Profiles.find {_id: doc.profileId}, {fields: {nickname: 1}}
-          }
-        ]
-      }
+      userComposite
       {
         find: (doc)->
           Images.find {_id: {$in: doc.pictures}}

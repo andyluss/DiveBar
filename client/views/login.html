@@ -1,14 +1,24 @@
 <template name="login">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">请先登录或注册</h1>
+    <h1 class="title">{{title}}</h1>
   {{/contentFor}}
 
-  {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="skip-login">跳过</button>
-  {{/contentFor}}
+  {{#if currentRouteIs 'login'}}
 
-  {{#ionView}}
+    {{#contentFor "headerButtonRight"}}
+      <button class="button button-clear pull-right button-positive" data-action="skip-login">跳过</button>
+    {{/contentFor}}
+
+  {{else}}
+
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="button-positive" text=false}}
+    {{/contentFor}}
+
+  {{/if}}
+
+  {{#ionView class='login'}}
     {{#ionContent}}
 
       {{> atForm}}

@@ -19,7 +19,7 @@ Router.plugin('ensureSignedIn', {
 });
 
 AccountsTemplates.configureRoute 'ensureSignedIn',
-  template: 'ensureLogin'
+  template: 'login'
   layoutTemplate: 'layoutContent'
 
 # My Card

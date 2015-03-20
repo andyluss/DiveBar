@@ -15,6 +15,10 @@ Template.registerHelper 'users', ->
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path
 
+Template.registerHelper "currentRoute", ->
+  current = Router.current()
+  current and current.route and current.route.getName() or ''
+
 Template.registerHelper "currentRouteIs", (name)->
   current = Router.current()
   current and current.route and current.route.getName() == name or false

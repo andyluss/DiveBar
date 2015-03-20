@@ -6,3 +6,6 @@ Template.myCard.helpers
     @nickname or '添加昵称'
   location: ->
     @location or '添加地址'
+
+Template.myCard.events
+  'click [data-action=change-avatar]': ->

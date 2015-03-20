@@ -2,6 +2,7 @@
 
 Router.configure
   layoutTemplate: 'layoutContent'
+  progressSpinner: false
 
 Router.route '/', ->
   if Meteor.userId()
@@ -27,7 +28,8 @@ routeCardInfo = (type)->
   Router.route '/my/card/' + type,
     controller: 'MyCardController'
 
-Router.route '/my/card'
+Router.route '/my/card',
+  progress : false
 routeCardInfo 'nickname'
 routeCardInfo 'location'
 routeCardInfo 'qq'

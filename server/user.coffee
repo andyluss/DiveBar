@@ -1,5 +1,5 @@
 Meteor.publish 'user', (id)->
-	Meteor.users.find {_id: id}
+	Meteor.users.find {_id: id}, {fields: {profileId : 1}}
 
 Meteor.publish 'myUserData', ->
   if @userId

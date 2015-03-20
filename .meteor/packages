@@ -15,7 +15,6 @@ reactive-var
 
 # Packages from Atmosphere:
 
-mdg:camera
 mdg:geolocation
 mquandalle:jade
 mquandalle:stylus
@@ -40,6 +39,7 @@ fourseven:scss@=1.0.0
 meteoric:ionicons-sass
 meteoric:ionic-sass
 meteoric:ionic
+meteoric:camera
 udondan:slick
 yogiben:favorites
 aldeed:template-extension
@@ -52,3 +52,4 @@ cfs:graphicsmagick
 cfs:ui
 sacha:spin
 spectrum:photoswipe
+multiply:iron-router-progress

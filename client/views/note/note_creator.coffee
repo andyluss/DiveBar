@@ -5,7 +5,7 @@ creator = (value)->
     Session.get 'creator'
 
 Template.noteCreator.created = ->
-  creator Meteor.userId() + '-' + new Date().toString()
+  creator newImageCreator()
 
 Template.noteCreator.helpers
   creator: creator

@@ -6,6 +6,8 @@ Meteor.startup ->
         f = new FS.File file
         f.owner = Meteor.userId()
         f.creator = creator
+        if not f.name()
+          f.name(f.creator)
         Images.insert f, (error, fileObj)->
           if error
             console.log error

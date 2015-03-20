@@ -1,3 +1,17 @@
+@myId = ->
+  Meteor.userId()
+
+@mySelf = ->
+  Meteor.user()
+
+@userById = (userId)->
+  if userId == myId()
+    return mySelf()
+  Meteor.users.findOne {_id: userId}
+
+@userProfile = (userId)->
+  Profiles.findOne({owner: userId})
+
 @imageUrl = (imageId)->
   image = Images.findOne(imageId)
   if image then image.url({store:'images'}) else ''
@@ -8,6 +22,9 @@
 
 @imagesUploaded = (creator)->
   Images.find {creator: creator}
+
+@newImageCreator = ->
+  Meteor.userId() + '-' + new Date().getTime()
 
 Template.registerHelper 'users', ->
   Meteor.users
@@ -38,12 +55,10 @@ Template.registerHelper 'firstOne', (array)->
     if array and array.length > 0 then array[0] else ''
 
 Template.registerHelper 'userName', (userId)->
-  user = Meteor.users.findOne(userId)
+  user = userById userId
   if user
-    if user.profileId
-      Profiles.findOne({_id: user.profileId}).nickname
-    else
-      user.username or user.emails[0].address.split('@')[0]
+    profile = userProfile userId
+    profile and profile.nickname or user.username or user.emails[0].address.split('@')[0]
   else
     '游客'
 

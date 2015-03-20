@@ -10,11 +10,16 @@ Profiles.attachSchema new SimpleSchema
   picture:
     type: String
     optional:true
-    label: '头像'
+    label: '照片'
     autoform:
       afFieldInput:
         type: 'fileUpload'
         collection: 'ProfilePictures'
+
+  avatar:
+    type: String
+    optional:true
+    label: '头像'
 
   nickname:
     type: String

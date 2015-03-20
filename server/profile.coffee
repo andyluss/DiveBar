@@ -14,8 +14,18 @@
 #  ]
 #  }
 
-Meteor.publish 'profileByOwner', (owner)->
-  Profiles.find {owner: owner}
+Meteor.publishComposite 'profileByOwner', (owner)->
+  {
+    find: ->
+      Profiles.find {owner: owner}
+    children: [
+      {
+        find: (profile)->
+          Images.find {_id: profile.avatar}
+      }
+    ]
+  }
+
 
 Profiles.allow
   update: (userId, doc)->

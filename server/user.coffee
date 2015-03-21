@@ -1,5 +1,11 @@
-Meteor.publish 'user', (id)->
-	Meteor.users.find {_id: id}, {fields: {profileId : 1}}
+Meteor.publishComposite 'user', (id)->
+  {
+    find: Meteor.users.find {_id: id}, {fields: {profileId: 1, username: 1, emails: 1}}
+    children: [
+      userProfileComposite
+    ]
+  }
+
 
 Meteor.publish 'myUserData', ->
   if @userId

@@ -23,6 +23,13 @@ AccountsTemplates.configureRoute 'ensureSignedIn',
   template: 'login'
   layoutTemplate: 'layoutContent'
 
+
+# User
+
+Router.route '/user/:id',
+  name: 'user.detail'
+
+
 # My Card
 routeCardInfo = (type)->
   Router.route '/my/card/' + type,
@@ -69,9 +76,6 @@ Router.route '/my/product/list',
 
 Router.route '/my/say/list',
   name: 'my.say/list'
-
-Router.route '/user/:id',
-  name: 'user.detail'
 
 Router.route '/journey/list',
   name: 'journey.list'

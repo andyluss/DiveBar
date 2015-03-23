@@ -1,5 +1,5 @@
 @UserDetailController = ContentController.extend
-  waitOn: ->
+  onAfterAction: ->
     subManager.subscribe 'user', @params.id
   data: ->
-    Meteor.users.findOne({_id: @params.id})
+    Meteor.users.findOne {_id: @params.id}

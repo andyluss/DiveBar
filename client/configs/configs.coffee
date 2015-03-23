@@ -5,6 +5,9 @@
   myNotesTopLimit: new ReactiveVar(10)
   loadingMoreNotes: new ReactiveVar(false)
 
+@AppConfig =
+  appName: 'Dive Bar'
+
 @SessionKeys =
   preRoute: 'preRoute'
   currentTab: 'ionTab.current'

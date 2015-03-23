@@ -1,2 +1,0 @@
-@AppConfig =
-  appName: 'Dive Bar'

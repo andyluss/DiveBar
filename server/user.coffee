@@ -1,8 +1,9 @@
 Meteor.publishComposite 'user', (id)->
   {
-    find: Meteor.users.find {_id: id}, {fields: {profileId: 1, username: 1, emails: 1}}
+    find: ->
+      Meteor.users.find {_id: id}, {fields: {profileId: 1, username: 1, emails: 1}}
     children: [
-      userProfileComposite
+      userProfileComposite()
     ]
   }
 

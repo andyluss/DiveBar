@@ -1,0 +1,20 @@
+.journey-list
+  @import '../../../lib/common/client/views/tab_bar.import.styl'
+  .category-container
+    display flex
+    height 3em
+    .category
+      flex 1
+      text-align center
+      padding-top 0.9em
+      background #e0f1fd
+      label
+        color #2b9ad5
+    .category.selected
+      background #2b9ad5
+      label
+        color #FFF
+  .journey-item-list.official
+    @import '../../../lib/common/client/views/image_item.import.styl'
+  .journey-item-list.user
+    @import 'journey_item_user.import.styl'

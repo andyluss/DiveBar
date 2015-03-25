@@ -1,0 +1,1 @@
+createPostPublications PostCategory.journey

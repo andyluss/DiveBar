@@ -120,6 +120,7 @@ tracker@1.0.6
 udondan:slick@1.3.11_1
 ui@1.0.6
 underscore@1.0.3
+underscorestring:underscore.string@3.0.3
 url@1.0.4
 useraccounts:core@1.8.1
 useraccounts:ionic@1.8.1

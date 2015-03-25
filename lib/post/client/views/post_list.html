@@ -1,0 +1,24 @@
+<template name="postList">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{title}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="my-data">
+    {{> ionIcon icon='ios-person-outline'}}
+    </button>
+  {{/contentFor}}
+
+  {{#ionView class='post-list'}}
+    {{#ionContent}}
+
+      {{>listLoader}}
+
+    {{/ionContent}}
+
+    {{>tabBar}}
+
+  {{/ionView}}
+
+</template>

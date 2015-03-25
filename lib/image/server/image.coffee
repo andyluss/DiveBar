@@ -3,9 +3,6 @@
 #  Images.on 'removed', (fileObj)->
 #    console.log 'Removed ' + fileObj._id + 'from Images'
 
-checkOwner = (userId, fileObj)->
-  userId == fileObj.owner
-
 Images.allow
   insert: checkOwner
   update: checkOwner

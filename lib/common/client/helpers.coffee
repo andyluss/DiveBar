@@ -1,21 +1,5 @@
-@myId = ->
-  Meteor.userId()
 
-@mySelf = ->
-  Meteor.user()
 
-@userById = (userId)->
-  if userId == myId()
-    mySelf()
-  else
-    Meteor.users.findOne {_id: userId}
-
-@userProfile = (userId)->
-  Profiles.findOne({owner: userId})
-
-@imageUrl = (imageId)->
-  image = Images.findOne(imageId)
-  if image then image.url({store:'images'}) else ''
 
 @back = ->
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]

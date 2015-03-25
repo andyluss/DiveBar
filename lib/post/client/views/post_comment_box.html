@@ -1,0 +1,59 @@
+<template name="postCommentBox">
+  <div class="comments-box">
+    <div class="ui comments">
+      <div class="title-bar">
+        <label class="ui header">点评（共{{ commentCount}}条）</label>
+      </div>
+
+      <!--{{#if loginAction}}-->
+        <!--<div class="ui warning message">请先登录 {{loginAction}}</div>-->
+      <!--{{/if}}-->
+
+      {{#if currentUser}}
+        {{> postCommentTextarea }}
+      {{/if}}
+
+      {{#each comment}}
+        {{> postCommentSingle }}
+      {{/each}}
+
+      {{#if hasMoreComments}}
+        <div class="ui fluid green loadmore-action button">加载更多</div>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="postCommentSingle">
+  <div data-id="{{_id}}" class="comment">
+    <div class="avatar-container">
+      {{> userAvatar userId=userId}}
+    </div>
+    <div class="content">
+      <div class="author-bar">
+        <a class="author" href="{{userUrl userId}}">{{userName userId}}</a>
+        <div class="actions">
+          {{#if isOwnComment}}
+            <a class="remove-action">删除</a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="text comment-content" data-id="{{commentId}}">
+        {{content}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="postCommentTextarea">
+  <form class="ui reply form comment-form">
+    <div class="field">
+      <textarea
+        placeholder="你有什么想表达的..."
+        class="create-comment"></textarea>
+    </div>
+    <button type="submit" class="ui blue labeled submit icon button">
+      <i class="icon edit"></i> 提交
+    </button>
+  </form>
+</template>

@@ -1,0 +1,11 @@
+<template name="listLoader">
+  <div class='item-list'>
+    {{#each list}}
+      {{> imageItem}}
+    {{/each}}
+  </div>
+
+  {{#if hasMore}}
+    <button class="loadmore-button">更多</button>
+  {{/if}}
+</template>

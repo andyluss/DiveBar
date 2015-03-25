@@ -1,0 +1,2 @@
+createPostCountMethod PostCategory.journey
+

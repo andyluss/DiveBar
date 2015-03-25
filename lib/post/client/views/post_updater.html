@@ -1,0 +1,29 @@
+<template name="postUpdater">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="update-post">更新</button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">编辑游记</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <div class='post-updater padding'>
+
+        <input type="text" class="title" value={{title}}>
+        <textarea class="content" placeholder="这一刻想发表什么..." value={{content}}></textarea>
+
+        {{>imageUploader creator=creator}}
+
+      </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

@@ -1,24 +1,5 @@
 <template name="noteList">
 
-  {{#contentFor "headerTitle"}}
-    <h1 class="title">{{strNote}}</h1>
-  {{/contentFor}}
-
-  {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="my-data">
-    {{> ionIcon icon='ios-person-outline'}}
-    </button>
-  {{/contentFor}}
-
-  {{#ionView class='note-list'}}
-    {{#ionContent}}
-
-      {{>noteLoader}}
-
-    {{/ionContent}}
-
-    {{>tabBar creator='noteCreator'}}
-
-  {{/ionView}}
+  {{>postList}}
 
 </template>

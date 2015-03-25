@@ -14,7 +14,7 @@ Template.journeyList.helpers
     if category() == _category then 'selected' else ''
 
   journeyTitle: ->
-    JourneyTitle[category()]
+    JourneyCategory2Label[category()]
 
 Template.journeyList.events
 

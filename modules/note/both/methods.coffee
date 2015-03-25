@@ -1,0 +1,1 @@
+createPostCountMethod PostCategory.note

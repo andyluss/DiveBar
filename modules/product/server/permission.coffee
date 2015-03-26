@@ -1,0 +1,1 @@
+createPostPermission PostCategory.product

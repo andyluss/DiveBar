@@ -1,5 +1,13 @@
 
-
+@getTopLimit = (category, category2, isMy)->
+  category ?= ''
+  category2 ?= ''
+  my = isMy and 'my' or ''
+  pcCategory = category and plural s.capitalize category or ''
+  capCategory2 = category2 and s.capitalize category2 or ''
+  if not window["top#{my}#{pcCategory}#{capCategory2}Limit"]
+    window["top#{my}#{pcCategory}#{capCategory2}Limit"] = new ReactiveVar 10
+  return window["top#{my}#{pcCategory}#{capCategory2}Limit"]
 
 @back = ->
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]
@@ -60,3 +68,6 @@ Template.registerHelper 'firstPicture', ->
 
 Template.registerHelper 'backRouteToMain', ->
   Session.get SessionKeys.preRoute
+
+Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
+  _.extend this, {itemTemplate: itemTemplate}

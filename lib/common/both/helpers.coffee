@@ -4,6 +4,10 @@
 @plural = (str)->
   str + 's'
 
+@coln = (category)->
+  capCategory = s.capitalize category
+  pluralCapCategory = plural capCategory
+  window[pluralCapCategory]
 
 @myId = ->
   Meteor.userId()
@@ -21,5 +25,5 @@
   Profiles.findOne({owner: userId})
 
 @imageUrl = (imageId)->
-  image = Images.findOne(imageId)
+  image = Images.findOne imageId
   if image then image.url({store:'images'}) else ''

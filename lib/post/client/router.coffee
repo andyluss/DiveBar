@@ -14,3 +14,7 @@
 
   Router.route "/my/#{name}/list",
     name: "my.#{name}.list"
+
+  Router.plugin('ensureSignedIn', {
+    only: ["my.#{name}.list", "#{name}.creator"]
+  });

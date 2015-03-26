@@ -1,7 +1,11 @@
 <template name="listLoader">
   <div class='item-list'>
     {{#each list}}
-      {{> imageItem}}
+      {{#if ../itemTemplate}}
+        {{>Template.dynamic template=../itemTemplate}}
+      {{else}}
+        {{>imageItem}}
+      {{/if}}
     {{/each}}
   </div>
 

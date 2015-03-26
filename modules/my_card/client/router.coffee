@@ -10,3 +10,8 @@ routeCardInfo 'qq'
 routeCardInfo 'wechat'
 routeCardInfo 'mobile'
 routeCardInfo 'signature'
+
+
+Router.plugin('ensureSignedIn', {
+  only: ['my.card']
+});

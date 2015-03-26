@@ -1,0 +1,1 @@
+createPostControllers PostCategory.product, true

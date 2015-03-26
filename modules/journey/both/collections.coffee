@@ -10,6 +10,7 @@ Journeys.attachSchema new SimpleSchema [PostSchema, {
   category2:
     type: String
     label: '分类2'
+    defaultValue: JourneyCategory2.user
     autoform:
       options: [
         {
@@ -49,7 +50,7 @@ Journeys.attachSchema new SimpleSchema [PostSchema, {
   peopleCountMax:
     type: Number
     label: '最大人数'
-    defaultValue: 1
+    defaultValue: 10
     min: 0
 
 }

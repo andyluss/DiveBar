@@ -10,8 +10,6 @@
   preRoute: 'preRoute'
   currentTab: 'ionTab.current'
 
-
-
 #@SessionKeys =
 #  journeyCategory: 'journeyCategory'
 

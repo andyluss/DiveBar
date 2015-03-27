@@ -1,3 +1,33 @@
+@createPostCollection = (category, hasCategory2)->
+  gbl()[pcap category] = new Meteor.Collection plural category
+
+  moreSchema =
+    category:
+      type: String
+      label: '分类'
+      defaultValue: category
+
+  if hasCategory2
+
+    category2 = getConfigs(category).category2
+    category2Default = getConfigs(category).category2Default
+    category2Label = getConfigs(category).category2Label
+
+    options = []
+    _.each category2, (value)->
+      options.push
+        value: category2[value]
+        label: category2Label[value]
+
+    moreSchema.category2 =
+      type: String
+      label: '子分类'
+      defaultValue: category2Default
+      autoform:
+        options: options
+
+  coln(category).attachSchema new SimpleSchema [PostSchema, moreSchema]
+
 @PostSchema = new SimpleSchema
 
   category:

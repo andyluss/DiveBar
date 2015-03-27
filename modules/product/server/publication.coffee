@@ -1,1 +1,0 @@
-createPostPublications PostCategory.product

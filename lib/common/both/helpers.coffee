@@ -1,13 +1,25 @@
+@gbl = ->
+  Meteor.isClient and window or global
+
+@getConfigs = (name)->
+  if not gbl()[name + 'Configs']
+    gbl()[name + 'Configs'] = {}
+  return gbl()[name + 'Configs']
+
 @checkOwner = (userId, doc)->
   userId == doc.owner
+
+@cap = (str)->
+  s.capitalize str
 
 @plural = (str)->
   str + 's'
 
+@pcap = (str)->
+  plural cap str
+
 @coln = (category)->
-  capCategory = s.capitalize category
-  pluralCapCategory = plural capCategory
-  window[pluralCapCategory]
+  gbl()[pcap category]
 
 @myId = ->
   Meteor.userId()

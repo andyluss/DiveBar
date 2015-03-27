@@ -1,13 +1,15 @@
 
+
+
 @getTopLimit = (category, category2, isMy)->
   category ?= ''
   category2 ?= ''
-  my = isMy and 'my' or ''
+  my = isMy and 'My' or ''
   pcCategory = category and plural s.capitalize category or ''
   capCategory2 = category2 and s.capitalize category2 or ''
-  if not window["top#{my}#{pcCategory}#{capCategory2}Limit"]
-    window["top#{my}#{pcCategory}#{capCategory2}Limit"] = new ReactiveVar 10
-  return window["top#{my}#{pcCategory}#{capCategory2}Limit"]
+  if not getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"]
+    getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"] = new ReactiveVar 10
+  return getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"]
 
 @back = ->
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]

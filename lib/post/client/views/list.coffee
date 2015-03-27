@@ -4,7 +4,7 @@ Template.postList.created = ->
   if @data.lists
     if not _category2
       capCat = s.capitalize @data.category
-      _category2 = new ReactiveVar window["#{capCat}Category2Default"]
+      _category2 = new ReactiveVar getConfigs(@data.category).category2Default
     setEvents @data.lists
 
 Template.postList.helpers
@@ -13,7 +13,7 @@ Template.postList.helpers
 
   title2: (category, category2)->
     capCat = s.capitalize category
-    window["#{capCat}Category2Label"][category2]
+    getConfigs(category).category2Label[category2]
 
   isSelect: (category2)->
     if _category2.get() == category2 then 'selected' else ''

@@ -1,1 +1,0 @@
-createPostCountMethod PostCategory.say

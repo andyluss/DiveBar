@@ -1,10 +1,7 @@
-_category2 = null
-
 Template.postList.created = ->
   if @data.lists
-    if not _category2
-      capCat = s.capitalize @data.category
-      _category2 = new ReactiveVar window["#{capCat}Category2Default"]
+    if not Session.get @data.category + 'Category2Current'
+      Session.set @data.category + 'Category2Current', getConfigs(@data.category).category2Default
     setEvents @data.lists
 
 Template.postList.helpers
@@ -13,19 +10,20 @@ Template.postList.helpers
 
   title2: (category, category2)->
     capCat = s.capitalize category
-    window["#{capCat}Category2Label"][category2]
+    getConfigs(category).category2Label[category2]
 
   isSelect: (category2)->
-    if _category2.get() == category2 then 'selected' else ''
+    if Session.get(@category + 'Category2Current') == category2 then 'selected' else ''
 
   selectedList: ->
     for list in @lists
-      if list.category2 == _category2.get()
+      if list.category2 == Session.get(@category + 'Category2Current')
         return list
 
 setEvents = (lists)->
   events = {}
   _.each lists, (list)->
-    events["click .#{list.category2}"] = ->
-      _category2.set list.category2
+    events["click .#{list.category}.#{list.category2}"] = ->
+      console.log(list.category)
+      Session.set list.category + 'Category2Current', list.category2
   Template.postList.events events

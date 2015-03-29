@@ -1,40 +1,47 @@
 
-@createTopPostsPublication = (name)->
+@createTopPostsPublication = (category)->
 
-  pluralCapName = plural s.capitalize name
-
-  Meteor.publishComposite "top#{pluralCapName}", (limit, selector)->
-    {
-    find: ->
-      selector ?= {}
-      global[pluralCapName].find(selector, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
-    children: [
-      docUserComposite()
+    Meteor.publishComposite "top#{pcap category}", (limit, category2, isMy)->
       {
-        find: (doc)->
-          Images.find {_id: doc.pictures[0]}
+      find: ->
+        selector = {}
+        selector.category2 = category2 if category2
+        selector.owner = @userId if isMy
+        # Count
+        countName = getCountName category, category2, isMy
+        Counts.publish this, countName, coln(category).find(selector), {noReady: true}
+
+        coln(category).find(selector, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
+      children: [
+        docUserComposite()
+        {
+          find: (doc)->
+            # Comment count
+            Counts.publish this, getCommentCountName(doc), Comments.get(doc._id), {noReady: true}
+            # First Picture
+            Images.find {_id: doc.pictures[0]}
+        }
+      ]
       }
-    ]
-    }
 
-@createPostPublication = (name)->
+@createPostPublication = (category)->
 
-  Meteor.publishComposite name, (_id)->
+  Meteor.publishComposite category, (_id)->
     {
     find: ->
-      pluralCapName = plural s.capitalize name
-      global[pluralCapName].find {_id: _id}
+      coln(category).find {_id: _id}
     children: [
       docUserComposite()
       {
         find: (doc)->
+          # Comment count
+          Counts.publish this, getCommentCountName(doc), Comments.get(doc._id), {noReady: true}
+          # Pictures
           Images.find {_id: {$in: doc.pictures}}
       }
     ]
     }
 
-
-
-@createPostPublications = (name)->
-  topPosts: createTopPostsPublication name
-  post: createPostPublication name
+@createPostPublications = (category)->
+  topPosts: createTopPostsPublication category
+  post: createPostPublication category

@@ -57,8 +57,11 @@ Template.registerHelper 'userName', (userId)->
   else
     '游客'
 
-Template.registerHelper 'userUrl', (userId)->
+@userUrl = (userId)->
   '/user/' + userId
+
+Template.registerHelper 'userUrl', (userId)->
+  userUrl userId
 
 Template.registerHelper 'imageUrl', imageUrl
 

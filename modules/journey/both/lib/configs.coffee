@@ -2,7 +2,7 @@
   category2:
     official: 'official'
     user: 'user'
-  category2Default: 'official'
+  category2Default: 'user'
   category2My: 'user'
   category2Label:
     official: '官方'

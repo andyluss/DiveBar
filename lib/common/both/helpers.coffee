@@ -27,6 +27,14 @@
 @coln = (category)->
   gbl()[pcap category]
 
+@getCountName = (category, category2, isMy)->
+  countName = "#{category}Count"
+  countName += '_' + category2 if category2
+  countName += '_my' if isMy
+
+@getCommentCountName = (docId)->
+  "#{docId}_CommentCount"
+
 @myId = ->
   Meteor.userId()
 

@@ -1,31 +1,24 @@
 <template name="userProductItem">
 
   <div class='product-item user'>
-    <div class="user-box">
-      <div class="avatar-container">
-        {{>userAvatar}}
-      </div>
-      <a href="{{userUrl owner}}">
-        {{userName owner}}
-      </a>
+    <div class="left-box">
+      {{#if firstPicture}}
+        <img src={{firstPicture}}>
+      {{/if}}
     </div>
-    <div class="right-box">
-      <div class="title-container">
-        <label class="title">{{title}}</label>
+    <div class="middle-box">
+      <label class="title">{{title}}</label>
+      <div>
+        <label class="title">{{userName owner}}</label>
         <label class="date">{{dateString date}}</label>
       </div>
-      <div class="content-container">
-        <table>
-          <tr>
-            <td>地点：{{location}}</td>
-            <td>费用：{{cost}}</td>
-          </tr>
-          <tr>
-            <td>级别要求：{{level}}</td>
-            <td>人数：{{peopleCount}}（{{peopleCount}}/{{peopleCountMax}}）</td>
-          </tr>
-        </table>
+      <div>
+        <label class="viewCount">阅读数：{{viewCount}}</label>
+        <label class="commentCount">评论数：{{commentCount}}</label>
       </div>
+    </div>
+    <div class="right-box">
+      <label class="price">￥{{price}}</label>
     </div>
     <hr>
   </div>

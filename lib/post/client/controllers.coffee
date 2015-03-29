@@ -6,17 +6,10 @@
   gbl()["#{my}#{capCategory}ListController"] = ContentController.extend
     onAfterAction: ->
       if hasCategory2
-        for category2 of configs.category2
-          capCategory2 = s.capitalize category2
-          selector = {category2: category2}
-          if isMy
-            selector = _.extend selector, {owner: Meteor.userId()}
-          subManager.subscribe "top#{pcCategory}", getTopLimit(category, category2, isMy).get(), selector, -> gbl()["loadingMore"].set false
+        _.each configs.category2, (category2)->
+          subManager.subscribe "top#{pcCategory}", getTopLimit(category, category2, isMy).get(), category2, isMy, -> gbl()["loadingMore"].set false
       else
-        selector = {}
-        if isMy
-          selector = {owner: Meteor.userId()}
-        subManager.subscribe "top#{pcCategory}", getTopLimit(category, undefined, isMy).get(), selector, -> gbl()["loadingMore"].set false
+        subManager.subscribe "top#{pcCategory}", getTopLimit(category, undefined, isMy).get(), undefined, isMy, -> gbl()["loadingMore"].set false
     data: ->
       data = {}
       data.category = category
@@ -28,7 +21,7 @@
           data.itemTemplate = configs.itemTemplate[configs.category2My]
         else
           data.lists = []
-          for category2 of configs.category2
+          _.each configs.category2, (category2)->
             selector = {category2: category2}
             list = {}
             list.category = category

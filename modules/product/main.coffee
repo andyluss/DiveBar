@@ -8,6 +8,9 @@ Products.attachSchema new SimpleSchema
     defaultValue: 100
     min: 0
 
+  viewCount:
+    type: Number
+    label: '阅读数'
 
 if Meteor.isClient
   Template.productList.onCreated ->

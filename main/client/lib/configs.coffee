@@ -7,7 +7,6 @@
   appName: 'Dive Bar'
 
 @SessionKeys =
-  preRoute: 'preRoute'
   currentTab: 'ionTab.current'
 
 #@SessionKeys =

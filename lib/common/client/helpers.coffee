@@ -68,8 +68,5 @@ Template.registerHelper 'firstPicture', ->
   else
     ''
 
-Template.registerHelper 'backRouteToMain', ->
-  Session.get SessionKeys.preRoute
-
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend this, {itemTemplate: itemTemplate}

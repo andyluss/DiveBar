@@ -1,0 +1,21 @@
+<template name="myCardQr">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">二维码</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" href="my.card" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='my-card-qr'}}
+
+    {{#ionContent}}
+      <div class="qr-code">
+
+      </div>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

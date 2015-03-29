@@ -7,10 +7,12 @@ Products.attachSchema new SimpleSchema
     label: '价格'
     defaultValue: 100
     min: 0
+    optional: true
 
   viewCount:
     type: Number
     label: '阅读数'
+    optional: true
 
 if Meteor.isClient
   Template.productList.onCreated ->

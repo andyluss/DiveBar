@@ -17,7 +17,7 @@
         {
           find: (doc)->
             # Comment count
-            Counts.publish this, getCommentCountName(doc), Comments.get(doc._id), {noReady: true}
+            Counts.publish this, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
             # First Picture
             Images.find {_id: doc.pictures[0]}
         }
@@ -35,7 +35,7 @@
       {
         find: (doc)->
           # Comment count
-          Counts.publish this, getCommentCountName(doc), Comments.get(doc._id), {noReady: true}
+          Counts.publish this, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
           # Pictures
           Images.find {_id: {$in: doc.pictures}}
       }

@@ -1,7 +1,7 @@
 Template.userProductItem.helpers
   commentCount: ->
-    Comments.session.get(@id + '_count');
+    Counts.get getCommentCountName(@_id)
 
 Template.userProductItem.events
   'click .product-item.user': ()->
-    Router.go
+    Router.go "product.detail", {id: @_id}

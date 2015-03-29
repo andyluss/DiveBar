@@ -6,8 +6,14 @@
     gbl()[name + 'Configs'] = {}
   return gbl()[name + 'Configs']
 
+@amIAdmin = ->
+  _.contains(Meteor.user().roles, UserRoles.admin)
+
 @checkOwner = (userId, doc)->
-  userId == doc.owner
+  userId == doc.owner or amIAdmin()
+
+@canEdit = (doc)->
+  doc.owner == Meteor.userId() or amIAdmin()
 
 @cap = (str)->
   s.capitalize str

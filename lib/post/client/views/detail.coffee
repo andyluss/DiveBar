@@ -36,7 +36,7 @@ showPhotoSwipe = (doc, container, index)->
   gallery.init()
 
 showActionSheet = (doc)->
-  if doc.owner == Meteor.userId()
+  if canEdit doc
     IonActionSheet.show
       titleText: '选项'
       cancelText: '取消'

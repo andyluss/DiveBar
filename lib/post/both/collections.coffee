@@ -65,6 +65,9 @@
     type: String
     label: '标题'
     max: 20
+    autoform:
+      'label-type': 'placeholder'
+      placeholder: '标题...'
 
   content:
     type: String
@@ -73,6 +76,8 @@
     max: 1000
     autoform:
       rows: 10
+      'label-type': 'placeholder'
+      placeholder: '这一刻想发表什么...'
 
   date:
     type: Date
@@ -85,8 +90,10 @@
     type: [String]
     label: '图片'
     optional: true
+    defaultValue: []
 
   creator:
     type: String
     label: '（开发辅助用）创建者标记'
+    optional: true
 

@@ -82,7 +82,6 @@ meteoric:camera@1.0.2
 meteoric:ionic@0.1.17
 meteoric:ionic-sass@0.1.8
 meteoric:ionicons-sass@0.1.5
-meteortypescript:compiler@2.0.8
 minifiers@1.1.4
 minimongo@1.0.7
 mobile-status-bar@1.0.3

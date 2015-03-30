@@ -9,8 +9,9 @@ Template.postCreator.created = ->
 
 Template.postCreator.helpers
   creator: creator
-  label: ->
-    PostCategoryLabel[@category]
+  formCollection: -> coln @category
+  formId: -> "#{@category}InsertForm"
+  label: -> PostCategoryLabel[@category]
 
 Template.ionNavBar.events
 #  'mousedown': (event, template)->

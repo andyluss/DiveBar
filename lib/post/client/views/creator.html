@@ -15,12 +15,11 @@
   {{#ionView}}
     {{#ionContent}}
 
-      <div class='post-creator padding'>
+      <div class='post-creator'>
 
-        <input type="text" class="title" maxlength="20" placeholder="标题...">
-        <textarea class="content" placeholder="这一刻想发表什么..."></textarea>
+        {{> quickForm collection=formCollection id=formId type="insert" omitFields="category,category2,createdAt,updatedAt,owner,date,creator,pictures" buttonContent="发布"}}
 
-        {{>imageUploader creator=creator}}
+        <!--{{>imageUploader creator=creator}}-->
 
       </div>
 

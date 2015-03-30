@@ -38,21 +38,15 @@
       return data
 
 @createPostCreatorController = (category)->
-  capCategory = s.capitalize category
-  pcCategory = plural capCategory
-  gbl()["#{capCategory}CreatorController"] = ContentController.extend
+  gbl()["#{cap category}CreatorController"] = ContentController.extend
     data: {category: category}
 
 @createPostUpdaterController = (category)->
-  capCategory = s.capitalize category
-  pcCategory = plural capCategory
-  gbl()["#{capCategory}UpdaterController"] = ContentController.extend
+  gbl()["#{cap category}UpdaterController"] = ContentController.extend
     data: -> coln(category).findOne({_id: @params.id})
 
 @createPostDetailController = (category)->
-  capCategory = s.capitalize category
-  pcCategory = plural capCategory
-  gbl()["#{capCategory}DetailController"] = ContentController.extend
+  gbl()["#{cap category}DetailController"] = ContentController.extend
     onAfterAction: ->
       subManager.subscribe category, @params.id
       subManager.subscribe 'favoritesByUser', Meteor.userId()

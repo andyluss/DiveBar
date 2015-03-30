@@ -9,6 +9,8 @@ Template.postCreator.created = ->
 
 Template.postCreator.helpers
   creator: creator
+  label: ->
+    PostCategoryLabel[@category]
 
 Template.ionNavBar.events
 #  'mousedown': (event, template)->
@@ -30,10 +32,10 @@ Template.ionNavBar.events
     title = $('.post-creator .title').val()
 
     if not title
-#      alert '请输入标题'
       IonPopup.alert
         title: '请输入标题'
         okText: '确定'
+        template: ''
       return
     content = $('.post-creator .content').val()
 

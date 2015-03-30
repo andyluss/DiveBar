@@ -31,6 +31,7 @@
   countName = "#{category}Count"
   countName += '_' + category2 if category2
   countName += '_my' if isMy
+  return countName
 
 @getCommentCountName = (docId)->
   "#{docId}_CommentCount"

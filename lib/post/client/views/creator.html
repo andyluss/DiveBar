@@ -9,7 +9,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">添加游记</h1>
+    <h1 class="title">添加{{label}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
@@ -17,7 +17,7 @@
 
       <div class='post-creator padding'>
 
-        <input type="text" class="title" maxlength="20" placeholder="标题">
+        <input type="text" class="title" maxlength="20" placeholder="标题...">
         <textarea class="content" placeholder="这一刻想发表什么..."></textarea>
 
         {{>imageUploader creator=creator}}

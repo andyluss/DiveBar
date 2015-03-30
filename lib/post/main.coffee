@@ -1,7 +1,6 @@
 @createPostBase = (category, hasCategory2)->
 
   createPostCollection category, hasCategory2
-  createPostCountMethod category
 
   if Meteor.isServer
     createPostPermission category

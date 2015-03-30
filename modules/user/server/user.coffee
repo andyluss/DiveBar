@@ -11,7 +11,7 @@ Meteor.startup ->
       email: 'root@divebar.com'
       password: 'test1234'
       username: 'root'
-    Roles.addUsersToRoles userId, 'admin'
+    Roles.addUsersToRoles userId, UserRoles.admin
 
 Meteor.publishComposite 'user', (id)->
   {

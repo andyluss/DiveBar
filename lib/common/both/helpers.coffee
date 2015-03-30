@@ -6,8 +6,14 @@
     gbl()[name + 'Configs'] = {}
   return gbl()[name + 'Configs']
 
+@amIAdmin = ->
+  _.contains(Meteor.user().roles, UserRoles.admin)
+
 @checkOwner = (userId, doc)->
-  userId == doc.owner
+  userId == doc.owner or amIAdmin()
+
+@canEdit = (doc)->
+  doc.owner == Meteor.userId() or amIAdmin()
 
 @cap = (str)->
   s.capitalize str
@@ -20,6 +26,14 @@
 
 @coln = (category)->
   gbl()[pcap category]
+
+@getCountName = (category, category2, isMy)->
+  countName = "#{category}Count"
+  countName += '_' + category2 if category2
+  countName += '_my' if isMy
+
+@getCommentCountName = (docId)->
+  "#{docId}_CommentCount"
 
 @myId = ->
   Meteor.userId()

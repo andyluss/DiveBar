@@ -57,8 +57,11 @@ Template.registerHelper 'userName', (userId)->
   else
     '游客'
 
-Template.registerHelper 'userUrl', (userId)->
+@userUrl = (userId)->
   '/user/' + userId
+
+Template.registerHelper 'userUrl', (userId)->
+  userUrl userId
 
 Template.registerHelper 'imageUrl', imageUrl
 
@@ -67,9 +70,6 @@ Template.registerHelper 'firstPicture', ->
     imageUrl @pictures[0]
   else
     ''
-
-Template.registerHelper 'backRouteToMain', ->
-  Session.get SessionKeys.preRoute
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend this, {itemTemplate: itemTemplate}

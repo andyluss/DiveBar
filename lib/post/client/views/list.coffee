@@ -24,6 +24,5 @@ setEvents = (lists)->
   events = {}
   _.each lists, (list)->
     events["click .#{list.category}.#{list.category2}"] = ->
-      console.log(list.category)
       Session.set list.category + 'Category2Current', list.category2
   Template.postList.events events

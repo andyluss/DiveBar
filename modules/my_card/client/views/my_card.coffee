@@ -12,8 +12,16 @@ Template.myCard.helpers
     profile = userProfile myId()
     profile and imageUrl(profile.avatar) or defaultAvatarUrl
 
+Template.ionNavBar.events
+
+  'click [data-action=logout]': (event, template)->
+    Meteor.logout ->
+      Router.go preMainRoute()
 
 Template.myCard.events
+  'click .qr-code': ->
+    Router.go 'my.card.qr'
+
   'click [data-action=change-avatar]': ->
     IonActionSheet.show
       titleText: '选项'

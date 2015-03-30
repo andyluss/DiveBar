@@ -64,7 +64,7 @@
   title:
     type: String
     label: '标题'
-    max: 100
+    max: 20
 
   content:
     type: String

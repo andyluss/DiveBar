@@ -4,4 +4,4 @@ Template.postCommentTextarea.inheritsHelpersFrom 'commentsTextarea'
 
 Template.postCommentBox.helpers
   commentCount: ->
-    Comments.session.get(@id + '_count');
+    Counts.get getCommentCountName(@id)

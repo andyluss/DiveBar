@@ -5,20 +5,23 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="update-post">更新</button>
+    <button class="button button-clear pull-right button-positive" data-action="update-post" form={{formId}}>更新</button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">编辑游记</h1>
+    <h1 class="title">编辑{{label}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
 
-      <div class='post-updater padding'>
+      <div class='post-updater'>
 
-        <input type="text" class="title" maxlength="20" value={{title}}>
-        <textarea class="content" placeholder="这一刻想发表什么..." value={{content}}></textarea>
+        {{#autoForm collection=formCollection id=formId doc=this type="update" resetOnSuccess=false}}
+          {{#each afFieldNames omitFields="category,category2,createdAt,updatedAt,owner,date,creator,pictures"}}
+            {{>afQuickField name=this.name options=afOptionsFromSchema}}
+          {{/each}}
+        {{/autoForm}}
 
         {{>imageUploader creator=creator}}
 

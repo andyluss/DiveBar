@@ -9,7 +9,7 @@
         selector.owner = @userId if isMy
         # Count
         countName = getCountName category, category2, isMy
-        Counts.publish this, countName, coln(category).find(selector), {noReady: true}
+        Counts.publish @, countName, coln(category).find(selector), {noReady: true}
 
         coln(category).find(selector, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
       children: [
@@ -17,7 +17,7 @@
         {
           find: (doc)->
             # Comment count
-            Counts.publish this, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
+            Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
             # First Picture
             Images.find {_id: doc.pictures[0]}
         }
@@ -35,7 +35,7 @@
       {
         find: (doc)->
           # Comment count
-          Counts.publish this, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
+          Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
           # Pictures
           Images.find {_id: {$in: doc.pictures}}
       }

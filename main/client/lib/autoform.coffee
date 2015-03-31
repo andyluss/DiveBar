@@ -1,1 +1,1 @@
-AutoForm.setDefaultTemplate 'ionic'
+#AutoForm.setDefaultTemplate 'ionic'

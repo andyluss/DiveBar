@@ -72,4 +72,4 @@ Template.registerHelper 'firstPicture', ->
     ''
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
-  _.extend this, {itemTemplate: itemTemplate}
+  _.extend @, {itemTemplate: itemTemplate}

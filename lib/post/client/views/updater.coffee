@@ -1,32 +1,23 @@
-Template.ionNavBar.events
+formId = (category)-> "#{category}UpdateForm"
 
-  'click [data-action=update-post]': (event, template)->
-    title = $('.post-updater .title').val()
-    if not title
-      alert '请输入标题'
-#      IonPopup.alert
-#        title: 'sss'
-#        template: '请输入标题'
-#        okText: '确定'
-      return
-    content = $('.post-updater .content').val()
+Template.postUpdater.onCreated ->
+  createAutoFormHooks @data.category
 
-    pictures = [];
-    pictures.push image._id for image in imagesUploaded(@creator).fetch()
+Template.postUpdater.helpers
+  formCollection: -> coln @category
+  formId: -> formId @category
+  label: -> PostCategoryLabel[@category]
 
-    updateSets = {}
-    updateSets.title = title if title != @title
-    updateSets.content = content if content != @content
-    updateSets.pictures = pictures # Can improve
-    preTitle = @title
+createAutoFormHooks = (category)->
+  check category, String
+  hooks =
+    onSuccess: -> back()
+    before:
+      update: (doc)->
+        pictures = []
+        pictures.push image._id for image in imagesUploaded(@currentDoc.creator).fetch()
+        doc['$set'].pictures = pictures # TODO Can improve
+        return doc
+  AutoForm.addHooks formId(category), hooks, true
 
-    coln(@category).update(
-      {_id: @_id},
-      {$set: updateSets},
-      {upset: false},
-      (error, _id)->
-        if error
-          console.log "Update #{preTitle} error: " + error
-        else
-          back()
-    )
+

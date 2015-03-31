@@ -11,7 +11,7 @@ Template.postDetail.events
 
 Template.ionNavBar.events
   'click [data-action=post-more]': (event, template)->
-    showActionSheet(this)
+    showActionSheet @
 
 showPhotoSwipe = (doc, container, index)->
   items = []

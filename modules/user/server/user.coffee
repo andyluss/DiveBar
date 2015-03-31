@@ -46,8 +46,8 @@ Meteor.publish null, ->
   #  }
 
   #Meteor.publish 'userPicture', ->
-  #	if Meteor.users.findOne({_id:this.userId}) && Meteor.users.findOne({_id:this.userId}).profile
-  #		_id = Meteor.users.findOne({_id:this.userId}).profile.picture
+  #	if Meteor.users.findOne({_id:@userId}) && Meteor.users.findOne({_id:@userId}).profile
+  #		_id = Meteor.users.findOne({_id:@userId}).profile.picture
   #		ProfilePictures.find _id : _id
   #	else
   #		@ready()

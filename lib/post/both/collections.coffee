@@ -75,7 +75,7 @@
     optional: true
     max: 1000
     autoform:
-      rows: 10
+      rows: 6
       'label-type': 'placeholder'
       placeholder: '这一刻想发表什么...'
 
@@ -88,8 +88,9 @@
 
   pictures:
     type: [String]
-    label: '图片'
+    label: '图片组'
     optional: true
+    maxCount: 9
     defaultValue: []
 
   creator:

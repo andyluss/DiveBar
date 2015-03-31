@@ -10,7 +10,7 @@ Template.listLoader.rendered = ->
   if category2
     selector.category2 = category2
 
-  template = this
+  template = @
   @autorun ->
     if gbl()["loadingMore"].get()
       template.$('.loadmore-button').addClass('loading').html('加载中')

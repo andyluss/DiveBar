@@ -19,7 +19,7 @@
             # Comment count
             Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
             # First Picture
-            Images.find {_id: doc.pictures[0]}
+            Images.find {creator: doc.creator}
         }
       ]
       }
@@ -37,7 +37,7 @@
           # Comment count
           Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
           # Pictures
-          Images.find {_id: {$in: doc.pictures}}
+          Images.find {creator: doc.creator}
       }
     ]
     }

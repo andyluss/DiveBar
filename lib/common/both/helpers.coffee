@@ -51,10 +51,15 @@
 @userProfile = (userId)->
   Profiles.findOne({owner: userId})
 
-@imageUrl = (imageId)->
-  image = Images.findOne imageId
-  if image then image.url({store:'images'}) else ''
+@imagesByCreator = (creator)->
+  Images.find {creator: creator}
 
-@imageThumbUrl = (imageId)->
-  image = Images.findOne imageId
-  if image then image.url({store:'thumbs'}) else ''
+@firstImagesByCreator = (creator)->
+  Images.findOne {creator: creator}
+
+@imageUrl = (imageIdOrImage, store)->
+  if typeof imageIdOrImage is 'string'
+    image = Images.findOne {_id: imageIdOrImage}
+  else
+    image = imageIdOrImage
+  return image?.url({store: store or 'images'}) or ''

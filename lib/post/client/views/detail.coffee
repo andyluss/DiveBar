@@ -2,38 +2,12 @@ Template.postDetail.helpers
   commentStrings: ->
     'add-button': '提交'
     'placeholder-textarea': '你有什么想表达的...'
-
-Template.postDetail.events
-
-  'click .picture-container': (event, template)->
-    index = parseInt(event.currentTarget.getAttribute 'index')
-    showPhotoSwipe(template.data, $('.pswp')[0], index)
+  hasPicture: ->
+    imagesByCreator(@creator).count() > 0
 
 Template.ionNavBar.events
   'click [data-action=post-more]': (event, template)->
     showActionSheet @
-
-showPhotoSwipe = (doc, container, index)->
-  items = []
-
-  getItem = (imageId)->
-    image = Images.findOne(imageId)
-    url = image.url({store:'images'})
-    if image
-      item =
-        src: url
-        w: image.metadata.width
-        h: image.metadata.height
-    else
-      console.log 'No Image, Id: ' + imageId
-    return item
-
-  items.push getItem picture for picture in doc.pictures
-
-  options =
-    index: index
-  gallery = new PhotoSwipe container, PhotoSwipeUI_Default, items, options
-  gallery.init()
 
 showActionSheet = (doc)->
   if canEdit doc

@@ -84,13 +84,6 @@
       if @isInsert
         new Date()
 
-  pictures:
-    type: [String]
-    label: '图片组'
-    optional: true
-    maxCount: 9
-    defaultValue: []
-
   creator:
     type: String
     label: '（开发辅助用）创建者标记'

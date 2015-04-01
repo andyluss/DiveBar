@@ -20,16 +20,8 @@
 
       <div class="post-detail">
 
-        {{#if pictures}}
-          <div class="picture-carousel">
-            {{#ionSlideBox showPager=true}}
-              {{#each pictures}}
-                <div class="picture-container">
-                  <img class="picture" src="{{imageUrl this}}">
-                </div>
-              {{/each}}
-            {{/ionSlideBox}}
-          </div>
+        {{#if hasPicture}}
+          {{>pictureCarousel}}
         {{/if}}
 
         <div class="title-container">
@@ -49,7 +41,7 @@
         {{/if}}
 
         {{#if this}}
-          {{>commentsBox id=_id content=commentStrings customTemplate='postCommentBox'}}
+          {{>commentsBox id=_id content=commentStrings customTemplate='commonCommentBox'}}
         {{/if}}
 
       </div>

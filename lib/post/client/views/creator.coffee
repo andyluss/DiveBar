@@ -24,9 +24,6 @@ createAutoFormHooks = (category)->
     onSuccess: -> back()
     before:
       insert: (doc)->
-        pictures = []
-        pictures.push image._id for image in imagesUploaded(creator()).fetch()
-        doc.pictures = pictures
         doc.creator = creator()
         return doc
   AutoForm.addHooks formId(category), hooks, true

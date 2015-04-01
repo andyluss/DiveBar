@@ -19,7 +19,7 @@
   $(backButton).click()
 
 @imagesUploaded = (creator)->
-  Images.find {creator: creator}
+  return Images.find {creator: creator}
 
 @newImageCreator = ->
   Meteor.userId() + '-' + new Date().getTime()
@@ -60,22 +60,15 @@ Template.registerHelper 'userName', (userId)->
   else
     '游客'
 
-Template.registerHelper 'userUrl', (userId)->
-  userUrl userId
+Template.registerHelper 'userUrl', (userId)-> userUrl userId
 
-Template.registerHelper 'imageUrl', imageUrl
+Template.registerHelper 'imageUrl', (image)-> imageUrl image
 
 Template.registerHelper 'firstPicture', ->
-  if @pictures and @pictures.length > 0
-    imageUrl @pictures[0]
-  else
-    ''
+  imageUrl firstImagesByCreator(@creator)
 
 Template.registerHelper 'firstPictureThumb', ->
-  if @pictures and @pictures.length > 0
-    imageThumbUrl @pictures[0]
-  else
-    ''
+  imageUrl firstImagesByCreator(@creator), 'thumbs'
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend @, {itemTemplate: itemTemplate}

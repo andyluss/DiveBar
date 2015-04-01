@@ -17,7 +17,7 @@
 
       <div class='post-updater'>
 
-        {{>quickForm collection=formCollection id=formId type="insert" resetOnSuccess=false buttonContent=false omitFields=formOmitFields}}
+        {{>quickForm doc=this collection=formCollection id=formId type="update" resetOnSuccess=false buttonContent=false omitFields=formOmitFields}}
 
         {{>imageUploader creator=creator}}
 

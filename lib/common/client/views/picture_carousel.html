@@ -1,0 +1,11 @@
+<template name="pictureCarousel">
+  <div class="picture-carousel">
+    {{#ionSlideBox showPager=true}}
+      {{#each pictures}}
+        <div class="picture-container">
+          <img class="picture" src="{{imageUrl this}}">
+        </div>
+      {{/each}}
+    {{/ionSlideBox}}
+  </div>
+</template>

@@ -1,20 +1,16 @@
-<template name="postCommentBox">
+<template name="commonCommentBox">
   <div class="comments-box">
     <div class="ui comments">
       <div class="title-bar">
         <label class="ui header">点评（共{{ commentCount}}条）</label>
       </div>
 
-      <!--{{#if loginAction}}-->
-        <!--<div class="ui warning message">请先登录 {{loginAction}}</div>-->
-      <!--{{/if}}-->
-
       {{#if currentUser}}
-        {{> postCommentTextarea }}
+        {{> commonCommentTextarea }}
       {{/if}}
 
       {{#each comment}}
-        {{> postCommentSingle }}
+        {{> commonCommentSingle }}
       {{/each}}
 
       {{#if hasMoreComments}}
@@ -24,7 +20,7 @@
   </div>
 </template>
 
-<template name="postCommentSingle">
+<template name="commonCommentSingle">
   <div data-id="{{_id}}" class="comment">
     <div class="avatar-container">
       {{> userAvatar userId=userId}}
@@ -45,7 +41,7 @@
   </div>
 </template>
 
-<template name="postCommentTextarea">
+<template name="commonCommentTextarea">
   <form class="ui reply form comment-form">
     <div class="field">
       <textarea

@@ -1,6 +1,9 @@
 
 
 
+@userUrl = (userId)->
+  '/user/' + userId
+
 @getTopLimit = (category, category2, isMy)->
   category ?= ''
   category2 ?= ''
@@ -57,9 +60,6 @@ Template.registerHelper 'userName', (userId)->
   else
     '游客'
 
-@userUrl = (userId)->
-  '/user/' + userId
-
 Template.registerHelper 'userUrl', (userId)->
   userUrl userId
 
@@ -68,6 +68,12 @@ Template.registerHelper 'imageUrl', imageUrl
 Template.registerHelper 'firstPicture', ->
   if @pictures and @pictures.length > 0
     imageUrl @pictures[0]
+  else
+    ''
+
+Template.registerHelper 'firstPictureThumb', ->
+  if @pictures and @pictures.length > 0
+    imageThumbUrl @pictures[0]
   else
     ''
 

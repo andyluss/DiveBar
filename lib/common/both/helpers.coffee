@@ -54,3 +54,7 @@
 @imageUrl = (imageId)->
   image = Images.findOne imageId
   if image then image.url({store:'images'}) else ''
+
+@imageThumbUrl = (imageId)->
+  image = Images.findOne imageId
+  if image then image.url({store:'thumbs'}) else ''

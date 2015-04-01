@@ -5,7 +5,7 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="save-post" form={{formId}}>保存</button>
+    <button class="button button-clear pull-right button-positive" data-action="create-post" form={{formId}}>发布</button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
@@ -17,11 +17,7 @@
 
       <div class='post-creator'>
 
-        {{#autoForm collection=formCollection id=formId type="insert" resetOnSuccess=false}}
-          {{#each afFieldNames omitFields="category,category2,createdAt,updatedAt,owner,date,creator,pictures"}}
-            {{>afQuickField name=this.name options=afOptionsFromSchema}}
-          {{/each}}
-        {{/autoForm}}
+        {{>quickForm collection=formCollection id=formId type="insert" resetOnSuccess=false buttonContent=false omitFields=formOmitFields}}
 
         {{>imageUploader creator=creator}}
 

@@ -10,3 +10,4 @@
   itemTemplate:
     official: 'imageItem'
     user: 'userProductItem'
+  moreAutoFormOmitFields: ['viewCount']

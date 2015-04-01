@@ -66,7 +66,6 @@
     label: '标题'
     max: 20
     autoform:
-      'label-type': 'placeholder'
       placeholder: '标题...'
 
   content:
@@ -76,7 +75,6 @@
     max: 1000
     autoform:
       rows: 6
-      'label-type': 'placeholder'
       placeholder: '这一刻想发表什么...'
 
   date:

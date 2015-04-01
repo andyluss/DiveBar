@@ -17,11 +17,7 @@
 
       <div class='post-updater'>
 
-        {{#autoForm collection=formCollection id=formId doc=this type="update" resetOnSuccess=false}}
-          {{#each afFieldNames omitFields="category,category2,createdAt,updatedAt,owner,date,creator,pictures"}}
-            {{>afQuickField name=this.name options=afOptionsFromSchema}}
-          {{/each}}
-        {{/autoForm}}
+        {{>quickForm collection=formCollection id=formId type="insert" resetOnSuccess=false buttonContent=false omitFields=formOmitFields}}
 
         {{>imageUploader creator=creator}}
 

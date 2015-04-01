@@ -7,6 +7,8 @@ Template.postUpdater.helpers
   formCollection: -> coln @category
   formId: -> formId @category
   label: -> PostCategoryLabel[@category]
+  formOmitFields: ->
+    autoFormOmitFields(@category)
 
 createAutoFormHooks = (category)->
   check category, String

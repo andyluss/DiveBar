@@ -1,28 +1,30 @@
-Template.postList.created = ->
-  if @data.lists
-    if not Session.get @data.category + 'Category2Current'
-      Session.set @data.category + 'Category2Current', getConfigs(@data.category).category2Default
-    setEvents @data.lists
+Template.postList.onCreated ->
+  if @data.category2
+    setEvents @data.category
 
 Template.postList.helpers
 
-  title: -> PostCategoryLabel[@category]
+  isUsers: -> @user?
 
-  title2: (category, category2)->
-    capCat = s.capitalize category
-    getConfigs(category).category2Label[category2]
+  title: ->
+    console.log @category
+    (if @user is myId() then '我的' else '') + getConfigs(@category).label
+
+  title2: ->
+    getConfigs(@parentData().category).category2Label[@]
 
   isSelect: (category2)->
-    if Session.get(@category + 'Category2Current') == category2 then 'selected' else ''
+    currentRouteQuery().category2 == category2 and 'selected' or ''
 
-  selectedList: ->
-    for list in @lists
-      if list.category2 == Session.get(@category + 'Category2Current')
-        return list
+  category2s: -> getConfigs(@category).category2
 
-setEvents = (lists)->
+setEvents = (category)->
   events = {}
-  _.each lists, (list)->
-    events["click .#{list.category}.#{list.category2}"] = ->
-      Session.set list.category + 'Category2Current', list.category2
+  _.each getConfigs(category).category2, (category2)->
+    events["click .#{category}.#{category2}"] = ->
+      query = {}
+      query.category = category
+      query.category2 = category2
+      console.log($.param query)
+      Router.go 'post.list', {query: $.param query}
   Template.postList.events events

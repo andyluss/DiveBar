@@ -1,7 +1,7 @@
 
 
 Accounts.onCreateUser (options, user)->
-  user.profileId = Profiles.insert {owner: user._id}
+  user.profileId = Profiles.insert {user: user._id}
   return user
 
 Meteor.startup ->
@@ -21,13 +21,6 @@ Meteor.publishComposite 'user', (id)->
       userProfileComposite()
     ]
   }
-
-
-Meteor.publish 'myUserData', ->
-  if @userId
-    Meteor.users.find {_id: @userId}, {fields: {profileId : 1}}
-  else
-    @ready()
 
 Meteor.publish null, ->
   Meteor.roles.find()

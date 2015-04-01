@@ -1,2 +1,2 @@
 @postConfigs =
-  autoFormOmitFields: ["category", "category2", "createdAt", "updatedAt", "owner", "date", "creator"]
+  autoFormOmitFields: ["category", "category2", "createdAt", "updatedAt", "user", "date", "creator"]

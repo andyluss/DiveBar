@@ -1,18 +1,21 @@
 
+@currentRoute = ->
+  current = Router.current()
+  current and current.route and current.route.getName() or ''
 
+@currentRouteQuery = ->
+  current = Router.current()
+  current and current.route and current.getParams().query
 
 @userUrl = (userId)->
   '/user/' + userId
 
-@getTopLimit = (category, category2, isMy)->
-  category ?= ''
-  category2 ?= ''
-  my = isMy and 'My' or ''
-  pcCategory = category and plural s.capitalize category or ''
-  capCategory2 = category2 and s.capitalize category2 or ''
-  if not getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"]
-    getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"] = new ReactiveVar 10
-  return getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"]
+@getListLimit = (selector)->
+  sel = JSON.stringify selector
+  category = sel.category
+  if not getConfigs(category)["listLimit_#{sel}"]
+    getConfigs(category)["listLimit_#{sel}"] = new ReactiveVar 10
+  return getConfigs(category)["listLimit_#{sel}"]
 
 @back = ->
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]
@@ -30,21 +33,13 @@ Template.registerHelper 'users', ->
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path
 
-Template.registerHelper "currentRoute", ->
-  current = Router.current()
-  current and current.route and current.route.getName() or ''
+Template.registerHelper "currentRoute", -> currentRoute()
 
-Template.registerHelper "currentRouteIs", (name)->
-  current = Router.current()
-  current and current.route and current.route.getName() == name or false
+Template.registerHelper "currentRouteIs", (name)-> currentRoute() is name
 
-Template.registerHelper "currentRouteType", ->
-  current = Router.current()
-  current and current.route and current.route.getName() and current.route.getName().split('.')[0]
+Template.registerHelper "currentRouteCategory", -> currentRouteQuery()?.category
 
-Template.registerHelper "activeRoute", (name)->
-  current = Router.current()
-  current and current.route and current.route.getName() == name and "active" or ""
+Template.registerHelper "activeRoute", (name)-> (currentRoute() is name) and 'active' or ''
 
 Template.registerHelper 'dateString', (date)->
   moment(date).format('YYYY/M/D')

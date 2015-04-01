@@ -1,5 +1,5 @@
 Favorites.allow
 	insert: (userId, doc) ->
-		doc.owner == userId
+		doc.user == userId
 	remove: (userId, doc) ->
-		doc.owner == userId
+		doc.user == userId

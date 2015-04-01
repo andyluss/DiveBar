@@ -38,11 +38,3 @@ Journeys.attachSchema new SimpleSchema
     defaultValue: 10
     min: 0
 
-if Meteor.isClient
-
-  Template.journeyList.onCreated ->
-    @data.lists[0].itemTemplate = 'imageItem'
-    @data.lists[1].itemTemplate = 'userJourneyItem'
-
-  Template.myJourneyList.onCreated ->
-    @data.itemTemplate = 'userJourneyItem'

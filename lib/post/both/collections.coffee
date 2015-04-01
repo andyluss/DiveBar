@@ -35,7 +35,7 @@
     label: '分类'
     defaultValue: 'post'
 
-  owner:
+  user:
     type: String
     label: '作者'
     regEx: SimpleSchema.RegEx.Id

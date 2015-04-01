@@ -4,11 +4,11 @@
 #    console.log 'Removed ' + fileObj._id + 'from Images'
 
 Images.allow
-  insert: checkOwner
-  update: checkOwner
-  remove: checkOwner
+  insert: checkUser
+  update: checkUser
+  remove: checkUser
   download: ->true
 
 Meteor.publish 'imagesUploaded', (userId, creator)->
   check userId, String
-  Images.find {owner: userId, creator: creator}
+  Images.find {user: userId, creator: creator}

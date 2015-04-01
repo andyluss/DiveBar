@@ -13,10 +13,3 @@ Products.attachSchema new SimpleSchema
     type: Number
     label: '阅读数'
     optional: true
-
-if Meteor.isClient
-  Template.productList.onCreated ->
-    @data.lists[0].itemTemplate = 'imageItem'
-    @data.lists[1].itemTemplate = 'userProductItem'
-  Template.myProductList.onCreated ->
-    @data.itemTemplate = 'userProductItem'

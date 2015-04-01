@@ -1,47 +1,38 @@
 
-@createTopPostsPublication = (category)->
+Meteor.publishComposite 'postList', (selector, limit)->
+  {
+  find: ->
+    category = selector.category
+    sel = _.omit selector, 'category'
+    # Count
+    Counts.publish @, getCountName(selector), coln(category).find(sel), {noReady: true}
 
-    Meteor.publishComposite "top#{pcap category}", (limit, category2, isMy)->
-      {
-      find: ->
-        selector = {}
-        selector.category2 = category2 if category2
-        selector.owner = @userId if isMy
-        # Count
-        countName = getCountName category, category2, isMy
-        Counts.publish @, countName, coln(category).find(selector), {noReady: true}
+    coln(category).find(sel, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
 
-        coln(category).find(selector, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
-      children: [
-        docUserComposite()
-        {
-          find: (doc)->
-            # Comment count
-            Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
-            # First Picture
-            Images.find {creator: doc.creator}
-        }
-      ]
-      }
-
-@createPostPublication = (category)->
-
-  Meteor.publishComposite category, (_id)->
+  children: [
+    docUserComposite()
     {
-    find: ->
-      coln(category).find {_id: _id}
-    children: [
-      docUserComposite()
-      {
-        find: (doc)->
-          # Comment count
-          Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
-          # Pictures
-          Images.find {creator: doc.creator}
-      }
-    ]
+      find: (doc)->
+        # Comment count
+        Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
+        # First Picture
+        Images.find {creator: doc.creator}
     }
+  ]
+  }
 
-@createPostPublications = (category)->
-  topPosts: createTopPostsPublication category
-  post: createPostPublication category
+Meteor.publishComposite 'post', (category, _id)->
+  {
+  find: ->
+    coln(category).find {_id: _id}
+  children: [
+    docUserComposite()
+    {
+      find: (doc)->
+        # Comment count
+        Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
+        # Pictures
+        Images.find {creator: doc.creator}
+    }
+  ]
+  }

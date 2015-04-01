@@ -5,7 +5,7 @@ Schemas.Favorites = new SimpleSchema
 		type:String
 		regEx: SimpleSchema.RegEx.Id
 
-	owner:
+	user:
 		type: String
 		regEx: SimpleSchema.RegEx.Id
 

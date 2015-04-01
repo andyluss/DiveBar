@@ -6,7 +6,7 @@ Template.postUpdater.onCreated ->
 Template.postUpdater.helpers
   formCollection: -> coln @category
   formId: -> formId @category
-  label: -> PostCategoryLabel[@category]
+  label: -> getConfigs(@category).label
   formOmitFields: ->
     autoFormOmitFields(@category)
 

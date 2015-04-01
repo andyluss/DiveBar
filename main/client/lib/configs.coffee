@@ -18,9 +18,10 @@ Template.registerHelper 'strJourney', -> '行程'
 Template.registerHelper 'strProduct', -> '商城'
 Template.registerHelper 'strSay', -> '说说'
 
-Template.registerHelper 'strMyCard', -> '我的名片'
+Template.registerHelper 'strProfile', -> '用户名片'
 
-Template.registerHelper 'strMyNote', -> '我的游记'
-Template.registerHelper 'strMyJourney', -> '我的行程'
-Template.registerHelper 'strMyProduct', -> '我的商品'
-Template.registerHelper 'strMySay', -> '我的说说'
+Template.registerHelper 'strUserNote', -> '用户游记'
+Template.registerHelper 'strUserJourney', -> '用户行程'
+Template.registerHelper 'strUserProduct', -> '用户商品'
+Template.registerHelper 'strUserSay', -> '用户说说'
+

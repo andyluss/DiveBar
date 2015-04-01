@@ -1,3 +1,6 @@
+@pq = (context)->
+  context.params.query
+
 @gbl = ->
   Meteor.isClient and window or global
 
@@ -9,11 +12,11 @@
 @amIAdmin = ->
   _.contains(Meteor.user().roles, UserRoles.admin)
 
-@checkOwner = (userId, doc)->
-  userId == doc.owner or amIAdmin()
+@checkUser = (userId, doc)->
+  userId == doc.user or amIAdmin()
 
 @canEdit = (doc)->
-  doc.owner == Meteor.userId() or amIAdmin()
+  doc.user == Meteor.userId() or amIAdmin()
 
 @cap = (str)->
   s.capitalize str
@@ -27,11 +30,8 @@
 @coln = (category)->
   gbl()[pcap category]
 
-@getCountName = (category, category2, isMy)->
-  countName = "#{category}Count"
-  countName += '_' + category2 if category2
-  countName += '_my' if isMy
-  return countName
+@getCountName = (selector)->
+  return 'count_' + JSON.stringify selector
 
 @getCommentCountName = (docId)->
   "#{docId}_CommentCount"
@@ -49,7 +49,7 @@
     Meteor.users.findOne {_id: userId}
 
 @userProfile = (userId)->
-  Profiles.findOne({owner: userId})
+  Profiles.findOne({user: userId})
 
 @imagesByCreator = (creator)->
   Images.find {creator: creator}

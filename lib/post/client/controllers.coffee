@@ -1,61 +1,29 @@
-@createPostListController = (category, hasCategory2, isMy)->
-  capCategory = s.capitalize category
-  pcCategory = plural capCategory
-  my = isMy and 'My' or ''
-  configs = getConfigs category
-  gbl()["#{my}#{capCategory}ListController"] = ContentController.extend
-    onAfterAction: ->
-      if hasCategory2
-        _.each configs.category2, (category2)->
-          subManager.subscribe "top#{pcCategory}", getTopLimit(category, category2, isMy).get(), category2, isMy, -> gbl()["loadingMore"].set false
-      else
-        subManager.subscribe "top#{pcCategory}", getTopLimit(category, undefined, isMy).get(), undefined, isMy, -> gbl()["loadingMore"].set false
-    data: ->
-      data = {}
-      data.category = category
-      data.isMy = isMy
-      if hasCategory2
-        if isMy
-          selector = {owner: Meteor.userId(), category2: configs.category2My}
-          data.list = coln(category).find selector, {sort: {date: -1}}
-          data.itemTemplate = configs.itemTemplate[configs.category2My]
-        else
-          data.lists = []
-          _.each configs.category2, (category2)->
-            selector = {category2: category2}
-            list = {}
-            list.category = category
-            list.category2 = category2
-            list.itemTemplate = configs.itemTemplate[category2]
-            list.list = coln(category).find selector, {sort: {date: -1}}
-            data.lists.push list
-      else
-        selector = {}
-        if isMy
-          selector = {owner: Meteor.userId()}
-        data.list = coln(category).find selector, {sort: {date: -1}}
-        data.itemTemplate = configs.itemTemplate
-      return data
+@PostListController = ContentController.extend
+  onAfterAction: ->
+    selector = pq(@)
+    subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
+    Session.set(SessionKeys.currentTab, "#{selector.category}.list");
+  data: ->
+    selector = pq(@)
+    category = selector.category
+    data = _.clone selector
+    console.log(selector)
+    data.list = coln(category).find selector, {sort: {date: -1}}
+    data.itemTemplate = getListItemTemplate(selector)
+    return data
 
-@createPostCreatorController = (category)->
-  gbl()["#{cap category}CreatorController"] = ContentController.extend
-    data: {category: category}
+getListItemTemplate = (selector)->
+  cfg = getConfigs selector.category
+  return cfg.itemTemplate[selector.category2] or cfg.itemTemplate
 
-@createPostUpdaterController = (category)->
-  gbl()["#{cap category}UpdaterController"] = ContentController.extend
-    data: -> coln(category).findOne({_id: @params.id})
+@PostDetailController = ContentController.extend
+  onAfterAction: ->
+    subManager.subscribe 'post', pq(@).category, pq(@).id
+    subManager.subscribe 'favoritesByUser', Meteor.userId()
+  data: -> coln(pq(@).category).findOne({_id: pq(@).id})
 
-@createPostDetailController = (category)->
-  gbl()["#{cap category}DetailController"] = ContentController.extend
-    onAfterAction: ->
-      subManager.subscribe category, @params.id
-      subManager.subscribe 'favoritesByUser', Meteor.userId()
-    data: ->
-      coln(category).findOne({_id: @params.id})
+@PostCreatorController = ContentController.extend
+  data: -> pq @
 
-@createPostControllers = (category, hasCategory2)->
-  list: createPostListController category, hasCategory2
-  myList: createPostListController category, hasCategory2, true
-  creator: createPostCreatorController category
-  updater: createPostUpdaterController category
-  detail: createPostDetailController category
+@PostUpdaterController = ContentController.extend
+  data: -> coln(pq(@).category).findOne({_id: pq(@).id})

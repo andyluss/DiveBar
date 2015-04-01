@@ -14,7 +14,7 @@ Template.postCreator.helpers
   creator: creator
   formCollection: -> coln @category
   formId: -> formId @category
-  label: -> PostCategoryLabel[@category]
+  label: -> getConfigs(@category).label
   formOmitFields: ->
     autoFormOmitFields(@category)
 

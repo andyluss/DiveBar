@@ -53,6 +53,8 @@ Template.registerHelper 'userName', (userId)-> userName userId
 
 Template.registerHelper 'userUrl', (userId)-> userUrl userId
 
+Template.registerHelper 'avatarUrl', (userId)-> avatarUrl userId
+
 Template.registerHelper 'imageUrl', (image)-> imageUrl image
 
 Template.registerHelper 'firstPicture', ->

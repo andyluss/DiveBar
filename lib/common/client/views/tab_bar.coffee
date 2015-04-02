@@ -35,5 +35,5 @@ Template.tabBar.onRendered ->
     href = $(@).attr 'href'
     current = Router.current().location.get().path
     # TODO 弱约束,有待思考
-    if s.contains href, current
+    if s.contains current, href
       Session.set SessionKeys.currentTab, href

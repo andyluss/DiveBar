@@ -1,6 +1,3 @@
-Template.postList.onCreated ->
-  setCategory2Events @data.category
-
 Template.postList.helpers
 
   title: ->
@@ -21,7 +18,12 @@ Template.postList.helpers
     else
       category2 == getConfigs(Template.parentData().category).category2Default and 'selected' or ''
 
-  category2s: -> _.values getConfigs(@category).category2
+  category2s: ->
+    if hasCategory2(@category)
+      _.values getConfigs(@category).category2
+
+  showCategory2s: ->
+    return hasCategory2(@category) and not @user
 
 Template.ionNavBar.events
 
@@ -30,9 +32,5 @@ Template.ionNavBar.events
     user = myId()? and "&user=#{myId()}" or ''
     Router.go "/profile?type=main" + user
 
-setCategory2Events = (category)->
-  events = {}
-  _.each getConfigs(category).category2, (category2)->
-    events["click .#{category}.#{category2}"] = ->
-      Router.go "/post/list?category=#{category}&category2=#{category2}"
-  Template.postList.events events
+Template.postList.events
+  'click .category2': -> Router.go "/post/list?category=#{Template.parentData().category}&category2=#{@}"

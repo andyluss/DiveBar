@@ -39,6 +39,9 @@
 @myId = ->
   Meteor.userId()
 
+@isMe = (userId)->
+  return myId() and userId == myId()
+
 @mySelf = ->
   Meteor.user()
 
@@ -50,6 +53,10 @@
 
 @userProfile = (userId)->
   Profiles.findOne({user: userId})
+
+@avatarUrl = (userId)->
+    profile = userProfile userId
+    profile and imageUrl(profile.avatar) or defaultAvatarUrl
 
 @userName = (userId)->
   user = userById userId

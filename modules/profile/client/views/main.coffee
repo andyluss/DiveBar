@@ -1,15 +1,16 @@
-Template.profileMain.rendered = ->
-  $('.qr-code').qrcode
-    text: myId()
+Template.profileMain.onRendered ->
+  @$('.qr-code').qrcode
+    text: userById(@data.user)
 
 getLine = (type, label)->
   label: label
   data: @[type]
-  href: "/profile?type=#{type}&user=#{@user}"
+  href: isMe(@user) and "/profile?type=#{type}&user=#{@user}" or ''
+  icon: isMe(@user) and "ios-arrow-right" or ''
 
 Template.profileMain.helpers
-  title: ->
-    (@user == myId() and '我' or userName(@user)) + '的名片'
+  isMe: -> return isMe(@user)
+  title: -> (isMe(@user) and '我' or userName(@user)) + '的名片'
   lines: -> [
     getLine.call(@, 'qq', 'QQ')
     getLine.call(@, 'wechat', '微信')
@@ -17,13 +18,8 @@ Template.profileMain.helpers
     getLine.call(@, 'signature', '签名')
   ]
 
-  nickname: ->
-    @nickname or '添加昵称'
-  location: ->
-    @location or '添加地址'
-  avatarUrl: ->
-    profile = userProfile myId()
-    profile and imageUrl(profile.avatar) or defaultAvatarUrl
+  nickname: -> @nickname or '添加昵称'
+  location: -> @location or '添加地址'
 
 Template.ionNavBar.events
 
@@ -34,6 +30,8 @@ Template.ionNavBar.events
 Template.profileMain.events
 
   'click [data-action=change-avatar]': ->
+    if not isMe(@user)
+      return
     IonActionSheet.show
       titleText: '选项'
       cancelText: '取消'

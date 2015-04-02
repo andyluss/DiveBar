@@ -1,4 +1,8 @@
 @PostListController = ContentController.extend
+  onBeforeAction: ->
+    if (not pq(@).category2?) and hasCategory2 pq(@).category
+      pq(@).category2 = getConfigs(pq(@).category).category2Default
+    @next()
   onAfterAction: ->
     selector = pq(@)
     subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false

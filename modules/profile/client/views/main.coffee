@@ -8,6 +8,8 @@ getLine = (type, label)->
   href: "/profile?type=#{type}&user=#{@user}"
 
 Template.profileMain.helpers
+  title: ->
+    (@user == myId() and '我' or userName(@user)) + '的名片'
   lines: -> [
     getLine.call(@, 'qq', 'QQ')
     getLine.call(@, 'wechat', '微信')

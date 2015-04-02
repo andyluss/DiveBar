@@ -49,13 +49,7 @@ Template.registerHelper 'dateString', (date)->
 Template.registerHelper 'firstOne', (array)->
     if array and array.length > 0 then array[0] else ''
 
-Template.registerHelper 'userName', (userId)->
-  user = userById userId
-  if user
-    profile = userProfile userId
-    profile and profile.nickname or user.username or user.emails[0].address.split('@')[0]
-  else
-    '游客'
+Template.registerHelper 'userName', (userId)-> userName userId
 
 Template.registerHelper 'userUrl', (userId)-> userUrl userId
 

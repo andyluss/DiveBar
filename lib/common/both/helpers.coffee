@@ -51,6 +51,14 @@
 @userProfile = (userId)->
   Profiles.findOne({user: userId})
 
+@userName = (userId)->
+  user = userById userId
+  if user
+    profile = userProfile userId
+    profile and profile.nickname or user.username or user.emails[0].address.split('@')[0]
+  else
+    '游客'
+
 @imagesByCreator = (creator)->
   Images.find {creator: creator}
 

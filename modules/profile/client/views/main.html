@@ -21,10 +21,10 @@
           <img src={{avatarUrl}}>
         </div>
         <div class="base-info">
-          <a href="/profile?user={{user}}&type=nickname">{{nickname}}</a>
-          <a href="/profile?user={{user}}&type=location">{{location}}</a>
+          <a href="/profile?type=nickname&user={{user}}">{{nickname}}</a>
+          <a href="/profile?type=location&user={{user}}">{{location}}</a>
         </div>
-        <a href="/profile?user={{user}}&type=qr" class="qr-code">
+        <a href="/profile?type=qr&user={{user}}" class="qr-code">
         </a>
       </div>
 
@@ -41,7 +41,7 @@
 
     {{/ionContent}}
 
-    {{>userTabBar}}
+    {{>tabBar}}
 
   {{/ionView}}
 

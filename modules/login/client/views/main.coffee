@@ -1,7 +1,7 @@
 Template.ionNavBar.events
 
   'click [data-action=skip-login]': (event, template)->
-    Router.go 'note.list'
+    Router.go "/post/list?category=#{PostCategory.note}"
 
 
 title = new ReactiveVar('登录')

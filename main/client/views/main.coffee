@@ -1,5 +1,5 @@
 Template.ionNavBar.events
 
   'click [data-action=my-data]': (event, template)->
-    preMainRoute Router.current().route.getName()
-    Router.go 'profile', {user: myId(), type: 'main'}
+    preMainRoute currentUrl()
+    Router.go "/profile?type=main&user=#{myId()}"

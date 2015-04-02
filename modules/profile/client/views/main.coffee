@@ -1,12 +1,11 @@
 Template.profileMain.rendered = ->
-  Session.set SessionKeys.currentTab, 'profile'
   $('.qr-code').qrcode
     text: myId()
 
 getLine = (type, label)->
   label: label
   data: @[type]
-  href: "/profile?user=#{@user}&type=#{type}"
+  href: "/profile?type=#{type}&user=#{@user}"
 
 Template.profileMain.helpers
   lines: -> [

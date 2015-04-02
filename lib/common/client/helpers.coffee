@@ -5,10 +5,12 @@
 
 @currentRouteQuery = ->
   current = Router.current()
-  current and current.route and current.getParams().query
+  current and current.getParams().query or {}
+
+@currentUrl = -> Iron.Location.get().path
 
 @userUrl = (userId)->
-  '/user/' + userId
+  "/profile?user=#{userId}"
 
 @getListLimit = (selector)->
   sel = JSON.stringify selector

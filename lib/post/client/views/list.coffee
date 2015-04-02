@@ -7,7 +7,6 @@ Template.postList.helpers
   isUsers: -> @user?
 
   title: ->
-    console.log @category
     (if @user is myId() then '我的' else '') + getConfigs(@category).label
 
   title2: ->
@@ -22,9 +21,5 @@ setEvents = (category)->
   events = {}
   _.each getConfigs(category).category2, (category2)->
     events["click .#{category}.#{category2}"] = ->
-      query = {}
-      query.category = category
-      query.category2 = category2
-      console.log($.param query)
-      Router.go 'post.list', {query: $.param query}
+      Router.go "/post/list?category=#{category}&category2=#{category2}"
   Template.postList.events events

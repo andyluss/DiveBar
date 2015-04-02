@@ -45,7 +45,7 @@ showActionSheet = (doc)->
         return true
 
 editPost = (doc)->
-  Router.go doc.category + '.updater', {id: doc._id}
+  Router.go "/post/updater?category=#{doc.category}&id=#{doc._id}"
 
 deletePost = (doc)->
   showConfirm = ->

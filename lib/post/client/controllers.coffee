@@ -2,12 +2,10 @@
   onAfterAction: ->
     selector = pq(@)
     subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
-    Session.set(SessionKeys.currentTab, "#{selector.category}.list");
   data: ->
     selector = pq(@)
     category = selector.category
     data = _.clone selector
-    console.log(selector)
     data.list = coln(category).find selector, {sort: {date: -1}}
     data.itemTemplate = getListItemTemplate(selector)
     return data
@@ -20,7 +18,8 @@ getListItemTemplate = (selector)->
   onAfterAction: ->
     subManager.subscribe 'post', pq(@).category, pq(@).id
     subManager.subscribe 'favoritesByUser', Meteor.userId()
-  data: -> coln(pq(@).category).findOne({_id: pq(@).id})
+  data: ->
+    coln(pq(@).category).findOne({_id: pq(@).id})
 
 @PostCreatorController = ContentController.extend
   data: -> pq @

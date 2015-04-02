@@ -1,4 +1,5 @@
 Template.registerHelper 'Favorites', (collection) ->
+	# TODO 改进
 	if typeof window['Favorites'] != 'undefined'
 		Favorites = []
 		favorites = window['Favorites'].find({user: Meteor.userId()},{sort: {createdAt: -1}}).fetch()

@@ -6,7 +6,7 @@
 
   {{#contentFor "headerButtonRight"}}
     {{#if currentUser}}
-      {{> favoriteButton _id=_id}}
+      {{> favoriteButton _id=_id category=category}}
     {{/if}}
     <button class="more-button button button-clear pull-right button-positive ion-more icon" data-action="post-more"></button>
   {{/contentFor}}

@@ -9,6 +9,7 @@ Template.favoriteButtonNotFavorited.events
 		Favorites.insert
 			doc: $(e.currentTarget).attr('doc')
 			user: Meteor.userId()
+			category: $(e.currentTarget).attr('category')
 
 Template.favoriteButtonFavorited.events
 	'click .favorite-button': (e,t) ->

@@ -9,8 +9,7 @@ getLine = (type, label)->
   icon: isMe(@user) and "ios-arrow-right" or ''
 
 Template.profileMain.helpers
-  isMe: -> return isMe(@user)
-  title: -> (isMe(@user) and '我' or userName(@user)) + '的名片'
+  title: -> userPrefix(@user, true) + '名片'
   lines: -> [
     getLine.call(@, 'qq', 'QQ')
     getLine.call(@, 'wechat', '微信')
@@ -48,7 +47,7 @@ Template.profileMain.events
         return true
 
 avatarName = ->
-  'avatar-' + Meteor.userId()
+  'avatar-' + myId()
 
 getPicture = (options)->
   options ?= {}
@@ -61,7 +60,7 @@ getPicture = (options)->
       console.log error
       return
     f = new FS.File data
-    f.user = Meteor.userId()
+    f.user = myId()
     f.creator = newImageCreator()
     f.name(avatarName())
     Images.insert f, (error, fileObj)->

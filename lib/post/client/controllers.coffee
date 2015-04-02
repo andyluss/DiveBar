@@ -8,6 +8,7 @@
     selector = pq(@)
     category = selector.category
     data = _.clone selector
+    selector = _.omit selector, 'favoritesby'
     data.list = coln(category).find selector, {sort: {date: -1}}
     data.itemTemplate = getListItemTemplate(selector)
 #    data.transition = 'none'
@@ -16,7 +17,7 @@
 @PostDetailController = ContentController.extend
   onAfterAction: ->
     subManager.subscribe 'post', pq(@).category, pq(@).id
-    subManager.subscribe 'favoritesByUser', Meteor.userId()
+    subManager.subscribe 'favoritesByUser', myId()
   data: ->
     coln(pq(@).category).findOne({_id: pq(@).id})
 

@@ -1,5 +1,6 @@
 Template.tabBar.helpers
   tabsData: ->
+    prefix = ''
     data = [
       getTabData(PostCategory.note, @user)
       getTabData(PostCategory.journey, @user)
@@ -9,7 +10,7 @@ Template.tabBar.helpers
     if @user
       path = "/profile?type=main&user=#{@user}"
       profile =
-        title: '名片'
+        title: userPrefix(@user) + '名片'
         href: path
         path: path
         iconOff: 'happy-outline'
@@ -22,7 +23,7 @@ getTabData = (category, user)->
   configs = getConfigs(category)
   path = "/post/list?category=#{category}" + (user? && "&user=#{user}" or '')
   return {
-    title: configs.label
+    title: userPrefix(user) + configs.label
     href: path
     path: path
     iconOff: configs.iconOff

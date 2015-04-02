@@ -7,7 +7,7 @@
   current = Router.current()
   current and current.getParams().query or {}
 
-@currentUrl = -> Iron.Location.get().path
+@currentPath = -> Iron.Location.get().path
 
 @userUrl = (userId)->
   "/profile?type=main&user=#{userId}"
@@ -27,10 +27,12 @@
   return Images.find {creator: creator}
 
 @newImageCreator = ->
-  Meteor.userId() + '-' + new Date().getTime()
+  myId() + '-' + new Date().getTime()
 
 Template.registerHelper 'users', ->
   Meteor.users
+
+Template.registerHelper 'isMe', (userId)-> isMe(userId or @user)
 
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path

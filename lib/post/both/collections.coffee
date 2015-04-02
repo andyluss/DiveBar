@@ -41,7 +41,7 @@
     regEx: SimpleSchema.RegEx.Id
     autoValue: ->
       if @isInsert
-        Meteor.userId()
+        myId()
     autoform:
       options: ->
         _.map Meteor.users.find().fetch(), (user)->

@@ -8,11 +8,15 @@
     {{>ionNavBackButton class="button-positive" text=false}}
   {{/contentFor}}
 
-  {{#if isMe}}
-    {{#contentFor "headerButtonRight"}}
+  {{#contentFor "headerButtonRight"}}
+    {{#if isMe}}
       <button class="button button-clear pull-right button-positive" data-action="logout">登出</button>
-    {{/contentFor}}
-  {{/if}}
+    {{else}}
+      {{#if currentUser}}
+        {{> favoriteButton _id=user}}
+      {{/if}}
+    {{/if}}
+  {{/contentFor}}
 
   {{#ionView class='profile'}}
 

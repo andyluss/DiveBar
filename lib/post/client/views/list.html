@@ -12,11 +12,35 @@
 
   {{else}}
 
-    {{#contentFor "headerButtonRight"}}
-      <button class="button button-clear pull-right button-positive" data-action="my-data">
-        {{> ionIcon icon='ios-person-outline'}}
-      </button>
-    {{/contentFor}}
+    {{#if favoritesby}}
+
+      {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-positive" text=false}}
+      {{/contentFor}}
+
+      {{#contentFor "headerButtonRight"}}
+      {{/contentFor}}
+
+    {{else}}
+
+      {{#if currentUser}}
+
+        {{#contentFor "headerButtonLeft"}}
+          <button class="button button-clear pull-left button-positive" data-action="favoritesby">
+            {{> ionIcon icon='ios-star-outline'}}
+          </button>
+        {{/contentFor}}
+
+      {{/if}}
+
+      {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear pull-right button-positive" data-action="my-data">
+          {{> ionIcon icon='ios-person-outline'}}
+        </button>
+      {{/contentFor}}
+
+    {{/if}}
+
 
   {{/if}}
 
@@ -39,7 +63,9 @@
 
     {{/ionContent}}
 
-    {{>tabBar}}
+    {{#unless favoritesby}}
+      {{>tabBar}}
+    {{/unless}}
 
   {{/ionView}}
 

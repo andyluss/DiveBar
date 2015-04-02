@@ -23,14 +23,17 @@ Template.postList.helpers
       _.values getConfigs(@category).category2
 
   showCategory2s: ->
-    return hasCategory2(@category) and not @user
+    return hasCategory2(@category) and not @user and not @favoritesby
 
 Template.ionNavBar.events
 
   'click [data-action=my-data]': (event, template)->
-    preMainRoute currentUrl()
+    preMainRoute currentPath()
     user = myId()? and "&user=#{myId()}" or ''
     Router.go "/profile?type=main" + user
+
+  'click [data-action=favoritesby]': (event, template)->
+    Router.go(currentPath() + "&favoritesby=#{myId()}")
 
 Template.postList.events
   'click .category2': -> Router.go "/post/list?category=#{Template.parentData().category}&category2=#{@}"

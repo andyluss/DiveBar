@@ -13,10 +13,10 @@
   _.contains(Meteor.user().roles, UserRoles.admin)
 
 @checkUser = (userId, doc)->
-  userId == doc.user or amIAdmin()
+  (userId == doc.user) or amIAdmin()
 
 @canEdit = (doc)->
-  doc.user == Meteor.userId() or amIAdmin()
+  (doc.user == myId()) or amIAdmin()
 
 @cap = (str)->
   s.capitalize str
@@ -25,7 +25,7 @@
   str + 's'
 
 @pcap = (str)->
-  plural cap str
+  plural cap(str)
 
 @coln = (category)->
   gbl()[pcap category]
@@ -44,6 +44,15 @@
 
 @mySelf = ->
   Meteor.user()
+
+@userPrefix = (userId, showName)->
+  prefix = ''
+  if userId
+    if isMe userId
+      prefix = '我的'
+    else
+      prefix = showName and (userName(userId) + '的') or '用户'
+  return prefix
 
 @userById = (userId)->
   if userId == myId()

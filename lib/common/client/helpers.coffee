@@ -10,7 +10,7 @@
 @currentUrl = -> Iron.Location.get().path
 
 @userUrl = (userId)->
-  "/profile?user=#{userId}"
+  "/profile?type=main&user=#{userId}"
 
 @getListLimit = (selector)->
   sel = JSON.stringify selector

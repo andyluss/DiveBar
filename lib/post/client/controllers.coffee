@@ -8,6 +8,7 @@
     data = _.clone selector
     data.list = coln(category).find selector, {sort: {date: -1}}
     data.itemTemplate = getListItemTemplate(selector)
+#    data.transition = 'none'
     return data
 
 getListItemTemplate = (selector)->

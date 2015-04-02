@@ -6,7 +6,6 @@ Template.tabBar.helpers
       getTabData(PostCategory.product, @user)
       getTabData(PostCategory.say, @user)
     ]
-    console.log(Session.get SessionKeys.currentTab)
     if @user
       path = "/profile?type=main&user=#{@user}"
       profile =
@@ -30,3 +29,11 @@ getTabData = (category, user)->
     iconOn: configs.iconOn
     class: "tab-item-positive"
   }
+
+Template.tabBar.onRendered ->
+  @$('.tabs').children().each ->
+    href = $(@).attr 'href'
+    current = Router.current().location.get().path
+    # TODO 弱约束,有待思考
+    if s.contains href, current
+      Session.set SessionKeys.currentTab, href

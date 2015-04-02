@@ -4,8 +4,6 @@ Template.postList.onCreated ->
 
 Template.postList.helpers
 
-  isUsers: -> @user?
-
   title: ->
     (if @user is myId() then '我的' else '') + getConfigs(@category).label
 
@@ -23,3 +21,10 @@ setEvents = (category)->
     events["click .#{category}.#{category2}"] = ->
       Router.go "/post/list?category=#{category}&category2=#{category2}"
   Template.postList.events events
+
+Template.ionNavBar.events
+
+  'click [data-action=my-data]': (event, template)->
+    preMainRoute currentUrl()
+    user = myId()? and "&user=#{myId()}" or ''
+    Router.go "/profile?type=main" + user

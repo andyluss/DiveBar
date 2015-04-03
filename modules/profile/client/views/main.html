@@ -13,7 +13,7 @@
       <button class="button button-clear pull-right button-positive" data-action="logout">登出</button>
     {{else}}
       {{#if currentUser}}
-        {{> favoriteButton _id=user}}
+        {{> favoriteButton _id=user category='user'}}
       {{/if}}
     {{/if}}
   {{/contentFor}}
@@ -41,6 +41,13 @@
             {{> ionIcon icon=icon}}
           {{/ionItem}}
         {{/each}}
+
+        {{#if isMe}}
+          {{#ionItem href=myFavoriteUsersPath iconRight=true}}
+            我的好友
+            {{> ionIcon icon='ios-arrow-right'}}
+          {{/ionItem}}
+        {{/if}}
 
       {{/ionList}}
 

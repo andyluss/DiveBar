@@ -11,3 +11,7 @@ Meteor.publishComposite 'profile', (user)->
   }
 
 
+
+Profiles.allow
+  update: (userId, doc)->
+    userId == doc.user

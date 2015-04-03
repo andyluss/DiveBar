@@ -54,18 +54,23 @@
       prefix = showName and (userName(userId) + '的') or '用户'
   return prefix
 
-@userById = (userId)->
-  if userId == myId()
-    mySelf()
+@idByUser = (user)->
+  if _.isObject(userId) and _.has user, '_id'
+    return user._id
   else
-    Meteor.users.findOne {_id: userId}
+    return user
 
-@userProfile = (userId)->
-  Profiles.findOne({user: userId})
+@userById = (userId)->
+  if _.isObject(userId) and _.has(userId, '_id')
+    return userId
+  if userId == myId()
+    return mySelf()
+  else
+    return Users.findOne {_id: userId}
 
-@avatarUrl = (userId)->
-    profile = userProfile userId
-    profile and imageUrl(profile.avatar) or defaultAvatarUrl
+@userProfile = (userId)-> Profiles.findOne {user: userId}
+
+@userUrl = (userId)-> "/profile?type=main&user=#{userId}"
 
 @userName = (userId)->
   user = userById userId
@@ -81,9 +86,21 @@
 @firstImagesByCreator = (creator)->
   Images.findOne {creator: creator}
 
-@imageUrl = (imageIdOrImage, store)->
-  if typeof imageIdOrImage is 'string'
-    image = Images.findOne {_id: imageIdOrImage}
-  else
-    image = imageIdOrImage
-  return image?.url({store: store or 'images'}) or ''
+@imageUrl = (image, store)->
+  check store, Match.Optional(String)
+  if typeof image is 'string'
+    image = Images.findOne {_id: image}
+  return image?.url({store: store or ImageStores.images}) or ''
+
+@avatarUrl = (userId)->
+  profile = userProfile userId
+  profile and imageUrl(profile.avatar, ImageStores.thumbs) or defaultAvatarUrl
+
+@selectFavorites = (selector)->
+  if selector.favoritesby
+    # TODO 可以改进
+    favs = Favorites.find({user: selector.favoritesby, category: selector.category}).fetch()
+    favs = _.pluck favs, 'doc'
+    selector = _.extend selector, {_id: {$in: favs}}
+    selector = _.omit selector, 'favoritesby'
+  return selector

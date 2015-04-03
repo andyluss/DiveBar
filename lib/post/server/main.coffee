@@ -1,20 +1,19 @@
+@createPostPermission = (category)->
+  coln(category).allow
+    insert: checkUser
+    update: checkUser
+    remove: checkUser
+
 
 Meteor.publishComposite 'postList', (selector, limit)->
   {
   find: ->
     category = selector.category
-    sel = _.omit selector, 'category'
     # Count
-    Counts.publish @, getCountName(selector), coln(category).find(sel), {noReady: true}
+    Counts.publish @, getCountName(selector), coln(category).find(_.omit(selector, 'category')), {noReady: true}
 
-    favoritesby = sel.favoritesby
-    sel = _.omit sel, 'favoritesby'
-    if favoritesby
-      # TODO 可以改进
-      favs = Favorites.find({user: favoritesby, category: category}).fetch()
-      favs = _.pluck favs, 'doc'
-      sel = _.extend sel, {_id: {$in: favs}}
-    coln(category).find(sel, {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
+    selector = selectFavorites(selector)
+    coln(category).find(_.omit(selector, 'category'), {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
 
   children: [
     docUserComposite()

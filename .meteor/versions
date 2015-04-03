@@ -13,7 +13,7 @@ autoupdate@1.2.1
 base64@1.0.3
 bengott:avatar@0.7.5
 binary-heap@1.0.3
-blaze@2.1.1
+blaze@2.1.2
 blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
@@ -107,7 +107,7 @@ sacha:spin@2.0.4
 service-configuration@1.0.4
 session@1.1.0
 sha@1.0.3
-softwarerero:accounts-t9n@1.0.8
+softwarerero:accounts-t9n@1.0.9
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 spectrum:photoswipe@1.0.0

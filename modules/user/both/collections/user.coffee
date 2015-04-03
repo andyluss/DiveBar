@@ -1,4 +1,6 @@
-Meteor.users.attachSchema new SimpleSchema
+@Users = Meteor.users
+
+Users.attachSchema new SimpleSchema
 
   username:
     type: String

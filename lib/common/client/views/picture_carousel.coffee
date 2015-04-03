@@ -1,7 +1,5 @@
 Template.pictureCarousel.helpers
-  pictures: ->
-    images = imagesByCreator(@creator)
-    return images
+  pictures: -> imagesByCreator(@creator)
 
 Template.pictureCarousel.events
 
@@ -13,7 +11,7 @@ showPhotoSwipe = (doc, container, index)->
   items = []
 
   getItem = (image)->
-    url = image.url({store:'images'})
+    url = image.url({store:ImageStores.images})
     if image
       item =
         src: url

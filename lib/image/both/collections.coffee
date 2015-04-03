@@ -10,13 +10,13 @@ createThumb = (fileObj, readStream, writeStream)->
 
 @Images = new FS.Collection 'images',
   stores: [
-    new FS.Store.FileSystem "thumbs",
+    new FS.Store.FileSystem ImageStores.thumbs,
       beforeWrite: (fileObj)->
         extension: 'png'
         type: 'image/png'
       transformWrite: createThumb
 
-    new FS.Store.FileSystem 'images',
+    new FS.Store.FileSystem ImageStores.images,
       transformWrite: (fileObj, readStream, writeStream)->
         # read image dimensions and write to metadata
         gm readStream

@@ -44,7 +44,7 @@
         myId()
     autoform:
       options: ->
-        _.map Meteor.users.find().fetch(), (user)->
+        _.map Users.find().fetch(), (user)->
           label: user.emails[0].address
           value: user._id
 

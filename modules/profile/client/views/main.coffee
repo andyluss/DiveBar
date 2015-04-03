@@ -10,6 +10,9 @@ getLine = (type, label)->
 
 Template.profileMain.helpers
   title: -> userPrefix(@user, true) + '名片'
+  nickname: -> @nickname or '添加昵称'
+  location: -> @location or '添加地址'
+
   lines: -> [
     getLine.call(@, 'qq', 'QQ')
     getLine.call(@, 'wechat', '微信')
@@ -17,8 +20,7 @@ Template.profileMain.helpers
     getLine.call(@, 'signature', '签名')
   ]
 
-  nickname: -> @nickname or '添加昵称'
-  location: -> @location or '添加地址'
+  myFavoriteUsersPath: -> "/user/list?favoritesby=#{myId()}"
 
 Template.ionNavBar.events
 

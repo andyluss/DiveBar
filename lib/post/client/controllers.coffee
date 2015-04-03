@@ -3,29 +3,27 @@
     checkCategory2.call(@)
     selector = pq(@)
     subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
+    subscribeMyFavorites()
   data: ->
     checkCategory2.call(@)
     selector = pq(@)
-    category = selector.category
     data = _.clone selector
-    selector = _.omit selector, 'favoritesby'
-    data.list = coln(category).find selector, {sort: {date: -1}}
+    selector = selectFavorites(selector)
+    data.list = coln(selector.category).find selector, {sort: {date: -1}}
     data.itemTemplate = getListItemTemplate(selector)
-#    data.transition = 'none'
-    return data
+    return noTransition data
 
 @PostDetailController = ContentController.extend
   onAfterAction: ->
     subManager.subscribe 'post', pq(@).category, pq(@).id
-    subManager.subscribe 'favoritesByUser', myId()
-  data: ->
-    coln(pq(@).category).findOne({_id: pq(@).id})
+    subscribeMyFavorites()
+  data: -> noTransition coln(pq(@).category).findOne({_id: pq(@).id})
 
 @PostCreatorController = ContentController.extend
-  data: -> pq @
+  data: -> noTransition pq(@)
 
 @PostUpdaterController = ContentController.extend
-  data: -> coln(pq(@).category).findOne({_id: pq(@).id})
+  data: -> noTransition coln(pq(@).category).findOne({_id: pq(@).id})
 
 getListItemTemplate = (selector)->
   cfg = getConfigs selector.category

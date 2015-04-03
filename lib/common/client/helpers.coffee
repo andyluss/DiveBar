@@ -1,3 +1,10 @@
+@subscribeMyFavorites = ->
+  subManager.subscribe 'favoritesByUser', myId()
+
+@noTransition = (data)->
+  if _.isObject data
+    data.transition = 'none'
+  return data
 
 @currentRoute = ->
   current = Router.current()
@@ -8,9 +15,6 @@
   current and current.getParams().query or {}
 
 @currentPath = -> Iron.Location.get().path
-
-@userUrl = (userId)->
-  "/profile?type=main&user=#{userId}"
 
 @getListLimit = (selector)->
   sel = JSON.stringify selector
@@ -23,14 +27,11 @@
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]
   $(backButton).click()
 
-@imagesUploaded = (creator)->
-  return Images.find {creator: creator}
+@imagesUploaded = (creator)-> Images.find {creator: creator}
 
-@newImageCreator = ->
-  myId() + '-' + new Date().getTime()
+@newImageCreator = -> myId() + '-' + new Date().getTime()
 
-Template.registerHelper 'users', ->
-  Meteor.users
+Template.registerHelper 'users', -> Users
 
 Template.registerHelper 'isMe', (userId)-> isMe(userId or @user)
 
@@ -57,13 +58,16 @@ Template.registerHelper 'userUrl', (userId)-> userUrl userId
 
 Template.registerHelper 'avatarUrl', (userId)-> avatarUrl userId
 
-Template.registerHelper 'imageUrl', (image)-> imageUrl image
+Template.registerHelper 'imageUrl', (image, store)->
+  if not _.isString store
+    store = undefined
+  imageUrl image, store
 
 Template.registerHelper 'firstPicture', ->
   imageUrl firstImagesByCreator(@creator)
 
 Template.registerHelper 'firstPictureThumb', ->
-  imageUrl firstImagesByCreator(@creator), 'thumbs'
+  imageUrl firstImagesByCreator(@creator), ImageStores.thumbs
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend @, {itemTemplate: itemTemplate}

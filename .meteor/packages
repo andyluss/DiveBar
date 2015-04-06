@@ -13,10 +13,13 @@ accounts-ui
 launch-screen
 reactive-var
 
+# Packages local
+
+favorites
+
 # Packages from Atmosphere:
 
 mdg:geolocation
-mquandalle:jade
 mquandalle:stylus
 mquandalle:bower
 aldeed:autoform
@@ -24,7 +27,6 @@ aldeed:collection2
 aldeed:simple-schema
 alanning:roles
 fortawesome:fontawesome
-meteoric:autoform-ionic
 useraccounts:ionic
 iron:router
 zimme:iron-router-active
@@ -35,13 +37,12 @@ reywood:publish-composite
 bengott:avatar
 momentjs:moment
 softwarerero:accounts-t9n
-fourseven:scss@=1.0.0
+fourseven:scss@=2.0.1_5
 meteoric:ionicons-sass
 meteoric:ionic-sass
 meteoric:ionic
 meteoric:camera
 udondan:slick
-yogiben:favorites
 aldeed:template-extension
 arkham:comments-ui
 meteorhacks:subs-manager
@@ -56,3 +57,4 @@ multiply:iron-router-progress
 steeve:jquery-qrcode
 underscorestring:underscore.string
 tmeasday:publish-counts
+iron:location

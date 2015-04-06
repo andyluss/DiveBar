@@ -4,7 +4,7 @@ Products.attachSchema new SimpleSchema
 
   price:
     type: Number
-    label: '价格'
+    label: '价格（元）'
     defaultValue: 100
     min: 0
     optional: true
@@ -13,10 +13,3 @@ Products.attachSchema new SimpleSchema
     type: Number
     label: '阅读数'
     optional: true
-
-if Meteor.isClient
-  Template.productList.onCreated ->
-    @data.lists[0].itemTemplate = 'imageItem'
-    @data.lists[1].itemTemplate = 'userProductItem'
-  Template.myProductList.onCreated ->
-    @data.itemTemplate = 'userProductItem'

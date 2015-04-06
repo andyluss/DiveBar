@@ -4,4 +4,4 @@ Template.userProductItem.helpers
 
 Template.userProductItem.events
   'click .product-item.user': ()->
-    Router.go "product.detail", {id: @_id}
+    Router.go "/post/detail?category=#{@category}&id=#{@_id}"

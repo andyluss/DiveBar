@@ -4,36 +4,68 @@
     <h1 class="title">{{title}}</h1>
   {{/contentFor}}
 
-  {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="my-data">
-    {{> ionIcon icon='ios-person-outline'}}
-    </button>
-  {{/contentFor}}
+  {{#if user}}
+
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="button-positive" text=false}}
+    {{/contentFor}}
+
+  {{else}}
+
+    {{#if favoritesby}}
+
+      {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-positive" text=false}}
+      {{/contentFor}}
+
+      {{#contentFor "headerButtonRight"}}
+      {{/contentFor}}
+
+    {{else}}
+
+      {{#if currentUser}}
+
+        {{#contentFor "headerButtonLeft"}}
+          <button class="button button-clear pull-left button-positive" data-action="favoritesby">
+            {{> ionIcon icon='ios-star-outline'}}
+          </button>
+        {{/contentFor}}
+
+      {{/if}}
+
+      {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear pull-right button-positive" data-action="my-data">
+          {{> ionIcon icon='ios-person-outline'}}
+        </button>
+      {{/contentFor}}
+
+    {{/if}}
+
+
+  {{/if}}
 
   {{#ionView class='post-list'}}
     {{#ionContent}}
 
-      {{#if lists}}
+      {{#if showCategory2s}}
 
         <div class="category2-container">
-          {{#each lists}}
-            <a class="category2 {{category}} {{category2}} {{isSelect category2}}">
-              <label>{{title2 category category2}}</label>
+          {{#each category2s}}
+            <a class="category2 {{../category}} {{this}} {{isSelect this}}">
+              <label>{{title2}}</label>
             </a>
           {{/each}}
         </div>
 
-        {{#with selectedList}}
-          {{>listLoader}}
-        {{/with}}
-
-      {{else}}
-        {{>listLoader}}
       {{/if}}
+
+      {{>listLoader}}
 
     {{/ionContent}}
 
-    {{>tabBar}}
+    {{#unless favoritesby}}
+      {{>tabBar}}
+    {{/unless}}
 
   {{/ionView}}
 

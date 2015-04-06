@@ -1,14 +1,30 @@
 <template name="tabBar">
 
-  {{#ionTabs style="ios" class='tab-bar'}}
+    {{#ionTabs style="ios" class='tab-bar'}}
 
-    {{> ionTab title=strNote path="note.list" iconOff="ios-bolt-outline" iconOn="ios-bolt" class="tab-item-positive"}}
-    {{> ionTab title=strJourney path="journey.list" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}
-    {{> ionTab title=strProduct path="product.list" iconOff="ios-bell-outline" iconOn="ios-bell" class="tab-item-positive"}}
-    {{> ionTab title=strSay path="say.list" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
+        {{#each tabsData}}
+          {{> ionTab}}
+        {{/each}}
 
-    <a class="add-button button button-icon icon ion-plus" href="/{{currentRouteType}}/creator"></a>
+        {{#unless user}}
+          <a class="add-button button button-icon icon ion-plus" href="/post/creator?category={{currentRouteCategory}}"></a>
+        {{/unless}}
 
-  {{/ionTabs}}
+        <div class="bottom-nav">
+            <div class="mask-top"></div>
+            <div class="mask-ref"></div>
+            <div class="add-area">
+                <div class="bottom-nav-in">
+                </div>
+            </div>
+            <div class="add-left"></div>
+            <div class="add-right"></div>
+            <div class="add-shadow-left"></div>
+            <div class="add-shadow-right"></div>
+            <div class="add-shadow-top"></div>
+            <div class="add-shadow-bottom"></div>
+        </div>
+
+    {{/ionTabs}}
 
 </template>

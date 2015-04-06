@@ -6,7 +6,7 @@
 
   {{#contentFor "headerButtonRight"}}
     {{#if currentUser}}
-      {{> favoriteButton _id=_id}}
+      {{> favoriteButton _id=_id category=category}}
     {{/if}}
     <button class="more-button button button-clear pull-right button-positive ion-more icon" data-action="post-more"></button>
   {{/contentFor}}
@@ -20,23 +20,15 @@
 
       <div class="post-detail">
 
-        {{#if pictures}}
-          <div class="picture-carousel">
-            {{#ionSlideBox showPager=true}}
-              {{#each pictures}}
-                <div class="picture-container">
-                  <img class="picture" src="{{imageUrl this}}">
-                </div>
-              {{/each}}
-            {{/ionSlideBox}}
-          </div>
+        {{#if hasPicture}}
+          {{>pictureCarousel}}
         {{/if}}
 
         <div class="title-container">
           <label class="title">{{title}}</label>
-          <label class="owner">
-            <a href="{{userUrl owner}}">
-              {{userName owner}}
+          <label class="user">
+            <a href="{{userUrl user}}">
+              {{userName user}}
             </a>
           </label>
           <label class="date">{{dateString date}}</label>
@@ -49,7 +41,7 @@
         {{/if}}
 
         {{#if this}}
-          {{>commentsBox id=_id content=commentStrings customTemplate='postCommentBox'}}
+          {{>commentsBox id=_id content=commentStrings customTemplate='commonCommentBox'}}
         {{/if}}
 
       </div>

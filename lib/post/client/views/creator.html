@@ -5,20 +5,19 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="button button-clear pull-right button-positive" data-action="save-post">保存</button>
+    <button class="button button-clear pull-right button-positive" data-action="create-post" form={{formId}}>发布</button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">添加游记</h1>
+    <h1 class="title">添加{{label}}</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
 
-      <div class='post-creator padding'>
+      <div class='post-creator'>
 
-        <input type="text" class="title" maxlength="20" placeholder="标题">
-        <textarea class="content" placeholder="这一刻想发表什么..."></textarea>
+        {{>quickForm collection=formCollection id=formId type="insert" resetOnSuccess=false buttonContent=false omitFields=formOmitFields}}
 
         {{>imageUploader creator=creator}}
 

@@ -35,16 +35,16 @@
     label: '分类'
     defaultValue: 'post'
 
-  owner:
+  user:
     type: String
     label: '作者'
     regEx: SimpleSchema.RegEx.Id
     autoValue: ->
       if @isInsert
-        Meteor.userId()
+        myId()
     autoform:
       options: ->
-        _.map Meteor.users.find().fetch(), (user)->
+        _.map Users.find().fetch(), (user)->
           label: user.emails[0].address
           value: user._id
 
@@ -65,6 +65,8 @@
     type: String
     label: '标题'
     max: 20
+    autoform:
+      placeholder: '标题...'
 
   content:
     type: String
@@ -72,7 +74,8 @@
     optional: true
     max: 1000
     autoform:
-      rows: 10
+      rows: 6
+      placeholder: '这一刻想发表什么...'
 
   date:
     type: Date
@@ -81,12 +84,8 @@
       if @isInsert
         new Date()
 
-  pictures:
-    type: [String]
-    label: '图片'
-    optional: true
-
   creator:
     type: String
     label: '（开发辅助用）创建者标记'
+    optional: true
 

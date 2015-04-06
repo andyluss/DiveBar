@@ -1,47 +1,52 @@
+@subscribeMyFavorites = ->
+  subManager.subscribe 'favoritesByUser', myId()
 
+@noTransition = (data)->
+  if _.isObject data
+    data.transition = 'none'
+  return data
 
+@currentRoute = ->
+  current = Router.current()
+  current and current.route and current.route.getName() or ''
 
-@getTopLimit = (category, category2, isMy)->
-  category ?= ''
-  category2 ?= ''
-  my = isMy and 'My' or ''
-  pcCategory = category and plural s.capitalize category or ''
-  capCategory2 = category2 and s.capitalize category2 or ''
-  if not getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"]
-    getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"] = new ReactiveVar 10
-  return getConfigs(category)["top#{my}#{pcCategory}#{capCategory2}Limit"]
+@currentRouteQuery = ->
+  current = Router.current()
+  current and current.getParams().query or {}
+
+@currentLocation = -> Iron.Location.get()
+
+@currentPath = -> Iron.Location.get().path
+
+@getListLimit = (selector)->
+  sel = JSON.stringify selector
+  category = sel.category
+  if not getConfigs(category)["listLimit_#{sel}"]
+    getConfigs(category)["listLimit_#{sel}"] = new ReactiveVar 10
+  return getConfigs(category)["listLimit_#{sel}"]
 
 @back = ->
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]
   $(backButton).click()
 
-@imagesUploaded = (creator)->
-  Images.find {creator: creator}
+@imagesUploaded = (creator)-> Images.find {creator: creator}
 
-@newImageCreator = ->
-  Meteor.userId() + '-' + new Date().getTime()
+@newImageCreator = -> myId() + '-' + new Date().getTime()
 
-Template.registerHelper 'users', ->
-  Meteor.users
+Template.registerHelper 'users', -> Users
+
+Template.registerHelper 'isMe', (userId)-> isMe(userId or @user)
 
 Template.registerHelper "absoluteUrl", (path)->
   Meteor.absoluteUrl path
 
-Template.registerHelper "currentRoute", ->
-  current = Router.current()
-  current and current.route and current.route.getName() or ''
+Template.registerHelper "currentRoute", -> currentRoute()
 
-Template.registerHelper "currentRouteIs", (name)->
-  current = Router.current()
-  current and current.route and current.route.getName() == name or false
+Template.registerHelper "currentRouteIs", (name)-> currentRoute() is name
 
-Template.registerHelper "currentRouteType", ->
-  current = Router.current()
-  current and current.route and current.route.getName() and current.route.getName().split('.')[0]
+Template.registerHelper "currentRouteCategory", -> currentRouteQuery()?.category
 
-Template.registerHelper "activeRoute", (name)->
-  current = Router.current()
-  current and current.route and current.route.getName() == name and "active" or ""
+Template.registerHelper "activeRoute", (name)-> (currentRoute() is name) and 'active' or ''
 
 Template.registerHelper 'dateString', (date)->
   moment(date).format('YYYY/M/D')
@@ -49,27 +54,22 @@ Template.registerHelper 'dateString', (date)->
 Template.registerHelper 'firstOne', (array)->
     if array and array.length > 0 then array[0] else ''
 
-Template.registerHelper 'userName', (userId)->
-  user = userById userId
-  if user
-    profile = userProfile userId
-    profile and profile.nickname or user.username or user.emails[0].address.split('@')[0]
-  else
-    '游客'
+Template.registerHelper 'userName', (userId)-> userName userId
 
-@userUrl = (userId)->
-  '/user/' + userId
+Template.registerHelper 'userUrl', (userId)-> userUrl userId
 
-Template.registerHelper 'userUrl', (userId)->
-  userUrl userId
+Template.registerHelper 'avatarUrl', (userId)-> avatarUrl userId
 
-Template.registerHelper 'imageUrl', imageUrl
+Template.registerHelper 'imageUrl', (image, store)->
+  if not _.isString store
+    store = undefined
+  imageUrl image, store
 
 Template.registerHelper 'firstPicture', ->
-  if @pictures and @pictures.length > 0
-    imageUrl @pictures[0]
-  else
-    ''
+  imageUrl firstImagesByCreator(@creator)
+
+Template.registerHelper 'firstPictureThumb', ->
+  imageUrl firstImagesByCreator(@creator), ImageStores.thumbs
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
-  _.extend this, {itemTemplate: itemTemplate}
+  _.extend @, {itemTemplate: itemTemplate}

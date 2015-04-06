@@ -4,7 +4,7 @@ Meteor.startup ->
       creator = @creator
       FS.Utility.eachFile event, (file)->
         f = new FS.File file
-        f.owner = Meteor.userId()
+        f.user = myId()
         f.creator = creator
         if not f.name()
           f.name(f.creator)
@@ -16,7 +16,7 @@ Meteor.startup ->
 
 #    'change .image-input': FS.EventHandlers.insertFiles Images,
 #      metadata: (fileObj)->
-#        owner: Meteor.userId()
+#        user: myId()
 #        creator: @creator
 #      after: (error, fileObj)->
 #        if error
@@ -29,4 +29,4 @@ Template.imageUploader.helpers
     imagesUploaded(@creator)
 
 Template.imageUploader.rendered = ->
-  Meteor.subscribe 'imagesUploaded', Meteor.userId(), @data.creator
+  Meteor.subscribe 'imagesUploaded', myId(), @data.creator

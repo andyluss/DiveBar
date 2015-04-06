@@ -1,8 +1,8 @@
 Template.imageItem.events
 
   'click .image-item': ->
-    Router.go @category + ".detail", {id: @_id}
+    Router.go "/post/detail?category=#{@category}&id=#{@_id}"
 
-  'click .image-item .owner': (event)->
+  'click .image-item .user': (event)->
     event.stopImmediatePropagation()
-    Router.go userUrl(@owner)
+    Router.go userUrl(@user)

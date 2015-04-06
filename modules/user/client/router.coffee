@@ -1,2 +1,1 @@
-Router.route '/user/:id',
-  name: 'user.detail'
+Router.route "/user/list"

@@ -1,28 +1,32 @@
-Template.postList.created = ->
-  if @data.lists
-    if not Session.get @data.category + 'Category2Current'
-      Session.set @data.category + 'Category2Current', getConfigs(@data.category).category2Default
-    setEvents @data.lists
-
 Template.postList.helpers
 
-  title: -> PostCategoryLabel[@category]
+  title: -> userPrefix(@user, true) + getConfigs(@category).label
 
-  title2: (category, category2)->
-    capCat = s.capitalize category
-    getConfigs(category).category2Label[category2]
+  title2: -> getConfigs(Template.parentData().category).category2Label[@]
 
   isSelect: (category2)->
-    if Session.get(@category + 'Category2Current') == category2 then 'selected' else ''
+    routeCat2 = currentRouteQuery().category2
+    if routeCat2
+      routeCat2 == category2 and 'selected' or ''
+    else
+      category2 == getConfigs(Template.parentData().category).category2Default and 'selected' or ''
 
-  selectedList: ->
-    for list in @lists
-      if list.category2 == Session.get(@category + 'Category2Current')
-        return list
+  category2s: ->
+    if hasCategory2(@category)
+      _.values getConfigs(@category).category2
 
-setEvents = (lists)->
-  events = {}
-  _.each lists, (list)->
-    events["click .#{list.category}.#{list.category2}"] = ->
-      Session.set list.category + 'Category2Current', list.category2
-  Template.postList.events events
+  showCategory2s: -> hasCategory2(@category) and not @user and not @favoritesby
+
+Template.ionNavBar.events
+
+  'click [data-action=my-data]': (event, template)->
+    preMainRoute currentPath()
+    user = myId()? and "&user=#{myId()}" or ''
+    Router.go "/profile?type=main" + user
+
+  'click [data-action=favoritesby]': (event, template)->
+#    setPostList 'favoritesby', myId()
+    Router.go(currentPath() + "&favoritesby=#{myId()}")
+
+Template.postList.events
+  'click .category2': -> Router.go "/post/list?category=#{Template.parentData().category}&category2=#{@}"

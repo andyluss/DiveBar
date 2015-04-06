@@ -1,0 +1,23 @@
+<template name="profileMobile">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">手机号</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="save-mobile">保存</button>
+  {{/contentFor}}
+
+  {{#ionView class='profile-mobile'}}
+
+    {{#ionContent}}
+      <input class="profile-input" autofocus type="text" maxlength="20" placeholder="请输入您的手机号" pattern="/^[0-9]{5,20}$/" value={{mobile}}>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

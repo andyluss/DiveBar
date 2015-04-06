@@ -1,7 +1,7 @@
 
 Router.route '/', ->
-  if Meteor.userId()
-    @redirect '/note/list'
+  if myId()
+    @redirect '/post/list?category=note'
   else
     @redirect '/login'
 

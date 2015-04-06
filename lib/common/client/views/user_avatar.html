@@ -1,7 +1,7 @@
 <template name="userAvatar">
-  <div class="image-container">
-    <a href="{{userUrl userId}}">
-      <img src="/images/default_avatar.png">
+  <div class="user-avatar image-container">
+    <a href="{{userUrl this}}">
+      <img src="{{avatarUrl this}}">
     </a>
   </div>
 </template>

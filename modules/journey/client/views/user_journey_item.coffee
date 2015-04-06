@@ -1,3 +1,3 @@
 Template.userJourneyItem.events
   'click .right-box': ->
-    Router.go 'journey.detail', {id: @_id}
+    Router.go "/post/detail?category=#{@category}&id=#{@_id}"

@@ -1,0 +1,23 @@
+<template name="profileQq">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">QQ</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-positive" data-action="save-qq">保存</button>
+  {{/contentFor}}
+
+  {{#ionView class='profile-qq'}}
+
+    {{#ionContent}}
+      <input class="profile-input" autofocus type="text" maxlength="50" placeholder="请输入您的QQ号" value={{qq}}>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

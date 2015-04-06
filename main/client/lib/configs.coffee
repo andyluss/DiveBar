@@ -8,5 +8,6 @@
 
 @SessionKeys =
   currentTab: 'ionTab.current'
+  listQuery: 'listQuery'
 
 

@@ -20,7 +20,6 @@ favorites
 # Packages from Atmosphere:
 
 mdg:geolocation
-mquandalle:jade
 mquandalle:stylus
 mquandalle:bower
 aldeed:autoform

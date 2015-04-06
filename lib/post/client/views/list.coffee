@@ -1,13 +1,6 @@
 Template.postList.helpers
 
-  title: ->
-    prefix = ''
-    if @user
-      if @user is myId()
-        prefix = '我的'
-      else
-        prefix = userName(@user) + '的'
-    return prefix + getConfigs(@category).label
+  title: -> userPrefix(@user, true) + getConfigs(@category).label
 
   title2: -> getConfigs(Template.parentData().category).category2Label[@]
 
@@ -22,8 +15,7 @@ Template.postList.helpers
     if hasCategory2(@category)
       _.values getConfigs(@category).category2
 
-  showCategory2s: ->
-    return hasCategory2(@category) and not @user and not @favoritesby
+  showCategory2s: -> hasCategory2(@category) and not @user and not @favoritesby
 
 Template.ionNavBar.events
 
@@ -33,6 +25,7 @@ Template.ionNavBar.events
     Router.go "/profile?type=main" + user
 
   'click [data-action=favoritesby]': (event, template)->
+#    setPostList 'favoritesby', myId()
     Router.go(currentPath() + "&favoritesby=#{myId()}")
 
 Template.postList.events

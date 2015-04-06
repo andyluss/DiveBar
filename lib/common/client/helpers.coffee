@@ -14,6 +14,8 @@
   current = Router.current()
   current and current.getParams().query or {}
 
+@currentLocation = -> Iron.Location.get()
+
 @currentPath = -> Iron.Location.get().path
 
 @getListLimit = (selector)->

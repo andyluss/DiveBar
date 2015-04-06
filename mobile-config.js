@@ -1,5 +1,5 @@
 App.info({
-  name: 'Dive Bar',
+  name: 'DiveBar',
   description: 'Dive Bar Desc.',
   author: 'Dive Bar Author',
   email: 'root@divebar.com',

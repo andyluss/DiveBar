@@ -1,14 +1,14 @@
 <template name="postDetail">
 
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton class="button-positive" text=false}}
+    {{>ionNavBackButton class="button-light" text=false}}
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
     {{#if currentUser}}
       {{> favoriteButton _id=_id category=category}}
     {{/if}}
-    <button class="more-button button button-clear pull-right button-positive ion-more icon" data-action="post-more"></button>
+    <button class="more-button button button-clear pull-right button-light ion-more icon" data-action="post-more"></button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}

@@ -15,7 +15,7 @@ Template.tabBar.helpers
         path: path
         iconOff: 'happy-outline'
         iconOn: 'happy'
-        class: "tab-item-positive"
+        class: "tab-item-light"
       data.splice(2, 0, profile)
 
     renderTabs()
@@ -30,7 +30,7 @@ getTabData = (category, user)->
     path: path
     iconOff: configs.iconOff
     iconOn: configs.iconOn
-    class: "tab-item-positive"
+    class: "tab-item-light"
   }
 
 renderTabs = ->

@@ -17,6 +17,8 @@ Template.tabBar.helpers
         iconOn: 'happy'
         class: "tab-item-positive"
       data.splice(2, 0, profile)
+
+    renderTabs()
     return data
 
 getTabData = (category, user)->
@@ -31,7 +33,7 @@ getTabData = (category, user)->
     class: "tab-item-positive"
   }
 
-Template.tabBar.onRendered ->
+renderTabs = ->
   @$('.tabs').children().each ->
     href = $(@).attr 'href'
     current = Router.current().location.get().path

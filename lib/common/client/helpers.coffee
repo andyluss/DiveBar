@@ -2,8 +2,8 @@
   subManager.subscribe 'favoritesByUser', myId()
 
 @noTransition = (data)->
-  if _.isObject data
-    data.transition = 'none'
+#  if _.isObject data
+#    data.transition = 'none'
   return data
 
 @currentRoute = ->

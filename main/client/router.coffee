@@ -1,4 +1,3 @@
-
 Router.route '/', ->
   if myId()
     @redirect '/post/list?category=note'
@@ -6,5 +5,6 @@ Router.route '/', ->
     @redirect '/login'
 
 
-
-
+Router.configure
+  progressDelay: 300
+  progressTick: false

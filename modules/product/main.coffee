@@ -12,4 +12,5 @@ Products.attachSchema new SimpleSchema
   viewCount:
     type: Number
     label: '阅读数'
+    defaultValue: 0
     optional: true

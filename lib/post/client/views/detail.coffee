@@ -2,8 +2,8 @@ Template.postDetail.helpers
   commentStrings: ->
     'add-button': '提交'
     'placeholder-textarea': '你有什么想表达的...'
-  hasPicture: ->
-    imagesByCreator(@creator).count() > 0
+  hasPicture: -> imagesByCreator(@creator).count() > 0
+  moreDetailTemplate: -> "#{@category}MoreDetail"
 
 Template.ionNavBar.events
   'click [data-action=post-more]': (event, template)->

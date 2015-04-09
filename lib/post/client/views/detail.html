@@ -40,6 +40,12 @@
           </div>
         {{/if}}
 
+        <div class="more-detail">
+          {{#if moreDetailTemplate}}
+            {{>Template.dynamic template=moreDetailTemplate}}
+          {{/if}}
+        </div>
+
         {{#if this}}
           {{>commentsBox id=_id content=commentStrings customTemplate='commonCommentBox'}}
         {{/if}}

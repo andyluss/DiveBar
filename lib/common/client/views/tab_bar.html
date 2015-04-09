@@ -7,7 +7,9 @@
         {{/each}}
 
         {{#unless user}}
-          <a class="add-button button button-clear button-icon icon ion-plus-circled" href="/post/creator?category={{currentRouteCategory}}"></a>
+          <a class="add-button button button-clear" href="/post/creator?category={{currentRouteCategory}}">
+            {{>ionIcon icon='plus-circled'}}
+          </a>
         {{/unless}}
 
         <!--<div class="bottom-nav">-->

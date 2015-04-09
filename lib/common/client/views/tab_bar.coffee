@@ -13,10 +13,16 @@ Template.tabBar.helpers
         title: userPrefix(@user) + '名片'
         href: path
         path: path
-        iconOff: 'happy-outline'
-        iconOn: 'happy'
-        class: "tab-item-positive"
+        icon: 'card'
+        class: "tab-item-light"
       data.splice(2, 0, profile)
+    else
+      dummy =
+        title: ''
+        class: "dummy"
+      data.splice(2, 0, dummy)
+
+    renderTabs()
     return data
 
 getTabData = (category, user)->
@@ -26,12 +32,11 @@ getTabData = (category, user)->
     title: userPrefix(user) + configs.label
     href: path
     path: path
-    iconOff: configs.iconOff
-    iconOn: configs.iconOn
-    class: "tab-item-positive"
+    icon: configs.icon
+    class: "tab-item-light"
   }
 
-Template.tabBar.onRendered ->
+renderTabs = ->
   @$('.tabs').children().each ->
     href = $(@).attr 'href'
     current = Router.current().location.get().path

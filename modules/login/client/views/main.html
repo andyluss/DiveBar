@@ -7,13 +7,13 @@
   {{#if currentRouteIs 'login'}}
 
     {{#contentFor "headerButtonRight"}}
-      <button class="button button-clear pull-right button-positive" data-action="skip-login">跳过</button>
+      <button class="button button-clear pull-right button-light" data-action="skip-login">跳过</button>
     {{/contentFor}}
 
   {{else}}
 
     {{#contentFor "headerButtonLeft"}}
-      {{>ionNavBackButton class="button-positive" text=false}}
+      {{>ionNavBackButton class="button-light" text=false}}
     {{/contentFor}}
 
   {{/if}}

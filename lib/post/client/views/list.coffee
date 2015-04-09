@@ -1,6 +1,6 @@
 Template.postList.helpers
 
-  title: -> userPrefix(@user, true) + getConfigs(@category).label
+  title: -> userPrefix(@user, true, @favoritesby?) + getConfigs(@category).label
 
   title2: -> getConfigs(Template.parentData().category).category2Label[@]
 

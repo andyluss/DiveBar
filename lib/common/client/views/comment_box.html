@@ -23,9 +23,9 @@
 <template name="commonCommentSingle">
   <div data-id="{{_id}}" class="comment">
     <div class="avatar-container">
-      {{> userAvatar user}}
+      {{> userAvatar userId}}
     </div>
-    <div class="content">
+    <div class="right-box">
       <div class="author-bar">
         <a class="author" href="{{userUrl userId}}">{{userName userId}}</a>
         <div class="actions">

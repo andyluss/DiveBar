@@ -5,15 +5,15 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton class="button-positive" text=false}}
+    {{>ionNavBackButton class="button-light" text=false}}
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
     {{#if isMe}}
-      <button class="button button-clear pull-right button-positive" data-action="logout">登出</button>
+      <button class="button button-clear pull-right button-light" data-action="logout">登出</button>
     {{else}}
       {{#if currentUser}}
-        {{> favoriteButton _id=user category='user'}}
+        {{>favoriteButton _id=user category='user'}}
       {{/if}}
     {{/if}}
   {{/contentFor}}
@@ -38,14 +38,14 @@
         {{#each lines}}
           {{#ionItem href=href iconRight=true}}
             {{label}}：{{data}}
-            {{> ionIcon icon=icon}}
+            {{>ionIcon icon=icon}}
           {{/ionItem}}
         {{/each}}
 
         {{#if isMe}}
           {{#ionItem href=myFavoriteUsersPath iconRight=true}}
             我的好友
-            {{> ionIcon icon='ios-arrow-right'}}
+            {{>ionIcon icon='ios-arrow-right'}}
           {{/ionItem}}
         {{/if}}
 

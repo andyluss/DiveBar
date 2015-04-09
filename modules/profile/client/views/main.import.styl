@@ -1,32 +1,58 @@
+
+@import '../../../lib/common/client/views/tab_bar.import.styl'
 @import '../../../modules/profile/client/views/qr.import.styl'
 
 .profile
-  .top
-    padding 1em
-    display flex
-    .avatar
-      flex 1
-      margin auto
-      size-all 80px
-      img
-        size 100%
-    .base-info
-      flex 1
-      margin-left 1em
-      margin-right 1em
-      a
-        display block
-    .qr-code
-      display block
-      flex 1
-      margin auto
-      size-all 80px
-      canvas
-        size 100%
-  .list
-    .item
-      padding-top 0.5em
-      padding-bottom 0.5em
-
-.profile-input
-  padding 10px
+  .content
+    background-color #f4f4f4
+    color #999
+    .top
+      padding 17px 12px
+      display flex
+      background-color #fff
+      border-top 1px solid #ddd
+      border-bottom 1px solid #ddd
+      margin 10px 0
+      .avatar
+        flex 1
+        margin auto
+        size-all 96px
+        border 1px solid #ddd
+        border-radius 4px
+        img
+          size 100%
+      .base-info
+        flex 1
+        margin-left 1em
+        margin-right 1em
+        a
+          display block
+      .qr-code
+        flex 1
+        margin auto
+        margin-right 30px
+        size-all 68px
+        canvas
+          size 100%
+          opacity 0.4
+    .list
+      margin-top 20px
+      padding 10px 0
+      background-color #fff
+      border-top 1px solid #ddd
+      border-bottom 1px solid #ddd
+      .item
+        margin 0 20px
+        padding-top 0.5em
+        padding-bottom 0.5em
+        line-height 24px
+        border none
+        border-bottom 1px solid #f5f5f5
+      .item:last-child
+        border none
+    .label
+      display inline-block
+      width 65px
+      color #2b9ad5
+  .profile-input
+    padding 10px

@@ -1,7 +1,6 @@
 @productConfigs =
   label: '商品'
-  iconOff: "ios-bell-outline"
-  iconOn: "ios-bell"
+  icon: "android-cart"
   category2:
     official: 'official'
     user: 'user'
@@ -12,5 +11,5 @@
     user: '二手'
   itemTemplate:
     official: 'imageItem'
-    user: 'userProductItem'
+    user: 'productUserItem'
   moreAutoFormOmitFields: ['viewCount']

@@ -7,7 +7,7 @@
   {{#if user}}
 
     {{#contentFor "headerButtonLeft"}}
-      {{>ionNavBackButton class="button-positive" text=false}}
+      {{>ionNavBackButton class="button-light" text=false}}
     {{/contentFor}}
 
   {{else}}
@@ -15,7 +15,7 @@
     {{#if favoritesby}}
 
       {{#contentFor "headerButtonLeft"}}
-        {{>ionNavBackButton class="button-positive" text=false}}
+        {{>ionNavBackButton class="button-light" text=false}}
       {{/contentFor}}
 
       {{#contentFor "headerButtonRight"}}
@@ -26,7 +26,7 @@
       {{#if currentUser}}
 
         {{#contentFor "headerButtonLeft"}}
-          <button class="button button-clear pull-left button-positive" data-action="favoritesby">
+          <button class="button button-clear pull-left button-light" data-action="favoritesby">
             {{> ionIcon icon='ios-star-outline'}}
           </button>
         {{/contentFor}}
@@ -34,7 +34,7 @@
       {{/if}}
 
       {{#contentFor "headerButtonRight"}}
-        <button class="button button-clear pull-right button-positive" data-action="my-data">
+        <button class="button button-clear pull-right button-light" data-action="my-data">
           {{> ionIcon icon='ios-person-outline'}}
         </button>
       {{/contentFor}}

@@ -1,7 +1,6 @@
 @journeyConfigs =
   label: '行程'
-  iconOff: "ios-clock-outline"
-  iconOn: "ios-clock"
+  icon: "plane"
   category2:
     official: 'official'
     user: 'user'
@@ -12,4 +11,4 @@
     user: '潜友'
   itemTemplate:
     official: 'imageItem'
-    user: 'userJourneyItem'
+    user: 'journeyUserItem'

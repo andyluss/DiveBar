@@ -10,7 +10,7 @@
   return gbl()[name + 'Configs']
 
 @amIAdmin = ->
-  _.contains(Meteor.user().roles, UserRoles.admin)
+  Meteor.userId() and _.contains(Meteor.user().roles, UserRoles.admin)
 
 @checkUser = (userId, doc)->
   (userId == doc.user) or amIAdmin()

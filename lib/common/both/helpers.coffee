@@ -45,13 +45,15 @@
 @mySelf = ->
   Meteor.user()
 
-@userPrefix = (userId, showName)->
+@userPrefix = (userId, showName, isFavorite)->
   prefix = ''
   if userId
     if isMe userId
-      prefix = '我的'
+      prefix = "我的"
     else
-      prefix = showName and (userName(userId) + '的') or '用户'
+      prefix = showName and (userName(userId) + "的") or "用户"
+  if isFavorite
+    prefix = '收藏的' + prefix
   return prefix
 
 @idByUser = (user)->

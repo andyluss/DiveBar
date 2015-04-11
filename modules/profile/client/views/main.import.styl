@@ -12,8 +12,10 @@
       background-color #fff
       border-top 1px solid #ddd
       border-bottom 1px solid #ddd
+      overflow hidden
       margin 10px 0
       .avatar
+        float left
         flex 1
         margin auto
         size-all 96px
@@ -22,15 +24,18 @@
         img
           size 100%
       .base-info
+        float left
         flex 1
         margin-left 1em
         margin-right 1em
         a
           display block
       .qr-code
+        float right
+        display block
         flex 1
-        margin auto
-        margin-right 30px
+        margin-top 15px;
+        margin-right 25px
         size-all 68px
         canvas
           size 100%
@@ -52,6 +57,7 @@
         border none
     .label
       display inline-block
+      font-weight bold
       width 65px
       color #2b9ad5
   .profile-input

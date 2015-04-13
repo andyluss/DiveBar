@@ -10,8 +10,10 @@ getLine = (type, label)->
 
 Template.profileMain.helpers
   title: -> userPrefix(@user, true) + '名片'
-  nickname: -> @nickname or '添加昵称'
-  location: -> @location or '添加地址'
+  nickname: -> @nickname or (isMe(@user) and '添加昵称' or '')
+  location: -> @location or (isMe(@user) and '添加地址' or '')
+  nicknameEditorUrl: -> isMe(@user) and "/profile?type=nickname&user=#{@user}" or ''
+  locationEditorUrl: -> isMe(@user) and "/profile?type=location&user=#{@user}" or ''
 
   lines: -> [
     getLine.call(@, 'qq', 'QQ')

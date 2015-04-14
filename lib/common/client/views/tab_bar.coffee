@@ -20,7 +20,6 @@ Template.tabBar.helpers
         class: "dummy"
       data.splice(2, 0, dummy)
 
-#    renderTabs()
     return data
 
 Template.ionTab.events
@@ -37,6 +36,13 @@ Template.ionTab.events
       Router.go path, {}, {replaceState: true}
     Session.set('ionTab.current', path);
 
+Template.ionTab.helpers
+  isActive: ->
+    if @category is 'profile'
+      return currentRoute() is 'profile' and 'active' or ''
+    else
+      return currentRouteQuery().category == @category and 'active' or ''
+
 getTabData = (category, user)->
   configs = getConfigs(category)
   return {
@@ -46,11 +52,3 @@ getTabData = (category, user)->
     class: "tab-item-light"
     user: user
   }
-
-renderTabs = ->
-  @$('.tabs').children().each ->
-    href = $(@).attr 'href'
-    current = Router.current().location.get().path
-    # TODO 弱约束,有待思考
-    if s.contains(current, href) or s.contains(href, current)
-      Session.set SessionKeys.currentTab, href

@@ -20,7 +20,6 @@ Template.postList.helpers
 Template.ionNavBar.events
 
   'click [data-action=my-data]': (event, template)->
-    preMainRoute currentPath()
     user = myId()? and "&user=#{myId()}" or ''
     Router.go "/profile?type=main" + user
 

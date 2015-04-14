@@ -26,9 +26,7 @@ Template.profileMain.helpers
 
 Template.ionNavBar.events
 
-  'click [data-action=logout]': (event, template)->
-    Meteor.logout ->
-      Router.go preMainRoute()
+  'click [data-action=logout]': ()-> Meteor.logout()
 
 Template.profileMain.events
 

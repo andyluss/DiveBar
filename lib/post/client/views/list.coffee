@@ -20,8 +20,10 @@ Template.postList.helpers
 Template.ionNavBar.events
 
   'click [data-action=my-data]': (event, template)->
-    user = myId()? and "&user=#{myId()}" or ''
-    Router.go "/profile?type=main" + user
+    if myId()
+      Router.go "/profile?type=main&user=#{myId()}"
+    else
+      Router.go '/login?from=list'
 
   'click [data-action=favoritesby]': (event, template)->
 #    setPostList 'favoritesby', myId()

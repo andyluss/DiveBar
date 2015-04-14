@@ -24,19 +24,19 @@ App.icons({
 
 App.launchScreens({
   // iOS
-  'iphone': 'resources/splash/Default.png',
-  'iphone_2x': 'resources/splash/Default@2x.png',
-  'iphone5': 'resources/splash/Default-568h@2x.png',
-  'iphone6': 'resources/splash/Default-667h@2x.png',
-  'iphone6p_portrait': 'resources/splash/Default-Portrait-736h@3x.png',
-  'ipad_portrait': 'resources/splash/Default-Portrait.png',
-  'ipad_portrait_2x': 'resources/splash/Default-Portrait@2x.png',
+  'iphone': 'resources/splash/iphone/Default.png',
+  'iphone_2x': 'resources/splash/iphone/Default@2x.png',
+  'iphone5': 'resources/splash/iphone/Default-568h@2x.png',
+  'iphone6': 'resources/splash/iphone/Default-667h@2x.png',
+  'iphone6p_portrait': 'resources/splash/iphone/Default-Portrait-736h@3x.png',
+  'ipad_portrait': 'resources/splash/iphone/Default-Portrait.png',
+  'ipad_portrait_2x': 'resources/splash/iphone/Default-Portrait@2x.png',
 
   // Android
-  'android_ldpi_portrait': 'resources/splash/splash-240x320.png',
-  'android_mdpi_portrait': 'resources/splash/splash-320x480.png',
-  'android_hdpi_portrait': 'resources/splash/splash-480x800.png',
-  'android_xhdpi_portrait': 'resources/splash/splash-640x960.png'
+  'android_ldpi_portrait': 'resources/splash/android/images/res-long-port-ldpi/default.png',
+  'android_mdpi_portrait': 'resources/splash/android/images/res-long-port-mdpi/default.png',
+  'android_hdpi_portrait': 'resources/splash/android/images/res-long-port-hdpi/default.png',
+  'android_xhdpi_portrait': 'resources/splash/android/images/res-long-port-xhdpi/default.png'
 });
 
 //App.setPreference('StatusBarOverlaysWebView', 'false');

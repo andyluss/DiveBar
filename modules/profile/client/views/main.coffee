@@ -61,16 +61,27 @@ getPicture = (options)->
     if error
       console.log error
       return
-    f = new FS.File data
-    f.user = myId()
-    f.creator = newImageCreator()
-    f.name(avatarName())
-    Images.insert f, (error, fileObj)->
+    Meteor.call 'uptoken', (error, result)->
       if error
         console.log error
       else
-        updateAvatar fileObj._id
-        console.log 'Image Inserted: ', fileObj.name()
+        token = result
+        key = ''
+        body = data
+#        qiniu.io.put(token, key, body, null, (err, ret)->
+
+#    Images.insert(
+#      {
+#        creator: newImageCreator()
+#        key: key
+#      },
+#      (error, _id)->
+#        if error
+#          console.log error
+#        else
+#          updateAvatar fileObj._id
+#          console.log 'Image Inserted: ', fileObj.name()
+#    )
 
 updateAvatar = (imageId)->
   Profiles.update {_id: Meteor.user().profileId}, {$set: {avatar: imageId}}

@@ -1,7 +1,7 @@
-.image-box.hidden
+.image-uploader.hidden
   display none
 
-.image-box
+.image-uploader
   width 96px
   max-width 96px
   height 96px
@@ -13,6 +13,14 @@
     width 100%
     height 100%
     position relative
+    .image-container
+      display flex
+      width 100%
+      height 100%
+      img
+        max-width 100%
+        max-height 100%
+        margin: auto
     .delete.button
       absolute top 0 left 0
     .upload-progress-bar

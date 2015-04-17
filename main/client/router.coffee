@@ -4,7 +4,6 @@ Router.route '/', ->
   else
     @redirect '/login'
 
-
 Router.configure
   progressDelay: 300
   progressTick: false

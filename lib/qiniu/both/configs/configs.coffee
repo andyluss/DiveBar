@@ -1,0 +1,3 @@
+@qiniuConfig =
+  BUCKET: ''
+  DOMAIN: ''

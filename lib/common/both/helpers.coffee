@@ -88,15 +88,21 @@
 @firstImagesByCreator = (creator)->
   Images.findOne {creator: creator}
 
-@imageUrl = (image, store)->
-  check store, Match.Optional(String)
+@imageUrl = (image, params)->
   if typeof image is 'string'
     image = Images.findOne {_id: image}
-  return image?.url({store: store or ImageStores.images}) or ''
+  if image and image.key and qiniuConfig.DOMAIN and Qiniu
+    Qiniu.domain = qiniuConfig.DOMAIN
+    if not params
+      return Qiniu.getUrl image.key
+    else
+      return Qiniu.imageView2 params, image.key
+  else
+    return ''
 
 @avatarUrl = (userId)->
   profile = userProfile userId
-  profile and imageUrl(profile.avatar, ImageStores.thumbs) or defaultAvatarUrl
+  profile and imageUrl(profile.avatar) or defaultAvatarUrl
 
 @selectFavorites = (selector)->
   if selector.favoritesby

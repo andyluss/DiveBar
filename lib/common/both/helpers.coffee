@@ -86,7 +86,8 @@
 
 @avatarUrl = (userId)->
   profile = userProfile userId
-  profile and imageUrl(profile.avatar) or defaultAvatarUrl
+  image = Images.findOne({_id: profile.avatar})
+  profile and image and image.base64 or defaultAvatarUrl
 
 @selectFavorites = (selector)->
   if selector.favoritesby

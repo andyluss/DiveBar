@@ -49,13 +49,13 @@ Template.profileMain.events
         return true
 
 avatarName = ->
-  'avatar-' + myId()
+  'avatar-' + myId() + '-' + new Date().getTime()
 
 getPicture = (options)->
   options ?= {}
   options = _.defaults options,
-    width: 200
-    height: 200
+    width: 96
+    height: 96
     quality: 90
   MeteoricCamera.getPicture options, (error, data)->
     if error
@@ -65,23 +65,34 @@ getPicture = (options)->
       if error
         console.log error
       else
-        token = result
-        key = ''
-        body = data
-#        qiniu.io.put(token, key, body, null, (err, ret)->
-
-#    Images.insert(
-#      {
-#        creator: newImageCreator()
-#        key: key
-#      },
-#      (error, _id)->
-#        if error
-#          console.log error
-#        else
-#          updateAvatar fileObj._id
-#          console.log 'Image Inserted: ', fileObj.name()
-#    )
+        key = avatarName() + '.jpeg'
+        Images.insert(
+          {
+            creator: newImageCreator()
+            key: key
+            base64: data
+          },
+          (error, _id)->
+            if error
+              console.log error
+            else
+              updateAvatar _id
+        )
+#        Meteor.call 'uploadToQiniu', {token: result, key: key, body: data}, (err, ret)->
+#          if err
+#            console.log err
+#          else
+#            Images.insert(
+#              {
+#                creator: newImageCreator()
+#                key: key
+#              },
+#              (error, _id)->
+#                if error
+#                  console.log error
+#                else
+#                  updateAvatar _id
+#            )
 
 updateAvatar = (imageId)->
   Profiles.update {_id: Meteor.user().profileId}, {$set: {avatar: imageId}}

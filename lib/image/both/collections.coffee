@@ -15,3 +15,7 @@ Images.attachSchema new SimpleSchema
     type: Number
     label: '高'
     optional: true
+  base64:
+    type: String
+    label: 'Base64编码'
+    optional: true

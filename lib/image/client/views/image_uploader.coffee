@@ -29,29 +29,31 @@ initQiniuUploader = (self)->
         chunk_size: '4mb'                           #分块上传时，每片的体积
         auto_start: true                            #选择文件后自动上传，若关闭需要自己绑定事件触发上传
         init:
-          'FilesAdded': (up, files)->
-            plupload.each files, (file)->
-              # 文件添加进队列后,处理相关的事情
-              console.log file
-
           'BeforeUpload': (up, file)->
-            # 每个文件上传前,处理相关的事情
-            console.log file
+            showProgress self, 0
 
           'UploadProgress': (up, file)->
-            # 每个文件上传时,处理相关的事情
-            console.log file
+            showProgress self, file.percent
 
           'FileUploaded': (up, file, info)->
             info = JSON.parse info
-            console.log info
             Images.insert
               creator: self.data.creator
               key: info.key
               width: info.width
               height: info.height
+            showInput self
 
           'Error': (up, err, errTip)->
-            #上传出错时,处理相关的事情
+            showInput self
             console.log err, errTip
 
+showProgress = (self, percent)->
+  self.$('.input-label').css('display', 'none')
+  self.$('.progress').css('display', 'inline-block')
+  self.$('.progress').html(percent + '%')
+
+showInput = (self)->
+  self.$('.input-label').css('display', 'inline-block')
+  self.$('.progress').css('display', 'none')
+  self.$('.progress').html('0%')

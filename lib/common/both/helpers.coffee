@@ -1,49 +1,35 @@
-@pq = (context)->
-  context.params.query
+@pq = (context)-> context.params.query
 
-@gbl = ->
-  Meteor.isClient and window or global
+@gbl = -> Meteor.isClient and window or global
 
 @getConfigs = (name)->
   if not gbl()[name + 'Configs']
     gbl()[name + 'Configs'] = {}
   return gbl()[name + 'Configs']
 
-@amIAdmin = ->
-  Meteor.userId() and _.contains(Meteor.user().roles, UserRoles.admin)
+@amIAdmin = -> Meteor.userId() and _.contains(Meteor.user().roles, UserRoles.admin)
 
-@checkUser = (userId, doc)->
-  (userId == doc.user) or amIAdmin()
+@checkUser = (userId, doc)-> (userId == doc.user) or amIAdmin()
 
-@canEdit = (doc)->
-  (doc.user == myId()) or amIAdmin()
+@canEdit = (doc)-> (doc.user == myId()) or amIAdmin()
 
-@cap = (str)->
-  s.capitalize str
+@cap = (str)-> s.capitalize str
 
-@plural = (str)->
-  str + 's'
+@plural = (str)-> str + 's'
 
-@pcap = (str)->
-  plural cap(str)
+@pcap = (str)-> plural cap(str)
 
-@coln = (category)->
-  gbl()[pcap category]
+@coln = (category)-> gbl()[pcap category]
 
-@getCountName = (selector)->
-  return 'count_' + JSON.stringify selector
+@getCountName = (selector)-> 'count_' + JSON.stringify selector
 
-@getCommentCountName = (docId)->
-  "#{docId}_CommentCount"
+@getCommentCountName = (docId)-> "#{docId}_CommentCount"
 
-@myId = ->
-  Meteor.userId()
+@myId = -> Meteor.userId()
 
-@isMe = (userId)->
-  return myId() and userId == myId()
+@isMe = (userId)-> myId() and userId == myId()
 
-@mySelf = ->
-  Meteor.user()
+@mySelf = -> Meteor.user()
 
 @userPrefix = (userId, showName, isFavorite)->
   prefix = ''
@@ -82,11 +68,9 @@
   else
     '游客'
 
-@imagesByCreator = (creator)->
-  Images.find {creator: creator}
+@imagesByCreator = (creator)-> Images.find {creator: creator}
 
-@firstImagesByCreator = (creator)->
-  Images.findOne {creator: creator}
+@firstImagesByCreator = (creator)-> Images.findOne {creator: creator}
 
 @imageUrl = (image, params)->
   if typeof image is 'string'

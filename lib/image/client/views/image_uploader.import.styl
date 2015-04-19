@@ -1,20 +1,13 @@
-input-style(font-size)
-  margin 1px
-  clear left
-  padding 0
-  size-all 96px
-  font-size font-size
-  text-align center
-  background #C3C3C3
-
 .image-uploader
-  .progress
-    display none
-    input-style(20px)
-    padding-top 36px
-  .input-label
-    display inline-block
-    input-style(67px)
-    .image-input
-      fixed top -1000px
-  @import '../../../lib/image/client/views/image_uploaded.import.styl'
+  .input-button
+    display block
+  .images
+    @import '../../../lib/image/client/views/image_uploaded.import.styl'
+    .progress
+      display none
+      margin 1px
+      clear left
+      size-all 96px
+      font-size 20px
+      text-align center
+      padding-top 36px

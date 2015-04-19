@@ -8,7 +8,9 @@
       <w>loadmore</w>
       <w>mousedown</w>
       <w>pcap</w>
+      <w>qiniu</w>
       <w>textarea</w>
+      <w>uptoken</w>
       <w>wechat</w>
     </words>
   </dictionary>

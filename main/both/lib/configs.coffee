@@ -1,3 +1,5 @@
+@AppConfig =
+  appName: '潜水吧'
 
 #Strings:
 
@@ -6,7 +8,6 @@
   journey: 'journey'
   product: 'product'
   say: 'say'
-
 
 
 

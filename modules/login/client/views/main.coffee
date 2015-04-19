@@ -6,9 +6,8 @@ Template.ionNavBar.events
 
 title = new ReactiveVar('登录')
 Template.login.helpers
-  inLoginRoute: ->
-    
   title: -> title.get()
+  fromOther: -> currentRoute() != 'login' or currentRouteQuery().from
 
 Template.login.events
   'click #at-signUp': ->

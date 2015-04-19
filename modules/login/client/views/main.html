@@ -4,16 +4,16 @@
     <h1 class="title">{{title}}</h1>
   {{/contentFor}}
 
-  {{#if currentRouteIs 'login'}}
+  {{#if fromOther}}
 
-    {{#contentFor "headerButtonRight"}}
-      <button class="button button-clear pull-right button-light" data-action="skip-login">跳过</button>
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="button-light" text=false}}
     {{/contentFor}}
 
   {{else}}
 
-    {{#contentFor "headerButtonLeft"}}
-      {{>ionNavBackButton class="button-light" text=false}}
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear pull-right button-light" data-action="skip-login">跳过</button>
     {{/contentFor}}
 
   {{/if}}

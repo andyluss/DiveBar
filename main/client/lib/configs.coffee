@@ -3,8 +3,7 @@
 
 @loadingMore = new ReactiveVar(false)
 
-@AppConfig =
-  appName: 'Dive Bar'
+
 
 @SessionKeys =
   currentTab: 'ionTab.current'

@@ -60,16 +60,11 @@ Template.registerHelper 'userUrl', (userId)-> userUrl userId
 
 Template.registerHelper 'avatarUrl', (userId)-> avatarUrl userId
 
-Template.registerHelper 'imageUrl', (image, store)->
-  if not _.isString store
-    store = undefined
-  imageUrl image, store
+Template.registerHelper 'imageUrl', (image)-> imageUrl image
 
 Template.registerHelper 'firstPicture', ->
-  imageUrl firstImagesByCreator(@creator)
-
-Template.registerHelper 'firstPictureThumb', ->
-  imageUrl firstImagesByCreator(@creator), ImageStores.thumbs
+#  ratio = window.devicePixelRatio or 1
+  imageUrl firstImagesByCreator(@creator), {mode: 2, w: screen.width, h: screen.width * 0.8, q: 100}
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend @, {itemTemplate: itemTemplate}

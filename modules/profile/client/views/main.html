@@ -27,8 +27,8 @@
           <img src={{avatarUrl user}}>
         </div>
         <div class="base-info">
-          <a href="/profile?type=nickname&user={{user}}">{{nickname}}</a>
-          <a href="/profile?type=location&user={{user}}">{{location}}</a>
+          <a href={{nicknameEditorUrl}}>{{nickname}}</a>
+          <a href={{locationEditorUrl}}>{{location}}</a>
         </div>
         <a href="/profile?type=qr&user={{user}}" class="qr-code"></a>
       </div>
@@ -37,14 +37,14 @@
 
         {{#each lines}}
           {{#ionItem href=href iconRight=true}}
-            {{label}}：{{data}}
+            <span class="label">{{label}}：</span>{{data}}
             {{>ionIcon icon=icon}}
           {{/ionItem}}
         {{/each}}
 
         {{#if isMe}}
           {{#ionItem href=myFavoriteUsersPath iconRight=true}}
-            我的好友
+            <span class="label">我的好友</span>
             {{>ionIcon icon='ios-arrow-right'}}
           {{/ionItem}}
         {{/if}}

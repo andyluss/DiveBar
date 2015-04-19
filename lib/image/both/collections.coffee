@@ -1,44 +1,21 @@
-createThumb = (fileObj, readStream, writeStream)->
-  size = '96'
-  gm readStream
-    .autoOrient()
-    .resize size, size + '^'
-    .gravity 'Center'
-    .extent size, size
-    .stream 'PNG'
-    .pipe writeStream
+@Images = new Meteor.Collection 'images'
 
-@Images = new FS.Collection 'images',
-  stores: [
-    new FS.Store.FileSystem ImageStores.thumbs,
-      beforeWrite: (fileObj)->
-        extension: 'png'
-        type: 'image/png'
-      transformWrite: createThumb
-
-    new FS.Store.FileSystem ImageStores.images,
-      transformWrite: (fileObj, readStream, writeStream)->
-        # read image dimensions and write to metadata
-        gm readStream
-          .size FS.Utility.safeCallback (err, size)->
-            if err
-              console.log err
-            else
-              fileObj.update
-                $set:
-                  'metadata.width': size.width
-                  'metadata.height': size.height
-          .stream()
-          .pipe writeStream
-  ]
-
-  filter:
-    maxSize: 1048576
-    allow:
-      contentTypes: ['image/*']
-
-    onInvalid: (message)->
-      if Meteor.isClient
-        alert message
-      else
-        console.log message
+Images.attachSchema new SimpleSchema
+  creator:
+    type: String
+    label: '创建标记'
+  key:
+    type: String
+    label: '文件键'
+  width:
+    type: Number
+    label: '宽'
+    optional: true
+  height:
+    type: Number
+    label: '高'
+    optional: true
+  base64:
+    type: String
+    label: 'Base64编码'
+    optional: true

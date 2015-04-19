@@ -1,5 +1,6 @@
 Template.pictureCarousel.helpers
   pictures: -> imagesByCreator(@creator)
+  imageSrc: -> imageUrl @, {mode: 2, w: screen.width, h: 200, q: 100}
 
 Template.pictureCarousel.events
 
@@ -11,12 +12,12 @@ showPhotoSwipe = (doc, container, index)->
   items = []
 
   getItem = (image)->
-    url = image.url({store:ImageStores.images})
+    url = imageUrl image
     if image
       item =
         src: url
-        w: image.metadata.width
-        h: image.metadata.height
+        w: image.width
+        h: image.height
     else
       console.log 'No Image, Id: ' + image._id
     return item

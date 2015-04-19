@@ -1,0 +1,13 @@
+<template name="imageUploader">
+
+  <div class="image-uploader">
+    <button class="button positive input-button">上传图片</button>
+    <div class="images">
+      {{#each imagesUploaded creator}}
+        {{>imageUploaded}}
+      {{/each}}
+      <div class="progress"></div>
+    </div>
+  </div>
+
+</template>

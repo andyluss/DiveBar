@@ -1,8 +1,12 @@
 <template name="imageUploaded">
-  <div class="image-uploaded">
+  <div class="image-uploaded" data-key="{{key}}">
     <div class="inner-box">
       <div class="image-container">
-        <img src="{{thumbUrl}}">
+        {{#if uploaded}}
+          <img src="{{thumbUrl}}">
+        {{else}}
+          <label class="progress">0%</label>
+        {{/if}}
       </div>
       <button class="delete button button-icon icon ion-close-circled"></button>
     </div>

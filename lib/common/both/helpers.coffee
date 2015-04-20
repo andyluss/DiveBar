@@ -27,7 +27,7 @@
 
 @myId = -> Meteor.userId()
 
-@isMe = (userId)-> myId() and userId == myId()
+@isMe = (userId)-> myId() and (userId == myId())
 
 @mySelf = -> Meteor.user()
 

@@ -5,7 +5,7 @@ Template.imageUploader.rendered = ->
   Meteor.subscribe 'imagesUploaded', @data.creator
   initQiniuUploader @
 
-getKey = (self, file)-> "#{self.data.creator}-#{file.name}"
+getKey = (self, file)-> "#{self.data.creator}-#{new Date().getTime()}-#{file.name}"
 
 initQiniuUploader = (self)->
   Meteor.call 'uptoken', (error, result)->
@@ -23,7 +23,7 @@ initQiniuUploader = (self)->
         # save_key: true                            # 默认 false。若在服务端生成uptoken的上传策略中指定了 `save_key`，则开启，SDK在前端将不对key进行任何处理
         domain: qiniuConfig.DOMAIN                  #bucket 域名，下载资源时用到，**必需**
 #        container: self.find '.input-label'         #上传区域DOM ID，默认是browser_button的父元素，
-        max_file_size: '4mb'                        #最大文件体积限制
+        max_file_size: '3mb'                        #最大文件体积限制
     #    flash_swf_url: 'js/plupload/Moxie.swf'     #引入flash,相对路径
         max_retries: 3                              #上传失败最大重试次数
         dragdrop: false                             #开启可拖曳上传
@@ -37,22 +37,24 @@ initQiniuUploader = (self)->
         }]
 
         init:
-          'Key': (up, file)-> getKey self, file
+          'Key': (up, file)->
+            file.key = getKey self, file
+            return file.key
 
           'BeforeUpload': (up, file)->
             Images.insert
               user: myId()
               creator: self.data.creator
-              key: getKey self, file
+              key: file.key
               uploaded: false
-            hideImageLoading self, file
+#            hideImageLoading self, file.key
 
           'UploadProgress': (up, file)->
-            showUploadProgress self, file
+            showUploadProgress self, file.key, file.percent
 
           'FileUploaded': (up, file, info)->
-            hideUploadProgress self, file
-            showImageLoading self, file
+            hideUploadProgress self, file.key
+#            showImageLoading self, file.key
             info = JSON.parse info
             image = Images.findOne {key: info.key}
             if image
@@ -65,20 +67,20 @@ initQiniuUploader = (self)->
           'Error': (up, err, errTip)->
             console.log err, errTip
 
-hideUploadProgress = (self, file)->
-  progressLabel = self.$(".image-uploaded[data-key='#{getKey self, file}'] .progress")
+hideUploadProgress = (self, key)->
+  progressLabel = self.$(".image-uploaded[data-key='#{key}'] .progress")
   progressLabel.html('')
 
-showUploadProgress = (self, file)->
-  progressLabel = self.$(".image-uploaded[data-key='#{getKey self, file}'] .progress")
-  progressLabel.html(file.percent + '%')
+showUploadProgress = (self, key, percent)->
+  progressLabel = self.$(".image-uploaded[data-key='#{key}'] .progress")
+  progressLabel.html(percent + '%')
 
-hideImageLoading = (self, file)->
-  imageContainer = self.$(".image-uploaded[data-key='#{getKey self, file}'] .image-container")
+hideImageLoading = (self, key)->
+  imageContainer = self.$(".image-uploaded[data-key='#{key}'] .image-container")
   imageContainer.css {background: '#FFF'}
 
-showImageLoading = (self, file)->
-  imageContainer = self.$(".image-uploaded[data-key='#{getKey self, file}'] .image-container")
+showImageLoading = (self, key)->
+  imageContainer = self.$(".image-uploaded[data-key='#{key}'] .image-container")
   imageContainer.css {background: '#FFF url(/images/loading.gif) no-repeat center center'}
-  imagesLoaded ".image-uploaded[data-key='#{getKey self, file}'] .image-container img", ->
+  imagesLoaded ".image-uploaded[data-key='#{key}'] .image-container img", ->
     imageContainer.css {background: '#FFF'}

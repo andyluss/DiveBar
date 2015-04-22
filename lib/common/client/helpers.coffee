@@ -16,7 +16,9 @@
 
 @currentLocation = -> Iron.Location.get()
 
-@currentPath = -> Iron.Location.get().path
+@currentPath = -> currentLocation().path
+
+@currentUrl = -> Meteor.absoluteUrl currentPath().slice(1)
 
 @getListLimit = (selector)->
   sel = JSON.stringify selector

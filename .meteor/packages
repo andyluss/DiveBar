@@ -12,6 +12,7 @@ accounts-password
 accounts-ui
 launch-screen
 reactive-var
+npm-container
 
 # Packages local
 
@@ -59,7 +60,4 @@ underscorestring:underscore.string
 tmeasday:publish-counts
 iron:location
 meteorhacks:npm
-
-
-npm-container
 manuel:reactivearray

@@ -17,28 +17,16 @@ Meteor.publishComposite 'postList', (selector, limit)->
 
   children: [
     docUserComposite()
-    {
-      find: (doc)->
-        # Comment count
-        Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
-        # First Picture
-        Images.find {creator: doc.creator}
-    }
   ]
   }
 
 Meteor.publishComposite 'post', (category, _id)->
   {
   find: ->
+    # Comment count
+    Counts.publish @, getCommentCountName(_id), Comments.get(_id)
     coln(category).find {_id: _id}
   children: [
     docUserComposite()
-    {
-      find: (doc)->
-        # Comment count
-        Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
-        # Pictures
-        Images.find {creator: doc.creator}
-    }
   ]
   }

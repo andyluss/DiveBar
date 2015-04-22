@@ -62,9 +62,9 @@ Template.registerHelper 'avatarUrl', (userId)-> avatarUrl userId
 
 Template.registerHelper 'imageUrl', (image)-> imageUrl image
 
-Template.registerHelper 'firstPicture', ->
-#  ratio = window.devicePixelRatio or 1
-  imageUrl firstImagesByCreator(@creator), {mode: 2, w: screen.width, h: screen.width * 0.8, q: 100}
+#Template.registerHelper 'firstPicture', (images)->
+##  ratio = window.devicePixelRatio or 1
+#  imageUrl images?[0], {mode: 2, w: screen.width, h: screen.width * 0.8, q: 100}
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend @, {itemTemplate: itemTemplate}

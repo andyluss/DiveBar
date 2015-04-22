@@ -1,30 +1,18 @@
-creator = (value)->
-  if value
-    Session.set 'creator', value
-  else
-    Session.get 'creator'
-
 formId = (category)-> "#{category}InsertForm"
 
-Template.postCreator.onCreated ->
-  creator newImageCreator()
-  createAutoFormHooks @data.category
+Template.postCreator.onRendered ->
+  createAutoFormHooks @data
 
 Template.postCreator.helpers
-  creator: creator
   formCollection: -> coln @category
   formId: -> formId @category
   label: -> getConfigs(@category).label
-  formOmitFields: ->
-    autoFormOmitFields(@category)
+  formOmitFields: -> autoFormOmitFields(@category)
 
-createAutoFormHooks = (category)->
-  check category, String
+createAutoFormHooks = (data)->
   hooks =
-    onSuccess: -> back()
-    before:
-      insert: (doc)->
-        doc.creator = creator()
-        return doc
-  AutoForm.addHooks formId(category), hooks, true
+    onSuccess: (formType, result)->
+      coln(data.category).update {_id: @docId}, {$set: {images: data.imagesToUpload.array()}}
+      back()
+  AutoForm.addHooks formId(data.category), hooks, true
 

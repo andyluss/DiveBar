@@ -84,8 +84,9 @@
       if @isInsert
         new Date()
 
-  creator:
-    type: String
-    label: '（开发辅助用）创建者标记'
+  images:
+    type: [String]
+    label: '图片集'
     optional: true
+    defaultValue: []
 

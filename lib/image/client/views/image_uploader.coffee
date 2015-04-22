@@ -1,11 +1,19 @@
+imagesToUpload = new ReactiveArray()
+
 Template.imageUploader.helpers
-  imagesUploaded: -> imagesUploaded(@creator)
+  imagesToUpload: -> imagesToUpload.list()
 
 Template.imageUploader.rendered = ->
-  Meteor.subscribe 'imagesUploaded', @data.creator
+  initImagesUploaded @data
   initQiniuUploader @
 
-getKey = (self, file)-> "#{self.data.creator}-#{new Date().getTime()}-#{file.name}"
+initImagesUploaded = (post)->
+  imagesToUpload.clear()
+  post.imagesToUpload = imagesToUpload
+  _.each post.images, (value)->
+    imagesToUpload.push value
+
+getKey = (self, file)-> "#{new Date().getTime()}-#{('' + Math.random()).substr(0, 5)}-#{file.name}"
 
 initQiniuUploader = (self)->
   Meteor.call 'uptoken', (error, result)->
@@ -42,38 +50,33 @@ initQiniuUploader = (self)->
             return file.key
 
           'BeforeUpload': (up, file)->
-            Images.insert
-              user: myId()
-              creator: self.data.creator
-              key: file.key
-              uploaded: false
-#            hideImageLoading self, file.key
+            imagesToUpload.push file.key
 
           'UploadProgress': (up, file)->
             showUploadProgress self, file.key, file.percent
 
           'FileUploaded': (up, file, info)->
             hideUploadProgress self, file.key
-#            showImageLoading self, file.key
-            info = JSON.parse info
-            image = Images.findOne {key: info.key}
-            if image
-              Images.update {_id: image._id},
-                $set:
-                  uploaded: true
-                  width: info.width
-                  height: info.height
+            resetImageSrc self, file.key
 
           'Error': (up, err, errTip)->
             console.log err, errTip
 
 hideUploadProgress = (self, key)->
+  progressContainer = self.$(".image-uploaded[data-key='#{key}'] .progress-container")
   progressLabel = self.$(".image-uploaded[data-key='#{key}'] .progress")
-  progressLabel.html('')
+  progressContainer.hide()
+  progressLabel.html('0%')
 
 showUploadProgress = (self, key, percent)->
+  progressContainer = self.$(".image-uploaded[data-key='#{key}'] .progress-container")
   progressLabel = self.$(".image-uploaded[data-key='#{key}'] .progress")
+  progressContainer.show()
   progressLabel.html(percent + '%')
+
+resetImageSrc = (self, key)->
+  image = self.$(".image-uploaded[data-key='#{key}'] .image")
+  image.attr 'src', imageUrl(key)
 
 hideImageLoading = (self, key)->
   imageContainer = self.$(".image-uploaded[data-key='#{key}'] .image-container")

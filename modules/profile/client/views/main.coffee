@@ -50,24 +50,9 @@ initUploader = (self)->
             file.key = newAvatarKey self, file
             return file.key
 
-          'BeforeUpload': (up, file)->
-            Images.insert
-              user: myId()
-              creator: file.key
-              key: file.key
-              uploaded: false
-
           'FileUploaded': (up, file, info)->
-            console.log info
             info = JSON.parse info
-            image = Images.findOne {key: info.key}
-            if image
-              Images.update {_id: image._id},
-                $set:
-                  uploaded: true
-                  width: info.width
-                  height: info.height
-              updateAvatar image._id
+            Profiles.update {_id: Meteor.user().profileId}, {$set: {avatar: info.key}}
 
           'Error': (up, err, errTip)->
             console.log err, errTip
@@ -78,5 +63,3 @@ getLine = (type, label)->
   href: isMe(@user) and "/profile?type=#{type}&user=#{@user}" or ''
   icon: isMe(@user) and "ios-arrow-right" or ''
 
-updateAvatar = (imageId)->
-  Profiles.update {_id: Meteor.user().profileId}, {$set: {avatar: imageId}}

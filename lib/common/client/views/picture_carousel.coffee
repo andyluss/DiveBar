@@ -1,5 +1,4 @@
 Template.pictureCarousel.helpers
-  pictures: -> imagesByCreator(@creator)
   imageSrc: -> imageUrl @, {mode: 2, w: screen.width, h: 200, q: 100}
 
 Template.pictureCarousel.events
@@ -16,13 +15,13 @@ showPhotoSwipe = (doc, container, index)->
     if image
       item =
         src: url
-        w: image.width
-        h: image.height
+#        w: image.width
+#        h: image.height
     else
-      console.log 'No Image, Id: ' + image._id
+      console.log 'No Image: ' + image
     return item
 
-  items.push getItem picture for picture in imagesByCreator(doc.creator).fetch()
+  items.push getItem picture for picture in doc.images
 
   options = {index: index}
   gallery = new PhotoSwipe container, PhotoSwipeUI_Default, items, options

@@ -22,6 +22,11 @@ Template.tabBar.helpers
 
     return data
 
+Template.tabBar.events
+  'click .add-button': (event, template)->
+    event.stopImmediatePropagation()
+    Router.go s.replaceAll(checkPostRouteLocation(currentLocation()), 'list', 'creator')
+
 Template.ionTab.events
   'click': (event, template)->
     data = template.data

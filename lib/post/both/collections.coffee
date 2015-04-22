@@ -10,7 +10,6 @@
   if hasCategory2
 
     category2 = getConfigs(category).category2
-    category2Default = getConfigs(category).category2Default
     category2Label = getConfigs(category).category2Label
 
     options = []
@@ -22,7 +21,7 @@
     moreSchema.category2 =
       type: String
       label: '子分类'
-      defaultValue: category2Default
+      defaultValue: category2.official
       autoform:
         options: options
 

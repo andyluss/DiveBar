@@ -6,8 +6,7 @@ Template.postDetail.helpers
   moreDetailTemplate: -> "#{@category}MoreDetail"
 
 Template.ionNavBar.events
-  'click [data-action=post-more]': (event, template)->
-    showActionSheet @
+  'click [data-action=post-more]': (event, template)-> showActionSheet @
 
 showActionSheet = (doc)->
   if canEdit doc

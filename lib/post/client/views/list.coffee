@@ -9,7 +9,7 @@ Template.postList.helpers
     if routeCat2
       routeCat2 == category2 and 'selected' or ''
     else
-      category2 == getConfigs(Template.parentData().category).category2Default and 'selected' or ''
+      category2 == getConfigs(Template.parentData().category).category2.official and 'selected' or ''
 
   category2s: ->
     if hasCategory2(@category)

@@ -52,8 +52,6 @@ Template.registerHelper "currentRoute", -> currentRoute()
 
 Template.registerHelper "currentRouteIs", (name)-> currentRoute() is name
 
-Template.registerHelper "currentRouteCategory", -> currentRouteQuery()?.category
-
 Template.registerHelper "activeRoute", (name)-> (currentRoute() is name) and 'active' or ''
 
 Template.registerHelper 'dateString', (date)->

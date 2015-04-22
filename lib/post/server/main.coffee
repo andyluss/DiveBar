@@ -1,9 +1,16 @@
 @createPostPermission = (category)->
   coln(category).allow
-    insert: checkUser
-    update: checkUser
-    remove: checkUser
+    insert: checkPostPermission
+    update: checkPostPermission
+    remove: checkPostPermission
 
+checkPostPermission = (userId, doc)->
+  if hasCategory2(doc.category)
+    if not doc.category2
+      return false
+    if (doc.category2 is getConfigs(doc.category).category2.official) and (not isAdmin(userId))
+      return false
+  return checkUser(userId, doc)
 
 Meteor.publishComposite 'postList', (selector, limit)->
   {

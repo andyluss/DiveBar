@@ -20,7 +20,7 @@
 @checkCategory2 = (queryObject)->
   qo = queryObject
   if not hasCategory2(qo.category)
-    return false
+    return qo
   category2s = getConfigs(qo.category).category2
   if (qo.category2 is category2s.official) or (not qo.category2?)
     qo.category2 = amIAdmin() and category2s.official or category2s.user

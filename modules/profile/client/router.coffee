@@ -1,3 +1,2 @@
 
-Router.route '/profile',
-  name: 'profile'
+Router.route '/profile'

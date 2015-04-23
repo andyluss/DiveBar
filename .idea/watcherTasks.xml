@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectTasksOptions" suppressed-tasks="CoffeeScript;LESS;Jade;Stylus;SCSS">
+  <component name="ProjectTasksOptions" suppressed-tasks="CoffeeScript;LESS;Jade;Stylus;SCSS;Less">
     <TaskOptions isEnabled="false">
       <option name="arguments" value="$FileName$ -P -E tpl" />
       <option name="checkSyntaxErrors" value="true" />

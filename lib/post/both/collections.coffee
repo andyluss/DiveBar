@@ -85,7 +85,7 @@
 
   images:
     type: [String]
-    label: '图片集'
+    label: '图片集（七牛云图片key）'
     optional: true
     defaultValue: []
 

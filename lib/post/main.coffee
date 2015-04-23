@@ -6,4 +6,4 @@
     createPostPermission category
 
   if Meteor.isClient
-    createPostViews category
+    window['createPostViews'] and (createPostViews category)

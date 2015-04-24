@@ -1,4 +1,4 @@
 @noteConfigs =
-  label: '游记'
+  label: '潜途'
   itemTemplate: 'imageItem'
-  icon: "android-car"
+  icon: "dive-note"

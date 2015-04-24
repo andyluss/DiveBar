@@ -2,9 +2,27 @@
   .tabs
     background #36618e
     .tab-item
-      color #aadeff
-    .tab-item.active
+      opacity 1
       color white
+      font-family SimHei
+      .icon
+        filter brightness(0) invert(1)
+      .ion-dive-note
+        background url(/images/icondive-noteon.svg) no-repeat center
+        background-size 24px 24px
+      .ion-dive-journey
+        background url(/images/icondive-journeyon.svg) no-repeat center
+        background-size 24px 24px
+      .ion-dive-product
+        background url(/images/icondive-producton.svg) no-repeat center
+        background-size 24px 24px
+      .ion-dive-say
+        background url(/images/icondive-sayon.svg) no-repeat center
+        background-size 24px 24px
+    .tab-item.active
+      color #aadeff
+      .icon
+        filter none
     .add-button
       color #aadeff
       position absolute

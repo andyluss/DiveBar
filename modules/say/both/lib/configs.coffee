@@ -1,4 +1,4 @@
 @sayConfigs =
   label: '说说'
   itemTemplate: 'imageItem'
-  icon: "chatbubble"
+  icon: "dive-say"

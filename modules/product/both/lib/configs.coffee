@@ -1,6 +1,6 @@
 @productConfigs =
-  label: '商品'
-  icon: "android-cart"
+  label: '装备'
+  icon: "dive-product"
   category2:
     official: 'official'
     user: 'user'

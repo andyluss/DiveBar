@@ -8,9 +8,3 @@ Products.attachSchema new SimpleSchema
     defaultValue: 100
     min: 0
     optional: true
-
-  viewCount:
-    type: Number
-    label: '阅读数'
-    defaultValue: 0
-    optional: true

@@ -79,6 +79,7 @@
   date:
     type: Date
     label: '日期'
+    optional: true
     autoValue: ->
       if @isInsert
         new Date()
@@ -88,4 +89,10 @@
     label: '图片集（七牛云图片key）'
     optional: true
     defaultValue: []
+
+  viewCount:
+    type: Number
+    label: '阅读数'
+    defaultValue: 0
+    optional: true
 

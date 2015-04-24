@@ -27,7 +27,6 @@
   return qo
 
 @checkPostRouteLocation = (location)->
-  path = location.path
   qo = checkCategory2 location.queryObject
   return location.pathname + Iron.Url.toQueryString(qo)
 

@@ -1,11 +1,11 @@
 @PostListController = ContentController.extend
   onAfterAction: ->
-    checkCategory2.call(@)
+    setDefaultCategory2.call @
     selector = pq(@)
     subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
     subscribeMyFavorites()
   data: ->
-    checkCategory2.call(@)
+    setDefaultCategory2.call @
     selector = pq(@)
     data = _.clone selector
     selector = selectFavorites(selector)
@@ -29,7 +29,7 @@ getListItemTemplate = (selector)->
   cfg = getConfigs selector.category
   return cfg.itemTemplate[selector.category2] or cfg.itemTemplate
 
-checkCategory2 = ->
+setDefaultCategory2 = ->
   if (not pq(@).category2?) and hasCategory2 pq(@).category
     config = getConfigs(pq(@).category)
-    pq(@).category2 = config.category2Default
+    pq(@).category2 = config.category2.official

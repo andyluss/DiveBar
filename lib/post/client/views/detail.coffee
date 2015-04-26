@@ -2,12 +2,11 @@ Template.postDetail.helpers
   commentStrings: ->
     'add-button': '提交'
     'placeholder-textarea': '你有什么想表达的...'
-  hasPicture: -> imagesByCreator(@creator).count() > 0
+  hasPicture: -> @images?.length > 0
   moreDetailTemplate: -> "#{@category}MoreDetail"
 
 Template.ionNavBar.events
-  'click [data-action=post-more]': (event, template)->
-    showActionSheet @
+  'click [data-action=post-more]': (event, template)-> showActionSheet @
 
 showActionSheet = (doc)->
   if canEdit doc
@@ -25,8 +24,7 @@ showActionSheet = (doc)->
       buttonClicked: (index)->
         switch index
           when 0
-            console.log 'Share'
-            return true
+            toShare(doc)
           when 1
             editPost(doc)
         return true
@@ -40,9 +38,14 @@ showActionSheet = (doc)->
       buttonClicked: (index)->
         switch index
           when 0
-            console.log 'Share'
-            return true
+            toShare(doc)
         return true
+
+toShare = (doc)->
+  if Meteor.isCordova
+    window.plugins.socialsharing.share doc.content, doc.title, imageUrl(doc.images?[0]), currentUrl()
+  else
+    alert '这是手机上才有的功能。'
 
 editPost = (doc)->
   Router.go "/post/updater?category=#{doc.category}&id=#{doc._id}"

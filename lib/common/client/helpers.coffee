@@ -1,3 +1,13 @@
+@qiniuImageInfo = (key, info)->
+  if info and key and Qiniu and qiniuConfig.DOMAIN
+    info.src = Qiniu.getUrl(key)
+    HTTP.get (info.src + '?imageInfo'), (error, result)->
+      if error
+        console.log error
+      else if result.statusCode is 200
+        info.w = result.data.width
+        info.h = result.data.height
+
 @subscribeMyFavorites = ->
   subManager.subscribe 'favoritesByUser', myId()
 
@@ -16,7 +26,9 @@
 
 @currentLocation = -> Iron.Location.get()
 
-@currentPath = -> Iron.Location.get().path
+@currentPath = -> currentLocation().path
+
+@currentUrl = -> Meteor.absoluteUrl currentPath().slice(1)
 
 @getListLimit = (selector)->
   sel = JSON.stringify selector
@@ -29,10 +41,6 @@
   backButton = $('.ionic-body .nav-bar-block .back-button')[0]
   $(backButton).click()
 
-@imagesUploaded = (creator)-> Images.find {creator: creator}
-
-@newImageCreator = -> myId() + '-' + new Date().getTime()
-
 Template.registerHelper 'users', -> Users
 
 Template.registerHelper 'isMe', (userId)-> isMe(userId or @user)
@@ -43,8 +51,6 @@ Template.registerHelper "absoluteUrl", (path)->
 Template.registerHelper "currentRoute", -> currentRoute()
 
 Template.registerHelper "currentRouteIs", (name)-> currentRoute() is name
-
-Template.registerHelper "currentRouteCategory", -> currentRouteQuery()?.category
 
 Template.registerHelper "activeRoute", (name)-> (currentRoute() is name) and 'active' or ''
 
@@ -62,9 +68,9 @@ Template.registerHelper 'avatarUrl', (userId)-> avatarUrl userId
 
 Template.registerHelper 'imageUrl', (image)-> imageUrl image
 
-Template.registerHelper 'firstPicture', ->
-#  ratio = window.devicePixelRatio or 1
-  imageUrl firstImagesByCreator(@creator), {mode: 2, w: screen.width, h: screen.width * 0.8, q: 100}
+#Template.registerHelper 'firstPicture', (images)->
+##  ratio = window.devicePixelRatio or 1
+#  imageUrl images?[0], {mode: 2, w: screen.width, h: screen.width * 0.8, q: 100}
 
 Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
   _.extend @, {itemTemplate: itemTemplate}

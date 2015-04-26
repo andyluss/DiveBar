@@ -21,7 +21,7 @@ Journeys.attachSchema new SimpleSchema
     type: Number
     label: '级别'
     optional: true
-    defaultValue: 1
+    defaultValue: 0
     min: 0
 
   peopleCount:

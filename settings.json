@@ -1,0 +1,7 @@
+{
+  "public":
+  {
+    "houston_root_route": "/db",
+    "houston_documents_per_page": 50
+  }
+}

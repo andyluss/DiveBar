@@ -1,9 +1,16 @@
 @createPostPermission = (category)->
   coln(category).allow
-    insert: checkUser
-    update: checkUser
-    remove: checkUser
+    insert: checkPostPermission
+    update: checkPostPermission
+    remove: checkPostPermission
 
+checkPostPermission = (userId, doc)->
+  if hasCategory2(doc.category)
+    if not doc.category2
+      return false
+    if (doc.category2 is getConfigs(doc.category).category2.official) and (not isAdmin(userId))
+      return false
+  return checkUser(userId, doc)
 
 Meteor.publishComposite 'postList', (selector, limit)->
   {
@@ -17,28 +24,16 @@ Meteor.publishComposite 'postList', (selector, limit)->
 
   children: [
     docUserComposite()
-    {
-      find: (doc)->
-        # Comment count
-        Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
-        # First Picture
-        Images.find {creator: doc.creator}
-    }
   ]
   }
 
 Meteor.publishComposite 'post', (category, _id)->
   {
   find: ->
+    # Comment count
+    Counts.publish @, getCommentCountName(_id), Comments.get(_id)
     coln(category).find {_id: _id}
   children: [
     docUserComposite()
-    {
-      find: (doc)->
-        # Comment count
-        Counts.publish @, getCommentCountName(doc._id), Comments.get(doc._id), {noReady: true}
-        # Pictures
-        Images.find {creator: doc.creator}
-    }
   ]
   }

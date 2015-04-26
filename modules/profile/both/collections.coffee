@@ -7,15 +7,6 @@ Profiles.attachSchema new SimpleSchema
     label: '用户'
     regEx: SimpleSchema.RegEx.Id
 
-  picture:
-    type: String
-    optional:true
-    label: '照片'
-    autoform:
-      afFieldInput:
-        type: 'fileUpload'
-        collection: 'ProfilePictures'
-
   avatar:
     type: String
     optional:true

@@ -1,6 +1,11 @@
+Template.imageUploaded.onRendered ->
+  @$('.progress-container').hide()
+
 Template.imageUploaded.helpers
   thumbUrl: -> imageUrl @, {mode: 2, w: 96, h: 96, q: 100}
 
 Template.imageUploaded.events
   'click .delete.button': (event, template)->
-    Images.remove template.data._id
+    console.log Template.parentData()
+    arr = Template.parentData().imagesToUpload
+    arr.splice(arr.indexOf(template.data), 1)

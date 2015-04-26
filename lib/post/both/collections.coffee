@@ -10,7 +10,6 @@
   if hasCategory2
 
     category2 = getConfigs(category).category2
-    category2Default = getConfigs(category).category2Default
     category2Label = getConfigs(category).category2Label
 
     options = []
@@ -22,7 +21,7 @@
     moreSchema.category2 =
       type: String
       label: '子分类'
-      defaultValue: category2Default
+      defaultValue: category2.official
       autoform:
         options: options
 
@@ -80,12 +79,20 @@
   date:
     type: Date
     label: '日期'
+    optional: true
     autoValue: ->
       if @isInsert
         new Date()
 
-  creator:
-    type: String
-    label: '（开发辅助用）创建者标记'
+  images:
+    type: [String]
+    label: '图片集（七牛云图片key）'
+    optional: true
+    defaultValue: []
+
+  viewCount:
+    type: Number
+    label: '阅读数'
+    defaultValue: 0
     optional: true
 

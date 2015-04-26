@@ -7,6 +7,10 @@
     gbl()[name + 'Configs'] = {}
   return gbl()[name + 'Configs']
 
+@isAdmin = (userId)->
+  user = Meteor.users.findOne {_id: userId}
+  return user and _.contains(user.roles, UserRoles.admin)
+
 @amIAdmin = -> Meteor.userId() and _.contains(Meteor.user().roles, UserRoles.admin)
 
 @checkUser = (userId, doc)-> (userId == doc.user) or amIAdmin()
@@ -27,7 +31,7 @@
 
 @myId = -> Meteor.userId()
 
-@isMe = (userId)-> myId() and userId == myId()
+@isMe = (userId)-> myId() and (userId == myId())
 
 @mySelf = -> Meteor.user()
 
@@ -68,26 +72,19 @@
   else
     '游客'
 
-@imagesByCreator = (creator)-> Images.find {creator: creator}
-
-@firstImagesByCreator = (creator)-> Images.findOne {creator: creator}
-
 @imageUrl = (image, params)->
-  if typeof image is 'string'
-    image = Images.findOne {_id: image}
-  if image and image.key and qiniuConfig.DOMAIN and Qiniu
+  if image and qiniuConfig.DOMAIN and Qiniu
     Qiniu.domain = qiniuConfig.DOMAIN
     if not params
-      return Qiniu.getUrl image.key
+      return Qiniu.getUrl image
     else
-      return Qiniu.imageView2 params, image.key
+      return Qiniu.imageView2 params, image
   else
     return ''
 
 @avatarUrl = (userId)->
   profile = userProfile userId
-  image = Images.findOne({_id: profile.avatar})
-  profile and image and image.base64 or defaultAvatarUrl
+  return imageUrl(profile?.avatar, {mode: 1, w: 96}) or defaultAvatarUrl
 
 @selectFavorites = (selector)->
   if selector.favoritesby

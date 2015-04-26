@@ -1,5 +1,4 @@
-Router.route '/login',
-  name: 'login'
+Router.route '/login'
 
 AccountsTemplates.configureRoute 'ensureSignedIn',
   template: 'login'

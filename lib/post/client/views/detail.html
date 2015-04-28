@@ -6,13 +6,17 @@
 
   {{#contentFor "headerButtonRight"}}
     {{#if currentUser}}
-      {{> favoriteButton _id=_id category=category}}
+      {{> favoriteButton _id=_id class='post-detail-favorite-button' category=category}}
     {{/if}}
     <button class="more-button button button-clear pull-right button-light ion-more icon" data-action="post-more"></button>
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
     <h1 class="title">{{title}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "popup"}}
+    {{>photoswipe}}
   {{/contentFor}}
 
   {{#ionView}}

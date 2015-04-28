@@ -12,7 +12,10 @@ Template.postCreator.helpers
 createAutoFormHooks = (data)->
   hooks =
     onSuccess: (formType, result)->
-      coln(data.category).update {_id: @docId}, {$set: {images: data.imagesToUpload.array()}}
+      coln(data.category).update {_id: @docId},
+        $set:
+          category2: data.category2
+          images: data.imagesToUpload.array()
       back()
   AutoForm.addHooks formId(data.category), hooks, true
 

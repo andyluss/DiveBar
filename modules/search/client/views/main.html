@@ -11,12 +11,19 @@
   {{#ionView class='search'}}
     {{#ionContent}}
 
-      <!--<div class="types-container">-->
-        <!--<a class="type-tab type-post selected">{{postCategoryLabel category}}</a>-->
-        <!--<a class="type-tab type-user">用户</a>-->
-      <!--</div>-->
+      <div class="types-container">
+        {{#with 'all'}}
+          <a class="type-tab {{this}} {{isSelect this}}">全部</a>
+        {{/with}}
+        {{#each postCategories}}
+          <a class="type-tab {{this}} {{isSelect this}}">{{postCategoryLabel this}}</a>
+        {{/each}}
+        {{#with 'profile'}}
+          <a class="type-tab {{this}} {{isSelect this}}">用户</a>
+        {{/with}}
+      </div>
 
-      {{> esInput index=indexes placeholder="搜索文章、用户..." class='query-input' reactive='false' event='enter'}}
+      {{> esInput index=indexes placeholder=placeholder class='query-input' event='enter'}}
     
       {{#ionList}}
         {{#each postCategories}}

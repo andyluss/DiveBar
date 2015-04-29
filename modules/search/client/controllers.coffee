@@ -1,2 +1,2 @@
-SearchController = ContentController.extend
+@SearchController = ContentController.extend
   data: -> noTransition paramsQuery @

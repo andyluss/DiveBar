@@ -1,10 +1,6 @@
 @createPostCollection = (category, hasCategory2)->
   Posts = gbl()[pcap category] = new Meteor.Collection plural category
 
-  Posts.initEasySearch and Posts.initEasySearch ['title', '_id'],
-    'limit': 20
-    'use': 'mongo-db'
-
   moreSchema =
     category:
       type: String

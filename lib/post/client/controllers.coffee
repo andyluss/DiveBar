@@ -25,9 +25,6 @@
 @PostUpdaterController = ContentController.extend
   data: -> noTransition coln(pq(@).category).findOne({_id: pq(@).id})
 
-@PostSearchController = ContentController.extend
-  data: -> noTransition pq(@)
-
 pq = (context)-> paramsQuery context
   
 getListItemTemplate = (selector)->

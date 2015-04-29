@@ -1,3 +1,6 @@
+
+@postCategoryLabel = (category)-> getConfigs(category).label
+
 @autoFormOmitFields = (category)->
   omitFields = getConfigs(category).autoFormOmitFields
   if omitFields

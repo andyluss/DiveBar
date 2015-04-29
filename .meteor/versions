@@ -75,7 +75,7 @@ localstorage@1.0.3
 logging@1.0.7
 manuel:reactivearray@1.0.5
 matb33:collection-hooks@0.7.11
-matteodem:easy-search@1.5.4
+matteodem:easy-search@1.5.6
 mdg:geolocation@1.0.2
 meteor@1.1.6
 meteor-platform@1.2.2
@@ -94,7 +94,6 @@ mongo@1.1.0
 mongo-livedata@1.0.8
 mquandalle:bower@1.3.12_3
 mquandalle:stylus@1.1.0
-msavin:mongol@0.3.5
 multiply:iron-router-progress@1.0.1
 npm-bcrypt@0.7.8_2
 npm-container@1.0.0

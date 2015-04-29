@@ -26,7 +26,7 @@ Template.ionNavBar.events
       Router.go '/login?from=list'
 
   'click [data-action=search]': (event, template)->
-    Router.go 'post.search', null, {query: currentLocation().query}
+    Router.go 'search'
 
   'click [data-action=favoritesby]': (event, template)->
 #    setPostList 'favoritesby', myId()

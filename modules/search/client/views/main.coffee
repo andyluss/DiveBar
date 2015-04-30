@@ -20,7 +20,6 @@ Template.search.events
   'click .type-tab': (event, template)->
     type.set('' + @)
     typeText = template.$('.' + type.get() + ' .query-input').val()
-    console.log type.get()
     if not typeText
       clearSearchIndex type.get()
 

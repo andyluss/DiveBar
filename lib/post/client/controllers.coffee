@@ -25,6 +25,8 @@
 @PostUpdaterController = ContentController.extend
   data: -> noTransition coln(pq(@).category).findOne({_id: pq(@).id})
 
+pq = (context)-> paramsQuery context
+  
 getListItemTemplate = (selector)->
   cfg = getConfigs selector.category
   return cfg.itemTemplate[selector.category2] or cfg.itemTemplate

@@ -1,4 +1,4 @@
-@pq = (context)-> context.params.query
+@paramsQuery = (context)-> context.params.query
 
 @gbl = -> Meteor.isClient and window or global
 

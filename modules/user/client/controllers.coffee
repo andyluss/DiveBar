@@ -1,11 +1,11 @@
 @UserListController = ContentController.extend
   onAfterAction: ->
-    selector = pq(@)
+    selector = paramsQuery(@)
     selector.category = 'user'
     subManager.subscribe "userList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
     subscribeMyFavorites()
   data: ->
-    selector = pq(@)
+    selector = paramsQuery(@)
     data = _.clone selector
     selector.category = 'user'
     selector = selectFavorites(selector)

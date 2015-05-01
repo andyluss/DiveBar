@@ -1,5 +1,5 @@
 @createPostCollection = (category, hasCategory2)->
-  gbl()[pcap category] = new Meteor.Collection plural category
+  Posts = gbl()[pcap category] = new Meteor.Collection plural category
 
   moreSchema =
     category:
@@ -25,7 +25,7 @@
       autoform:
         options: options
 
-  coln(category).attachSchema new SimpleSchema [PostSchema, moreSchema]
+  Posts.attachSchema new SimpleSchema [PostSchema, moreSchema]
 
 @PostSchema = new SimpleSchema
 

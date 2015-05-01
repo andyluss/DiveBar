@@ -1,0 +1,20 @@
+<template name="imageItemSay">
+
+  <div class='image-item-say'>
+    {{#if firstPicture}}
+      <div class="image-container">
+        <img src={{firstPicture}}>
+      </div>
+    {{/if}}
+    <div class="title-container">
+      <label class="title">{{title}}</label>
+      <div class="banner">
+        <label class="user">
+          {{userName user}}
+        </label>
+        <label class="date">{{dateString date}}</label>
+      </div>
+    </div>
+  </div>
+
+</template>

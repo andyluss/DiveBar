@@ -1,18 +1,32 @@
 <template name="imageItemSay">
 
   <div class='image-item-say'>
-    {{#if firstPicture}}
-      <div class="image-container">
-        <img src={{firstPicture}}>
-      </div>
-    {{/if}}
-    <div class="title-container">
-      <label class="title">{{title}}</label>
-      <div class="banner">
-        <label class="user">
-          {{userName user}}
+    {{>userAvatar}}
+    <a href="{{userUrl this}}" class="user">{{userName user}}</a>
+    <div class="item-say">
+      <div class="item-container">
+        <label class="text">
+          {{title}}
+          {{#if content}}
+            {{content}}
+          {{/if}}
         </label>
-        <label class="date">{{dateString date}}</label>
+        {{#if firstPicture}}
+          <div class="image-container">
+            <div class="image-block">
+              <img src={{firstPicture}}>
+            </div>
+            {{#if secondPicture}}
+              <div class="image-block">
+                <img src={{secondPicture}}>
+              </div>
+            {{/if}}
+          </div>
+        {{/if}}
+        <div class="banner">
+          <label class="date">{{dateString date}}</label>
+          <label class="recall"></label>
+        </div>
       </div>
     </div>
   </div>

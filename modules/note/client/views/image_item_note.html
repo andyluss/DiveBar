@@ -1,0 +1,22 @@
+<template name="imageItemNote">
+
+  <div class='image-item'>
+    {{#if firstPicture}}
+      <div class="image-container">
+        <img src={{firstPicture}}>
+      </div>
+    {{/if}}
+    <div class="title-container">
+      <label class="title">{{title}}</label>
+      <div class="banner">
+        <label class="user">
+          <span class="icon-heart"></span>{{userName user}}
+        </label>
+        <label class="date">
+          <span class="icon-answer"></span>{{dateString date}}
+        </label>
+      </div>
+    </div>
+  </div>
+
+</template>

@@ -1,4 +1,4 @@
 @noteConfigs =
   label: '潜途'
-  itemTemplate: 'imageItem'
+  itemTemplate: 'imageItemNote'
   icon: "dive-note"

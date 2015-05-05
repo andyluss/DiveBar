@@ -51,10 +51,13 @@
           height 24px
           margin-right 5px
           vertical-align middle
-        .icon-heart
-          opacity 0.25
-          background url(/images/icon-heart.svg) no-repeat center
-          background-size 24px 24px
-        .icon-answer
-          background url(/images/icon-answer.svg) no-repeat center
-          background-size 24px 24px
+        .icon-heart:before,.icon-answer:before
+          vertical-align top
+          font-family "Dive"
+          font-size 20px
+          line-height 22px
+          color #cbcbcb
+        .icon-heart:before
+          content "\e604"
+        .icon-answer:before
+          content "\e602"

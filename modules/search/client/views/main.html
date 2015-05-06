@@ -12,44 +12,54 @@
     {{#ionContent}}
 
       <div class="types-container">
-        {{#with 'all'}}
-          <a class="type-tab {{this}} {{isSelect this}}">全部</a>
-        {{/with}}
-        {{#each postCategories}}
-          <a class="type-tab {{this}} {{isSelect this}}">{{postCategoryLabel this}}</a>
+        {{#each tabs}}
+          <a class="type-tab {{this}} {{isSelect this}}">{{label this}}</a>
         {{/each}}
-        {{#with 'profile'}}
-          <a class="type-tab {{this}} {{isSelect this}}">用户</a>
-        {{/with}}
       </div>
 
-      {{> esInput index=indexes placeholder=placeholder class='query-input' event='enter'}}
-    
-      {{#ionList}}
-        {{#each postCategories}}
-          {{#esEach index=postIndex}}
-            {{#ionItem class='result-item post' id=_id category=category}}
-              {{postCategoryLabel category}}：{{title}}
-            {{/ionItem}}
-          {{/esEach}}
+      <div class="tab-view-container">
+
+        {{#each tabs}}
+
+          <div class="tab-view {{this}} {{isHidden}}">
+
+            {{>esInput index=indexes placeholder=placeholder class='query-input' reactive='false' event='enter'}}
+
+            {{#ionList}}
+
+              {{#esEach index=indexes}}
+
+                {{#if isPost ..}}
+                  {{#ionItem class='result-item post' id=_id category=category}}
+                    {{title}}
+                  {{/ionItem}}
+                {{/if}}
+
+                {{#if isProfile ..}}
+                  {{#ionItem class='result-item profile' user=user}}
+                    {{nickname}}
+                  {{/ionItem}}
+                {{/if}}
+
+              {{/esEach}}
+            {{/ionList}}
+
+            {{>esLoadMoreButton index=indexes}}
+
+            {{#ifEsHasNoResults index=indexes}}
+              <div class="no-results">没有结果。</div>
+            {{/ifEsHasNoResults}}
+
+            {{#ifEsIsSearching index=indexes}}
+              <div class="result-loading">加载中...</div>
+            {{/ifEsIsSearching}}
+
+          </div>
+
         {{/each}}
 
-        {{#esEach index='profiles'}}
-          {{#ionItem class='result-item profile' user=user}}
-            用户：{{nickname}}
-          {{/ionItem}}
-        {{/esEach}}
-      {{/ionList}}
+      </div>
 
-      {{> esLoadMoreButton index=indexes}}
-
-      {{#ifEsHasNoResults index=indexes}}
-        <div class="no-results">没有结果。</div>
-      {{/ifEsHasNoResults}}
-
-      {{#ifEsIsSearching index=indexes}}
-        <div class="result-loading">加载中...</div>
-      {{/ifEsIsSearching}}
       
     {{/ionContent}}
   {{/ionView}}

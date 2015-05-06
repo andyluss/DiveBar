@@ -19,18 +19,20 @@
       <div class="content-container">
         <table>
           <tr>
-            <td>地点：{{location}}</td>
-            <td>级别要求：{{level}}</td>
-            <td>时间：<label class="date">{{dateString date}}</label></td>
+              <td>地点：{{location}}</td>
+              <td>费用：{{cost}}</td>
           </tr>
+        </table>
+        <table>
           <tr>
-            <td>费用：{{cost}}</td>
-            <td>人数：{{peopleCount}}（{{peopleCount}}/{{peopleCountMax}}）</td>
+            <td>时间：<label class="date">{{dateString date}}</label>
+                人数：{{peopleCount}}（{{peopleCount}}/{{peopleCountMax}}）
+                级别要求：{{level}}</td>
           </tr>
         </table>
       </div>
     </div>
-    <hr>
+    <!--hr-->
   </div>
 
 </template>

@@ -3,7 +3,8 @@ Template.postDetail.helpers
     'add-button': '提交'
     'placeholder-textarea': '你有什么想表达的...'
   hasPicture: -> @images?.length > 0
-  moreDetailTemplate: -> "#{@category}MoreDetail"
+  moreDetailTemplate: -> Template["#{@category}MoreDetail"]? and "#{@category}MoreDetail" or false
+  detailContent: -> Template["#{@category}DetailContent"]? and "#{@category}DetailContent" or false
 
 Template.ionNavBar.events
   'click [data-action=post-more]': (event, template)-> showActionSheet @

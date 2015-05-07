@@ -22,39 +22,47 @@
   {{#ionView}}
     {{#ionContent}}
 
-      <div class="post-detail">
+      {{#if detailContent}}
 
-        {{#if hasPicture}}
-          {{>pictureCarousel}}
-        {{/if}}
+        {{>Template.dynamic template=detailContent}}
 
-        <div class="title-container">
-          <label class="title">{{title}}</label>
-          <label class="user">
-            <a href="{{userUrl user}}">
-              {{userName user}}
-            </a>
-          </label>
-          <label class="date">{{dateString date}}</label>
-        </div>
+      {{else}}
 
-        {{#if content}}
-          <div class="content-container ">
-            {{content}}
-          </div>
-        {{/if}}
+        <div class="post-detail">
 
-        <div class="more-detail">
-          {{#if moreDetailTemplate}}
-            {{>Template.dynamic template=moreDetailTemplate}}
+          {{#if hasPicture}}
+            {{>pictureCarousel}}
           {{/if}}
+
+          <div class="title-container">
+            <label class="title">{{title}}</label>
+            <label class="user">
+              <a href="{{userUrl user}}">
+                {{userName user}}
+              </a>
+            </label>
+            <label class="date">{{dateString date}}</label>
+          </div>
+
+          {{#if content}}
+            <div class="content-container ">
+              {{content}}
+            </div>
+          {{/if}}
+
+          <div class="more-detail">
+            {{#if moreDetailTemplate}}
+              {{>Template.dynamic template=moreDetailTemplate}}
+            {{/if}}
+          </div>
+
+          {{#if this}}
+            {{>commentsBox id=_id content=commentStrings customTemplate='commonCommentBox'}}
+          {{/if}}
+
         </div>
 
-        {{#if this}}
-          {{>commentsBox id=_id content=commentStrings customTemplate='commonCommentBox'}}
-        {{/if}}
-
-      </div>
+      {{/if}}
 
     {{/ionContent}}
 

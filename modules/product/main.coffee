@@ -1,10 +1,12 @@
-createPostBase PostCategory.product, true
+Meteor.startup ->
 
-Products.attachSchema new SimpleSchema
+  createPostBase PostCategory.product, true
 
-  price:
-    type: Number
-    label: '价格（元）'
-    defaultValue: 100
-    min: 0
-    optional: true
+  Products.attachSchema new SimpleSchema
+
+    price:
+      type: Number
+      label: '价格（元）'
+      defaultValue: 100
+      min: 0
+      optional: true

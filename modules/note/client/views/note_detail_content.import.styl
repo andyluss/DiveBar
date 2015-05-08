@@ -1,21 +1,53 @@
 .note-detail
   width 100%
   @import '../../../lib/common/client/views/picture_carousel.import.styl'
+
+  .tittles
+    position absolute
+    left 0
+    bottom 61%
+    size 100% 2em
+    height 95px
+    background-color transparent
+    .title
+      position relative
+      display block
+      padding 8px 5%
+      width 100%
+      height 60px
+      color #fff
+      font-size 1.5em
+      line-height 22px
+      background-color rgba(0,0,0,0.4)
+
+
   .title-container
     padding-top 0.35em
     size 100% 2em
-    background-color #6463ce
-    label
-      color white
-      position absolute
-    .title
-      left 10px
-    .user
-      right 80px
+    background-color #a4cf5f
     .date
       right 10px
+
+  .userbox
+    color black
+    font-size 1.2em
+    display flex
+    .user
+      padding-top 0.7em
+      padding-left 0.7em
+      font-size 1.2em
+      right 80px
+    .avatar-user
+      padding-top 0.5em
+      padding-left 0.2em
+      size 3em
+      @import '../../../lib/common/client/views/user_avatar.import.styl'
+
   .content-container
+    font-size 1.5em
+    color black
     padding 2px 10px
     opacity 0.6
+    margin 10px 20px
 
   @import '../../../lib/common/client/views/comment_box.import.styl'

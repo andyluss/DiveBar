@@ -2,19 +2,31 @@
 
       <div class="note-detail">
 
-        {{#if hasPicture}}
+        <!--{{#if hasPicture}}-->
           {{>pictureCarousel}}
-        {{/if}}
+        <!--{{/if}}-->
+
+        <div class="tittles">
+            <label class="title">{{title}}</label>
+        </div>
 
         <div class="title-container">
-          <label class="title">{{title}}</label>
+
+
+          <label class="date">{{dateString date}}</label>
+        </div>
+
+        <div class="userbox">
           <label class="user">
             <a href="{{userUrl user}}">
               {{userName user}}
             </a>
           </label>
-          <label class="date">{{dateString date}}</label>
+          <div class="avatar-user">
+            {{>userAvatar user}}
+          </div>
         </div>
+
 
         {{#if content}}
           <div class="content-container ">

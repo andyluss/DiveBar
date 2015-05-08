@@ -6,3 +6,9 @@ Template.imageItemNote.events
   'click .image-item-note .user': (event)->
     event.stopImmediatePropagation()
     Router.go userUrl(@user)
+
+Template.noteDetailContent.helpers
+  hasPicture: -> @images?.length > 0
+
+
+

@@ -1,47 +1,56 @@
 .note-detail
-  width 100%
   @import '../../../lib/common/client/views/picture_carousel.import.styl'
+  margin-bottom 10px
+  position relative
+  width 100%
+  height 240px
+  background-color #fff
+  //box-shadow 0 2px 2px rgba(0,0,0,0.1)
+  z-index 1
 
-  .tittles
+  .titles
     position absolute
     left 0
-    bottom 61%
-    size 100% 2em
-    height 95px
+    bottom 0
+    size 100% 3em
+    height 130px
     background-color transparent
+    //background-color rgba(0,0,0,0.4)
     .title
       position relative
       display block
       padding 8px 5%
       width 100%
-      height 60px
+      //height 65px
       color #fff
-      font-size 1.5em
-      line-height 22px
-      background-color rgba(0,0,0,0.4)
+      font-size 2em
+    .subtitle
+      position relative
+      display flex
+      color #fff
+      .date
+        font-size 1em
+        margin-left 4em
+      .user
+        //padding-top 0.7em
+        margin-left 8em
+        font-size 1em
+        //right 80px
+      .avatar-user
+        position:relative;
+        top -0.5em
+        margin-left 1em
+        size  2em
+        @import '../../../lib/common/client/views/user_avatar.import.styl'
+
+  //.title-container
+  //  padding-top 0.35em
+  //  size 100% 2em
+  //  background-color #a4cf5f
+  //  .date
+  //    right 10px
 
 
-  .title-container
-    padding-top 0.35em
-    size 100% 2em
-    background-color #a4cf5f
-    .date
-      right 10px
-
-  .userbox
-    color black
-    font-size 1.2em
-    display flex
-    .user
-      padding-top 0.7em
-      padding-left 0.7em
-      font-size 1.2em
-      right 80px
-    .avatar-user
-      padding-top 0.5em
-      padding-left 0.2em
-      size 3em
-      @import '../../../lib/common/client/views/user_avatar.import.styl'
 
   .content-container
     font-size 1.5em

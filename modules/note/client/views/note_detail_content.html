@@ -6,26 +6,41 @@
           {{>pictureCarousel}}
         <!--{{/if}}-->
 
-        <div class="tittles">
+        <div class="titles">
+            <!--文章标题-->
             <label class="title">{{title}}</label>
+            <!--副标题-->
+            <div class="subtitle">
+              <label class="date">{{dateString date}}</label>
+              <!--<div class="userbox">-->
+              <label class="user">
+                  <a href="{{userUrl user}}">
+                    {{userName user}}
+                  </a>
+              </label>
+              <div class="avatar-user">
+                {{>userAvatar user}}
+              </div>
+              <!--</div>-->
+            </div>
         </div>
 
-        <div class="title-container">
+        <!--<div class="title-container">-->
 
 
-          <label class="date">{{dateString date}}</label>
-        </div>
+          <!--<label class="date">{{dateString date}}</label>-->
+        <!--</div>-->
 
-        <div class="userbox">
-          <label class="user">
-            <a href="{{userUrl user}}">
-              {{userName user}}
-            </a>
-          </label>
-          <div class="avatar-user">
-            {{>userAvatar user}}
-          </div>
-        </div>
+        <!--<div class="userbox">-->
+          <!--<label class="user">-->
+            <!--<a href="{{userUrl user}}">-->
+              <!--{{userName user}}-->
+            <!--</a>-->
+          <!--</label>-->
+          <!--<div class="avatar-user">-->
+            <!--{{>userAvatar user}}-->
+          <!--</div>-->
+        <!--</div>-->
 
 
         {{#if content}}

@@ -1,2 +1,1 @@
-Meteor.startup ->
-  createPostBase PostCategory.say
+createPostBase PostCategory.say

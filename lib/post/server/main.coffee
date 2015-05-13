@@ -20,7 +20,7 @@ Meteor.publishComposite 'postList', (selector, limit)->
     Counts.publish @, getCountName(selector), coln(category).find(_.omit(selector, 'category')), {noReady: true}
 
     selector = selectFavorites(selector)
-    coln(category).find(_.omit(selector, 'category'), {limit: limit, sort: [['date', 'desc']]})
+    coln(category).find(_.omit(selector, 'category'), {limit: limit, fields: {content: 0}, sort: [['date', 'desc']]})
 
   children: [
     docUserComposite()

@@ -1,38 +1,33 @@
 <template name="journeyUserItem">
 
   <div class='journey user-item'>
-    <div class="above-box">
+    <div class="user-box">
       <div class="avatar-container">
         {{>userAvatar user}}
       </div>
-      <div class="above-right">
-        <a href="{{userUrl user}}">
-          {{userName user}}
-        </a>
-        <div class="title-container">
-            <label class="title">{{title}}</label>
-        </div>
-      </div>
-
+      <a href="{{userUrl user}}">
+        {{userName user}}
+      </a>
     </div>
-    <div class="under-box">
+    <div class="right-box">
+      <div class="title-container">
+        <label class="title">{{title}}</label>
+        <label class="date">{{dateString date}}</label>
+      </div>
       <div class="content-container">
         <table>
           <tr>
-              <td>地点：{{location}}</td>
-              <td>费用：{{cost}}</td>
+            <td>地点：{{location}}</td>
+            <td>费用：{{cost}}</td>
           </tr>
-        </table>
-        <table>
           <tr>
-            <td>时间：<label class="date">{{dateString date}}</label>
-                人数：{{peopleCount}}（{{peopleCount}}/{{peopleCountMax}}）
-                级别要求：{{level}}</td>
+            <td>级别要求：{{level}}</td>
+            <td>人数：{{peopleCount}}（{{peopleCount}}/{{peopleCountMax}}）</td>
           </tr>
         </table>
       </div>
     </div>
-    <!--hr-->
+    <hr>
   </div>
 
 </template>

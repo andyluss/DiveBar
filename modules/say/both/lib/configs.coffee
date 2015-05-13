@@ -1,4 +1,4 @@
 @sayConfigs =
   label: '话题'
-  itemTemplate: 'imageItemSay'
+  itemTemplate: 'imageItem'
   icon: "dive-say"

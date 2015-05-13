@@ -1,44 +1,38 @@
 .journey.user-item
   background #f8fbfd
-  display inline-block
+  display flex
   padding 10px
   border-bottom solid 1px #badef1
-  .above-box
-    display flex
+  .user-box
     flex 1
     min-width 56px
-    text-align left
-    color #a4cf5f
+    text-align center
+    color #2b9ad5
     font-weight bold
     margin-right 10px
+    a
+      font-size 0.8em
     .avatar-container
-      size 4em
+      size 56px
       @import '../../../lib/common/client/views/user_avatar.import.styl'
-    .above-right
-      //display:flex
-      a
-        font-size 1.2em
+  .right-box
+    flex 5
+    .title-container
       .title
         font-weight bold
         color #2b9ad5
-        font-size 1.5em
-
-  .under-box
-    flex 5
-
-      //.date
-      //  position absolute
-      //  right 10px
-      //  color #ed9606
+      .date
+        position absolute
+        right 10px
+        color #ed9606
     .content-container
-      //display flex
+      display inline-block
       width 100%
       color #898a8b
       table
-        font-size 1.2em
         width 100%
         tr
           width 100%
           td
-            width 60%
-            padding-top 0em
+            width 50%
+            padding-top 0.3em

@@ -10,7 +10,7 @@ Template.tabBar.helpers
       profile =
         title: userPrefix(@user) + '名片'
         category: 'profile'
-        icon: 'card'
+        icon: 'dive-card'
         class: "tab-item-light"
         user: @user
       data.splice(2, 0, profile)

@@ -35,10 +35,9 @@ Template.ionTab.events
     path = ''
     if data.category is 'profile'
       path = "/profile?type=main&user=#{data.user}"
-      Router.go path
     else
       path = "/post/list?category=#{data.category}" + (data.user && "&user=#{data.user}" or '')
-      Router.go path, {}, {replaceState: true}
+    Router.go path, {}, {replaceState: true}
     Session.set('ionTab.current', path);
 
 Template.ionTab.helpers

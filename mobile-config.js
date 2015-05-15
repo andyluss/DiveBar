@@ -4,7 +4,7 @@ App.info({
   author: 'Dive Bar Author',
   email: 'root@divebar.com',
   website: 'http://divebar.com',
-  version: '0.0.1'
+  version: '1.2.1'
 });
 
 App.icons({

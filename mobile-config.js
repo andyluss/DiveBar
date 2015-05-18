@@ -1,10 +1,10 @@
 App.info({
-  name: 'DiveBar',
-  description: 'Dive Bar Desc.',
-  author: 'Dive Bar Author',
+  name: '潜途',
+  description: '一个潜水相关的软件',
+  author: 'divebar',
   email: 'root@divebar.com',
   website: 'http://divebar.com',
-  version: '1.2.1'
+  version: '2.0.0'
 });
 
 App.icons({

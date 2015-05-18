@@ -1,6 +1,6 @@
 T9n.setLanguage 'zh-cn'
 
-AccountsTemplates.configure
+#AccountsTemplates.configure
 #  showForgotPasswordLink: true
 
 #AccountsTemplates.configure

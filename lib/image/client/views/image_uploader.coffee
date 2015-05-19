@@ -50,6 +50,7 @@ initQiniuUploader = (self)->
             return file.key
 
           'BeforeUpload': (up, file)->
+            showUploadProgress self, file.key, 0
             imagesToUpload.push file.key
 
           'UploadProgress': (up, file)->
@@ -76,7 +77,7 @@ showUploadProgress = (self, key, percent)->
 
 resetImageSrc = (self, key)->
   image = self.$(".image-uploaded[data-key='#{key}'] .image")
-  image.attr 'src', imageUrl(key)
+  image.attr 'src', imageUrl(key, {mode: 2, w: 96, h: 96, q: 80})
 
 hideImageLoading = (self, key)->
   imageContainer = self.$(".image-uploaded[data-key='#{key}'] .image-container")

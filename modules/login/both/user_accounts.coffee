@@ -1,5 +1,11 @@
 T9n.setLanguage 'zh-cn'
 
+T9n.map "zh-cn",
+  "Email": "电子邮箱"
+  "Required Field": "需要填写"
+  "Invalid email": "无效的电子邮箱"
+  "Minimum required length: 6": "最小需要长度：6"
+
 #AccountsTemplates.configure
 #  showForgotPasswordLink: true
 

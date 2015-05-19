@@ -1,5 +1,8 @@
 imageInfos = []
 
+Template.pictureCarousel.onDestroyed ->
+  imageInfos = []
+
 Template.pictureCarousel.helpers
   imageSrc: ->
     url = imageUrl @, {mode: 2, w: screen.width, h: 200, q: 100}

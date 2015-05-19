@@ -37,9 +37,7 @@
     getConfigs(category)["listLimit_#{sel}"] = new ReactiveVar 10
   return getConfigs(category)["listLimit_#{sel}"]
 
-@back = ->
-  backButton = $('.ionic-body .nav-bar-block .back-button')[0]
-  $(backButton).click()
+@back = -> window.history.back();
 
 Template.registerHelper 'users', -> Users
 

@@ -19,7 +19,12 @@ Template.profileMain.helpers
   myFavoriteUsersPath: -> "/user/list?favoritesby=#{myId()}"
 
 Template.ionNavBar.events
-  'click [data-action=logout]': ()-> Meteor.logout()
+  'click [data-action=back-to-main]': ()-> back()
+
+Template.profileMain.events
+  'click [data-action=logout]': ()->
+    Meteor.logout()
+    back()
 
 newAvatarKey = -> 'avatar-' + myId() + '-' + new Date().getTime()
 

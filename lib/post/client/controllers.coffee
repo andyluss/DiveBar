@@ -2,6 +2,7 @@
   onAfterAction: ->
     setDefaultCategory2.call @
     selector = pq(@)
+    gbl()["loadingMore"].set true
     subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
     subscribeMyFavorites()
   data: ->

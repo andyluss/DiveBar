@@ -8,11 +8,6 @@ checkPostPermission = (userId, doc)->
   if hasCategory2(doc.category)
     if not doc.category2
       return false
-
-    console.log getConfigs(doc.category).category2.official
-    console.log doc.category2
-    console.log (doc.category2 is getConfigs(doc.category).category2.official)
-    console.log isAdmin(userId)
     if (doc.category2 is getConfigs(doc.category).category2.official) and (not isAdmin(userId))
       return false
   return checkUser(userId, doc)

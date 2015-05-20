@@ -17,6 +17,7 @@ Template.profileMain.helpers
     getLine.call(@, 'signature', '签名')
   ]
   myFavoriteUsersPath: -> "/user/list?favoritesby=#{myId()}"
+  certificatePath: -> "/certificate/list?user=#{@user}"
 
 Template.ionNavBar.events
   'click [data-action=back-to-main]': ()-> back()

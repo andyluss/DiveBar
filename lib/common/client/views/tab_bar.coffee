@@ -8,7 +8,7 @@ Template.tabBar.helpers
     ]
     if @user
       profile =
-        title: userPrefix(@user) + '名片'
+        title: '个人中心'
         category: 'profile'
         icon: 'dive-card'
         class: "tab-item-light"

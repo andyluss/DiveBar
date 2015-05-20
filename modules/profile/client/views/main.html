@@ -37,6 +37,10 @@
 
       {{#ionList}}
 
+        {{#ionItem href=certificatePath iconRight=true}}
+          <span class="label">证书</span>
+          {{>ionIcon icon="ios-arrow-right"}}
+        {{/ionItem}}
         {{#each lines}}
           {{#ionItem href=href iconRight=true}}
             <span class="label">{{label}}：</span>{{data}}

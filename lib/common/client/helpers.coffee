@@ -52,8 +52,7 @@ Template.registerHelper "currentRouteIs", (name)-> currentRoute() is name
 
 Template.registerHelper "activeRoute", (name)-> (currentRoute() is name) and 'active' or ''
 
-Template.registerHelper 'dateString', (date)->
-  moment(date).format('YYYY/M/D')
+Template.registerHelper 'dateString', (date, format)-> (typeof format is 'string') and dateString(date, format) or dateString(date)
 
 Template.registerHelper 'firstOne', (array)->
     if array and array.length > 0 then array[0] else ''
@@ -70,5 +69,6 @@ Template.registerHelper 'imageUrl', (image)-> imageUrl image
 ##  ratio = window.devicePixelRatio or 1
 #  imageUrl images?[0], {mode: 2, w: screen.width, h: screen.width * 0.8, q: 100}
 
-Template.registerHelper 'mergeItemTemplate', (itemTemplate)->
-  _.extend @, {itemTemplate: itemTemplate}
+Template.registerHelper 'mergeItemTemplate', (itemTemplate)-> _.extend @, {itemTemplate: itemTemplate}
+
+Template.registerHelper 'userPrefix', (userId, showName, isFavorite)-> userPrefix(userId, showName, isFavorite)

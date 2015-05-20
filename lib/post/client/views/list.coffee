@@ -19,6 +19,8 @@ Template.postList.helpers
 
 Template.ionNavBar.events
 
+  'click [data-action=back-to-main]': ()-> back()
+
   'click [data-action=my-data]': (event, template)->
     if myId()
       Router.go "/profile?type=main&user=#{myId()}"

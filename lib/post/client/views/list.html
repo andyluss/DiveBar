@@ -10,6 +10,18 @@
       {{>ionNavBackButton class="button-light" text=false}}
     {{/contentFor}}
 
+    {{#if currentUser}}
+
+      {{#contentFor "headerButtonRight"}}
+        {{#if isMe}}
+          <button class="button button-clear pull-right button-light" data-action="back-to-main">
+            {{> ionIcon icon='ionic'}}
+          </button>
+        {{/if}}
+      {{/contentFor}}
+
+    {{/if}}
+
   {{else}}
 
     {{#if favoritesby}}

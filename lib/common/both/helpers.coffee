@@ -72,6 +72,9 @@
   else
     '游客'
 
+@dateString = (date, format)-> moment(date).format(format or 'YYYY/M/D')
+
+
 @imageUrl = (image, params)->
   if image and qiniuConfig.DOMAIN and Qiniu
     Qiniu.domain = qiniuConfig.DOMAIN

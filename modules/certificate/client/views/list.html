@@ -1,0 +1,51 @@
+<template name="certificateList">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{userPrefix user true false}}证书列表</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#if currentUser}}
+
+    {{#contentFor "headerButtonRight"}}
+      {{#if isMe}}
+        <button class="button button-clear pull-right button-light" data-action="create-certificate">
+          {{> ionIcon icon='plus'}}
+        </button>
+      {{/if}}
+    {{/contentFor}}
+
+  {{/if}}
+
+  {{#ionView class='certificate-list'}}
+
+    {{#ionContent}}
+
+      <div class='item-list'>
+        {{#each list}}
+
+          <div class='certificate-item'>
+            <div class="left-box">
+              {{#if firstPictureThumb}}
+                <img src={{firstPictureThumb}}>
+              {{/if}}
+            </div>
+            <div class="right-box">
+              <label><span class="item-label">组 织：</span>{{orgName}}</label>
+              <label><span class="item-label">等 级：</span>{{level}}</label>
+              <label><span class="item-label">说 明：</span>{{desc}}</label>
+              <label><span class="item-label">日 期：</span>{{dateString date 'YYYY. M'}}</label>
+            </div>
+          </div>
+
+        {{/each}}
+      </div>
+
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

@@ -5,7 +5,7 @@ Template.profileMain.onRendered ->
     initUploader @
 
 Template.profileMain.helpers
-  title: -> userPrefix(@user, true) + '名片'
+  title: -> userPrefix(@user, true) + '个人中心'
   nickname: -> @nickname or (isMe(@user) and '添加昵称' or '')
   location: -> @location or (isMe(@user) and '添加地址' or '')
   nicknameEditorUrl: -> isMe(@user) and "/profile?type=nickname&user=#{@user}" or ''

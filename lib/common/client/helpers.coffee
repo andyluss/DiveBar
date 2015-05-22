@@ -9,12 +9,7 @@
         info.h = result.data.height
 
 @subscribeMyFavorites = ->
-  subManager.subscribe 'favoritesByUser', myId()
-
-@noTransition = (data)->
-#  if _.isObject data
-#    data.transition = 'none'
-  return data
+  subsManager.subscribe 'favoritesByUser', myId()
 
 @currentRoute = ->
   current = Router.current()

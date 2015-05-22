@@ -1,4 +1,4 @@
-@subManager = new SubsManager()
+@subsManager = new SubsManager()
 
 Router.configure
   layoutTemplate: 'layoutContent'

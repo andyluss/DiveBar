@@ -1,9 +1,17 @@
+loading = false
+
 @PostListController = ContentController.extend
   onAfterAction: ->
     setDefaultCategory2.call @
     selector = pq(@)
-    gbl()["loadingMore"].set true
-    subManager.subscribe "postList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
+    if not loading
+      console.log 'loading'
+      IonLoading.show()
+      loading = true
+    subsManager.subscribe "postList", selector, getListLimit(selector).get(), ->
+      gbl()["loadingMore"].set false
+      IonLoading.hide()
+      console.log 'loaded'
     subscribeMyFavorites()
   data: ->
     setDefaultCategory2.call @
@@ -12,19 +20,19 @@
     selector = selectFavorites(selector)
     data.list = coln(selector.category).find selector, {sort: {date: -1}}
     data.itemTemplate = getListItemTemplate(selector)
-    return noTransition data
+    return data
 
 @PostDetailController = ContentController.extend
   onAfterAction: ->
-    subManager.subscribe 'post', pq(@).category, pq(@).id
+    subsManager.subscribe 'post', pq(@).category, pq(@).id
     subscribeMyFavorites()
-  data: -> noTransition coln(pq(@).category).findOne({_id: pq(@).id})
+  data: -> coln(pq(@).category).findOne({_id: pq(@).id})
 
 @PostCreatorController = ContentController.extend
-  data: -> noTransition pq(@)
+  data: -> pq(@)
 
 @PostUpdaterController = ContentController.extend
-  data: -> noTransition coln(pq(@).category).findOne({_id: pq(@).id})
+  data: -> coln(pq(@).category).findOne({_id: pq(@).id})
 
 pq = (context)-> paramsQuery context
   

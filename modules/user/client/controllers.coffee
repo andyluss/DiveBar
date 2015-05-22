@@ -2,7 +2,7 @@
   onAfterAction: ->
     selector = paramsQuery(@)
     selector.category = 'user'
-    subManager.subscribe "userList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
+    subsManager.subscribe "userList", selector, getListLimit(selector).get(), -> gbl()["loadingMore"].set false
     subscribeMyFavorites()
   data: ->
     selector = paramsQuery(@)
@@ -12,4 +12,4 @@
     selector = _.omit selector, 'category'
     data.list = Users.find selector
     data.itemTemplate = 'userListItem'
-    return noTransition data
+    return data

@@ -5,13 +5,11 @@ loading = false
     setDefaultCategory2.call @
     selector = pq(@)
     if not loading
-      console.log 'loading'
       IonLoading.show()
       loading = true
     subsManager.subscribe "postList", selector, getListLimit(selector).get(), ->
       gbl()["loadingMore"].set false
       IonLoading.hide()
-      console.log 'loaded'
     subscribeMyFavorites()
   data: ->
     setDefaultCategory2.call @

@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca9f124-8d43-4a55-a019-d987b51e3e14" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/client/views/change_pwd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/client/views/forgot_pwd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/client/views/resend_verification_email.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/both/router.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/client/views/sign_in.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/client/views/sign_up.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/login/client/views/verify_email.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/login/client/router.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/login/client/views/main.coffee" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/login/both/user_accounts.coffee" afterPath="$PROJECT_DIR$/modules/login/both/main.coffee" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/modules/login/client/views/main.html" afterPath="$PROJECT_DIR$/modules/login/client/views/sign_in.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/both/lib/configs.coffee" afterPath="$PROJECT_DIR$/main/both/lib/configs.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/post/client/views/list.coffee" afterPath="$PROJECT_DIR$/lib/post/client/views/list.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/post/client/views/list.html" afterPath="$PROJECT_DIR$/lib/post/client/views/list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/profile/client/views/main.coffee" afterPath="$PROJECT_DIR$/modules/profile/client/views/main.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/profile/client/views/main.html" afterPath="$PROJECT_DIR$/modules/profile/client/views/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/login/client/views/main.import.styl" afterPath="$PROJECT_DIR$/modules/login/client/views/main.import.styl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main/client/router.coffee" afterPath="$PROJECT_DIR$/main/client/router.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile-config.js" afterPath="$PROJECT_DIR$/mobile-config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DiveBar.iws" />
@@ -44,16 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/post/client/views/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/login/both/main.coffee">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,11 +45,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="packages" pinned="false" current-in-tab="true">
+      <file leaf-file-name="packages" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.meteor/packages">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4422222">
+            <state vertical-scroll-proportion="-7.3703704">
               <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.meteor/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6818182">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mobile-config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mobile-config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.18947369">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -104,41 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change_pwd.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/login/client/views/change_pwd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.import.styl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/login/client/views/main.import.styl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/profile/client/views/main.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/profile/client/views/main.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -193,7 +174,6 @@
         <option value="$PROJECT_DIR$/lib/post/client/views/list_loader.coffee" />
         <option value="$PROJECT_DIR$/lib/common/client/router.coffee" />
         <option value="$PROJECT_DIR$/lib/post/client/controllers.coffee" />
-        <option value="$PROJECT_DIR$/mobile-config.js" />
         <option value="$PROJECT_DIR$/modules/login/client/views/login.html" />
         <option value="$PROJECT_DIR$/modules/login/client/views/login.coffee" />
         <option value="$PROJECT_DIR$/modules/login/client/views/signIn.html" />
@@ -216,6 +196,7 @@
         <option value="$PROJECT_DIR$/main/both/lib/configs.coffee" />
         <option value="$PROJECT_DIR$/modules/login/both/main.coffee" />
         <option value="$PROJECT_DIR$/.meteor/packages" />
+        <option value="$PROJECT_DIR$/mobile-config.js" />
       </list>
     </option>
   </component>
@@ -483,12 +464,6 @@
       <created>1419742402784</created>
       <option name="number" value="Default" />
       <updated>1419742402784</updated>
-    </task>
-    <task id="LOCAL-00075" summary="去掉Tab栏上和导航栏下的细线。close #16">
-      <created>1429153391775</created>
-      <option name="number" value="00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1429153391776</updated>
     </task>
     <task id="LOCAL-00076" summary="安卓配置文件小调整">
       <created>1429153596315</created>
@@ -778,7 +753,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432290296946</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="注册相关改进">
+      <created>1432903873251</created>
+      <option name="number" value="00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1432903873252</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TodoView">
@@ -794,22 +775,22 @@
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24612203" sideWeight="0.46866772" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686982" sideWeight="0.49921012" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16913319" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2917251" sideWeight="0.5842142" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2917251" sideWeight="0.41578576" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2925457" sideWeight="0.5842142" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2925457" sideWeight="0.41578576" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.4986835" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36619717" sideWeight="0.45384073" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26875854" sideWeight="0.4989429" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20256917" sideWeight="0.41495523" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -855,7 +836,6 @@
         <todo-filter name="fixme" />
       </TodoPanelSettings>
     </option>
-    <MESSAGE value="v1.1.0 发布日志" />
     <MESSAGE value="使用meteor-easy-search库开发文章搜索功能；改进一些功能。" />
     <MESSAGE value="改进以适应整合型管理后台" />
     <MESSAGE value="开发用户搜索，整合文章和用户搜索为统一搜索" />
@@ -880,7 +860,8 @@
     <MESSAGE value="改版本号。" />
     <MESSAGE value="添加Loading" />
     <MESSAGE value="更改版本号" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改版本号" />
+    <MESSAGE value="注册相关改进" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册相关改进" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -889,27 +870,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/client/views/main.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/client/views/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.meteor/packages/meteoric_ionic/0.1.17/web.cordova/packages/meteoric:ionic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.55819476">
-          <caret line="5772" column="0" selection-start-line="5772" selection-start-column="0" selection-end-line="5772" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/journey/both/lib/configs.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07125891">
@@ -1092,13 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile-config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.221519">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/post/client/controllers.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1250,8 +1203,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.meteor/packages">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4422222">
+        <state vertical-scroll-proportion="-7.3703704">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.meteor/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6818182">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18947369">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>

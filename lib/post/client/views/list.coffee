@@ -25,7 +25,7 @@ Template.ionNavBar.events
     if myId()
       Router.go "/profile?type=main&user=#{myId()}"
     else
-      Router.go '/login?from=list'
+      Router.go '/signIn?from=list'
 
   'click [data-action=search]': (event, template)->
     Router.go "/search?category=#{@category}"

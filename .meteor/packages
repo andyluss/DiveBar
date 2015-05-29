@@ -13,6 +13,9 @@ accounts-ui
 launch-screen
 reactive-var
 npm-container
+http
+less
+email
 
 # Packages local
 
@@ -37,7 +40,7 @@ dburles:collection-helpers
 reywood:publish-composite
 bengott:avatar
 momentjs:moment
-softwarerero:accounts-t9n
+softwarerero:accounts-t9n@=1.1.0
 fourseven:scss@=2.0.1_5
 meteoric:ionicons-sass
 meteoric:ionic-sass
@@ -48,10 +51,6 @@ aldeed:template-extension
 arkham:comments-ui
 meteorhacks:subs-manager
 houston:admin
-cfs:standard-packages
-cfs:filesystem
-cfs:graphicsmagick
-cfs:ui
 sacha:spin
 spectrum:photoswipe
 multiply:iron-router-progress
@@ -61,7 +60,5 @@ tmeasday:publish-counts
 iron:location
 meteorhacks:npm
 manuel:reactivearray
-http
 iron:url
-less
 matteodem:easy-search

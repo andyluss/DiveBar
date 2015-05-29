@@ -1,0 +1,20 @@
+<template name="signUp">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">注册</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='signUp'}}
+    {{#ionContent}}
+
+      {{> atForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+

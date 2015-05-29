@@ -1,0 +1,20 @@
+<template name="resendVerificationEmail">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">重发验证邮件</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='resendVerificationEmail'}}
+    {{#ionContent}}
+
+      {{> atForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+

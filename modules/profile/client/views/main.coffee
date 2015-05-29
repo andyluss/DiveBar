@@ -22,7 +22,7 @@ Template.profileMain.helpers
 Template.profileMain.events
   'click [data-action=logout]': ()->
     Meteor.logout()
-    back()
+    Router.go '/'
 
 Template.ionNavBar.events
   'click [data-action=back-to-main]': ()->

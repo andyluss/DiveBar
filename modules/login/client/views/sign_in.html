@@ -1,7 +1,7 @@
-<template name="login">
+<template name="signIn">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">{{title}}</h1>
+    <h1 class="title">登录</h1>
   {{/contentFor}}
 
   {{#if fromOther}}
@@ -13,12 +13,12 @@
   {{else}}
 
     {{#contentFor "headerButtonRight"}}
-        <button class="button button-clear pull-right button-light" data-action="skip-login">跳过</button>
+        <button class="button button-clear pull-right button-light" data-action="skip-sign-in">跳过</button>
     {{/contentFor}}
 
   {{/if}}
 
-  {{#ionView class='login'}}
+  {{#ionView class='signIn'}}
     {{#ionContent}}
 
       {{> atForm}}

@@ -53,6 +53,14 @@
             <span class="label">我的好友</span>
             {{>ionIcon icon='ios-arrow-right'}}
           {{/ionItem}}
+          {{#ionItem href='/changePwd' iconRight=true}}
+            <span class="label">修改密码</span>
+            {{>ionIcon icon='ios-arrow-right'}}
+          {{/ionItem}}
+          {{#ionItem href='/resendVerificationEmail' iconRight=true}}
+            <span class="label">重发验证邮件</span>
+            {{>ionIcon icon='ios-arrow-right'}}
+          {{/ionItem}}
           {{#ionItem}}
             <button class="logout button button-block button-assertive" data-action="logout">登出</button>
           {{/ionItem}}

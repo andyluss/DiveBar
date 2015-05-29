@@ -1,0 +1,20 @@
+<template name="changePwd">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">修改密码</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='changePwd'}}
+    {{#ionContent}}
+
+      {{> atForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+

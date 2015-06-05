@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ca9f124-8d43-4a55-a019-d987b51e3e14" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mobile-config.js" afterPath="$PROJECT_DIR$/mobile-config.js" />
+    <list default="true" id="4ca9f124-8d43-4a55-a019-d987b51e3e14" name="Default" comment="更新">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DiveBar.iws" />
@@ -25,78 +24,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/login/both/main.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="configs.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/both/lib/configs.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="packages" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.meteor/packages">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3703704">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.meteor/.gitignore">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/post/client/views/list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
+              <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favorite_button.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/common/client/views/favorite_button.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image_uploader.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/image/client/views/image_uploader.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="image_uploader.coffee" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/image/client/views/image_uploader.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6818182">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mobile-config.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mobile-config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18947369">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/both/main.coffee">
+        <entry file="file://$PROJECT_DIR$/lib/qiniu/server/main.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -105,21 +74,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="router.coffee" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/login/both/router.coffee">
+      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/qiniu/both/main.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.063025214">
+              <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/profile/client/views/main.html">
+        <entry file="file://$PROJECT_DIR$/main/client/views/main.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+              <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.styl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/client/views/main.styl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/client/views/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -151,7 +140,6 @@
         <option value="$PROJECT_DIR$/modules/certificate/client/views/main.import.styl" />
         <option value="$PROJECT_DIR$/lib/common/both/helpers.coffee" />
         <option value="$PROJECT_DIR$/modules/certificate/client/views/list.html" />
-        <option value="$PROJECT_DIR$/lib/common/client/views/layout_content.import.styl" />
         <option value="$PROJECT_DIR$/modules/certificate/client/views/list.import.styl" />
         <option value="$PROJECT_DIR$/modules/certificate/client/views/list.coffee" />
         <option value="$PROJECT_DIR$/main/client/views/dive_font.css" />
@@ -197,6 +185,7 @@
         <option value="$PROJECT_DIR$/modules/login/both/main.coffee" />
         <option value="$PROJECT_DIR$/.meteor/packages" />
         <option value="$PROJECT_DIR$/mobile-config.js" />
+        <option value="$PROJECT_DIR$/lib/common/client/views/layout_content.import.styl" />
       </list>
     </option>
   </component>
@@ -210,7 +199,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="803" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -258,20 +247,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="DiveBar">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -294,6 +269,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiveBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiveBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiveBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiveBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiveBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DiveBar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="DiveBar">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -310,9 +353,9 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="SearchEverywhereHistoryKey" value="packages&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/packages&#10;profi/main&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.html&#10;post/li&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;profi/ma&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.html&#10;user&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/login/both/user_accounts.coffee&#10;list&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;post/list&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;noTra&#9;null&#9;null&#10;help&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/both/helpers.coffee&#10;backt&#9;null&#9;null&#10;profile/mai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.html&#10;tabb&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/tab_bar.html&#10;cer/mai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/certificate/server/main.coffee&#10;lay&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/layout_content.import.styl&#10;post/lis&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;profile/main&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.import.styl&#10;tabba&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/tab_bar.import.styl&#10;prof/main&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.import.styl&#10;main/main.st&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/main/client/views/main.styl&#10;note/con&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/note/both/lib/configs.coffee&#10;layout&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/layout_content.html&#10;profi/mai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.import.styl&#10;certi/list&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/certificate/client/views/list.html&#10;profile/&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile&#10;dateString&#9;null&#9;null&#10;datestring&#9;null&#9;null&#10;main/main.s&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/main/client/views/main.styl&#10;helper&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/both/helpers.coffee&#10;first&#9;null&#9;null&#10;useri&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/product/client/views/user_item.coffee&#10;produ/user&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/product/client/views/user_item.coffee&#10;versions&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/versions&#10;loadingmo&#9;null&#9;null&#10;creat&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/creator.html&#10;detail&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/detail.html&#10;imageite&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/image_item.html&#10;/prof&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile&#10;packag&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/packages/favorites/package.js&#10;login&#9;null&#9;null&#10;accou&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/login/both/user_accounts.coffee&#10;post/detai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/detail.html&#10;post/det&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/detail.html&#10;postcate&#9;null&#9;null&#10;categoryL&#9;null&#9;null&#10;sear/&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/search&#10;image&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/image_item.html&#10;tab&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/tab_bar.import.styl&#10;post/&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post&#10;search&#9;null&#9;null&#10;tabbar&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/tab_bar.html" />
+    <property name="SearchEverywhereHistoryKey" value="fav&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/favorite_button.html&#10;pac&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/packages&#10;main.sty&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/main/client/views/main.styl&#10;list&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;layou&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/layout_content.html&#10;lay&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/layout_content.import.styl&#10;pa&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/packages&#10;main.html&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/main/client/views/main.html&#10;pack&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/packages&#10;packages&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/packages&#10;profi/main&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.html&#10;post/li&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;profi/ma&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.html&#10;user&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/login/both/user_accounts.coffee&#10;post/list&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;noTra&#9;null&#9;null&#10;help&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/both/helpers.coffee&#10;backt&#9;null&#9;null&#10;profile/mai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.html&#10;tabb&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/tab_bar.html&#10;cer/mai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/certificate/server/main.coffee&#10;post/lis&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/list.html&#10;profile/main&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.import.styl&#10;tabba&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/tab_bar.import.styl&#10;prof/main&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.import.styl&#10;main/main.st&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/main/client/views/main.styl&#10;note/con&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/note/both/lib/configs.coffee&#10;layout&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/layout_content.html&#10;profi/mai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile/client/views/main.import.styl&#10;certi/list&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/certificate/client/views/list.html&#10;profile/&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile&#10;dateString&#9;null&#9;null&#10;datestring&#9;null&#9;null&#10;main/main.s&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/main/client/views/main.styl&#10;helper&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/both/helpers.coffee&#10;first&#9;null&#9;null&#10;useri&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/product/client/views/user_item.coffee&#10;produ/user&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/product/client/views/user_item.coffee&#10;versions&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/.meteor/versions&#10;loadingmo&#9;null&#9;null&#10;creat&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/creator.html&#10;detail&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/detail.html&#10;imageite&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/common/client/views/image_item.html&#10;/prof&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/profile&#10;packag&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/packages/favorites/package.js&#10;login&#9;null&#9;null&#10;accou&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/modules/login/both/user_accounts.coffee&#10;post/detai&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/detail.html&#10;post/det&#9;FILE&#9;file:///Users/lushisang/work/dive_bar/code/DiveBar/lib/post/client/views/detail.html&#10;postcate&#9;null&#9;null" />
     <property name="editorconfig.notification" value="Applied .editorconfig settings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dive_bar_static_demo" />
     <property name="list.type.of.created.stylesheet" value="Stylus" />
     <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -464,12 +507,6 @@
       <created>1419742402784</created>
       <option name="number" value="Default" />
       <updated>1419742402784</updated>
-    </task>
-    <task id="LOCAL-00076" summary="安卓配置文件小调整">
-      <created>1429153596315</created>
-      <option name="number" value="00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1429153596315</updated>
     </task>
     <task id="LOCAL-00077" summary="用七牛云做图片存储。close #7">
       <created>1429271651544</created>
@@ -759,7 +796,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432903873252</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="改版本号">
+      <created>1432904255656</created>
+      <option name="number" value="00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1432904255656</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TodoView">
@@ -772,26 +815,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="803" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24612203" sideWeight="0.46866772" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686982" sideWeight="0.49921012" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2457627" sideWeight="0.465821" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32676056" sideWeight="0.49612403" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16913319" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16842847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2925457" sideWeight="0.5842142" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2925457" sideWeight="0.41578576" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2881356" sideWeight="0.6116984" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2881356" sideWeight="0.3883016" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.4986835" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36619717" sideWeight="0.45384073" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26875854" sideWeight="0.4989429" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32780084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20256917" sideWeight="0.41495523" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20140845" sideWeight="0.41226214" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -812,9 +855,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24223275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32435232" sideWeight="0.4986835" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -854,14 +897,14 @@
     <MESSAGE value="修正后退导航错误" />
     <MESSAGE value="修正搜索错误" />
     <MESSAGE value="改进搜索" />
-    <MESSAGE value="改版本号" />
     <MESSAGE value="修改bug" />
     <MESSAGE value="修改问题。开发证书功能。" />
     <MESSAGE value="改版本号。" />
     <MESSAGE value="添加Loading" />
     <MESSAGE value="更改版本号" />
     <MESSAGE value="注册相关改进" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册相关改进" />
+    <MESSAGE value="改版本号" />
+    <option name="LAST_COMMIT_MESSAGE" value="改版本号" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -870,83 +913,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/journey/both/lib/configs.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07125891">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/say/both/lib/configs.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10688836">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/product/both/lib/configs.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07125891">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/note/both/lib/configs.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10688836">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/client/views/tab_bar.import.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/post/client/views/list.import.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/client/views/layout_content.import.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/certificate/server/main.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/certificate/client/views/list.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="86" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/certificate/client/views/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/fonts/dive.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/common/client/views/tab_bar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1045,13 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/client/router.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/post/client/controllers.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1077,13 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/client/views/main.styl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1133,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1141,15 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/post/client/views/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,7 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,23 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/both/main.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/login/both/router.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,31 +1113,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/both/lib/configs.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.meteor/packages">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3703704">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1227,7 +1126,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6818182">
+        <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
@@ -1235,8 +1134,151 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mobile-config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18947369">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/user/server/main.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/user/both/collections.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/login/both/router.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/client/views/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/client/views/layout_content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.116504855">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/client/views/layout_content.import.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.055658627">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/client/views/main.styl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/client/views/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.meteor/packages">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5644531">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/both/lib/configs.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44526902">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/client/router.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027829314">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/both/main.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.055658627">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/post/client/views/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/client/views/favorite_button.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/image/client/views/image_uploader.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/image/client/views/image_uploader.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/qiniu/server/main.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31578946">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/qiniu/both/main.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.063025214">
+          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
           <folding />
         </state>
       </provider>

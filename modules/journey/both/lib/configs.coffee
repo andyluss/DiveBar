@@ -1,6 +1,6 @@
 @journeyConfigs =
   label: '行程'
-  icon: "dive-journey"
+  icon: "dive-icon-journey"
   category2:
     official: 'official'
     user: 'user'

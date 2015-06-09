@@ -1,19 +1,17 @@
 <template name="imageItem">
 
   <div class='image-item'>
-    {{#if firstPicture}}
-      <div class="image-container">
+    <div class="image-container">
+      {{#if firstPicture}}
         <img src={{firstPicture}}>
-      </div>
-    {{/if}}
+      {{/if}}
+    </div>
     <div class="title-container">
       <label class="title">{{title}}</label>
-      <div class="banner">
-        <label class="user">
+      <label class="user">
         {{userName user}}
-        </label>
-        <label class="date">{{dateString date}}</label>
-      </div>
+      </label>
+      <label class="date">{{dateString date}}</label>
     </div>
   </div>
 

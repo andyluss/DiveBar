@@ -1,7 +1,7 @@
 <template name="search">
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">搜索</h1>
+    <h1 class="title">搜索{{label}}</h1>
   {{/contentFor}}
 
   {{#contentFor "headerButtonLeft"}}
@@ -11,56 +11,29 @@
   {{#ionView class='search'}}
     {{#ionContent}}
 
-      <div class="types-container">
-        {{#each tabs}}
-          <a class="type-tab {{this}} {{isSelect this}}">{{label this}}</a>
-        {{/each}}
-      </div>
+      {{>esInput index=indexes placeholder=placeholder class='query-input' reactive='false' event='enter'}}
 
-      <div class="tab-view-container">
+      {{#ionList}}
 
-        {{#each tabs}}
+        {{#esEach index=indexes}}
 
-          <div class="tab-view {{this}} {{isHidden}}">
+          {{#ionItem class='result-item post' id=_id category=category}}
+            {{title}}
+          {{/ionItem}}
 
-            {{>esInput index=indexes placeholder=placeholder class='query-input' reactive='false' event='enter'}}
+        {{/esEach}}
+      {{/ionList}}
 
-            {{#ionList}}
+      {{>esLoadMoreButton index=indexes}}
 
-              {{#esEach index=indexes}}
+      {{#ifEsHasNoResults index=indexes}}
+        <div class="no-results">没有结果。</div>
+      {{/ifEsHasNoResults}}
 
-                {{#if isPost ..}}
-                  {{#ionItem class='result-item post' id=_id category=category}}
-                    {{title}}
-                  {{/ionItem}}
-                {{/if}}
+      {{#ifEsIsSearching index=indexes}}
+        <div class="result-loading">加载中...</div>
+      {{/ifEsIsSearching}}
 
-                {{#if isProfile ..}}
-                  {{#ionItem class='result-item profile' user=user}}
-                    {{nickname}}
-                  {{/ionItem}}
-                {{/if}}
-
-              {{/esEach}}
-            {{/ionList}}
-
-            {{>esLoadMoreButton index=indexes}}
-
-            {{#ifEsHasNoResults index=indexes}}
-              <div class="no-results">没有结果。</div>
-            {{/ifEsHasNoResults}}
-
-            {{#ifEsIsSearching index=indexes}}
-              <div class="result-loading">加载中...</div>
-            {{/ifEsIsSearching}}
-
-          </div>
-
-        {{/each}}
-
-      </div>
-
-      
     {{/ionContent}}
   {{/ionView}}
 

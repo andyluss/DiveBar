@@ -1,31 +1,24 @@
 .tab-bar
   .tabs
+    padding-top 0
     background #36618e
     .tab-item
       opacity 1
-      color white
+      color #76ACE5
       font-family SimHei
       line-height 12px
       .icon
         height 34px
-        filter brightness(0) invert(1)
-      .ion-dive-note
-        background url(/images/icondive-note.svg) no-repeat center
-        background-size 30px 30px
-      .ion-dive-journey
-        background url(/images/icondive-journey.svg) no-repeat center
-        background-size 30px 30px
-      .ion-dive-product
-        background url(/images/icondive-product.svg) no-repeat center
-        background-size 30px 30px
-      .ion-dive-say
-        background url(/images/icondive-say.svg) no-repeat center
-        background-size 30px 30px
+      .icon:before
+        font-size 30px
+        font-family "dive"
+        line-height 34px
+        color #76ACE5
     .tab-item.active
-      color #2E5C8D
+      color white
       background-color #81BEFF
-      .icon
-        filter none
+      .icon:before
+        color white
     .add-button
       position absolute
       top 0
@@ -39,9 +32,27 @@
       color #fff
       .ion-dive-plus
         display block
+        position relative
         margin 0 auto
-        height 34px
-        background url(/images/icondive-add.svg) no-repeat center
-        background-size 32px 32px
-      .icon:before
-        font-size 50px
+        height 44px
+        width 44px
+        background-color #fff
+        border-radius 3px
+        z-index 1
+      .ion-dive-plus:before,.ion-dive-plus:after
+        content:""
+        position absolute
+        margin 0 auto
+        display block
+        background #36618e
+        z-index 2
+      .ion-dive-plus:before
+        top 10px
+        left 17px
+        width 10px
+        height 24px
+      .ion-dive-plus:after
+        top 17px
+        left 10px
+        width 24px
+        height 10px

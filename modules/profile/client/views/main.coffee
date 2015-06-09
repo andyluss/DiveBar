@@ -5,7 +5,7 @@ Template.profileMain.onRendered ->
     initUploader @
 
 Template.profileMain.helpers
-  title: -> userPrefix(@user, true) + '名片'
+  title: -> userPrefix(@user, true) + '个人中心'
   nickname: -> @nickname or (isMe(@user) and '添加昵称' or '')
   location: -> @location or (isMe(@user) and '添加地址' or '')
   nicknameEditorUrl: -> isMe(@user) and "/profile?type=nickname&user=#{@user}" or ''
@@ -17,9 +17,17 @@ Template.profileMain.helpers
     getLine.call(@, 'signature', '签名')
   ]
   myFavoriteUsersPath: -> "/user/list?favoritesby=#{myId()}"
+  certificatePath: -> "/certificate/list?user=#{@user}"
+
+Template.profileMain.events
+  'click [data-action=logout]': ()->
+    Meteor.logout()
+    Router.go '/'
 
 Template.ionNavBar.events
-  'click [data-action=logout]': ()-> Meteor.logout()
+  'click [data-action=back-to-main]': ()->
+    $("[data-action=back-to-main]").data('nav-direction', 'back')
+    back()
 
 newAvatarKey = -> 'avatar-' + myId() + '-' + new Date().getTime()
 

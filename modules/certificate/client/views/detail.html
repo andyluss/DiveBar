@@ -1,0 +1,61 @@
+<template name="certificateDetail">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="more-button button button-clear pull-right button-light ion-more icon" data-action="certificate-more"></button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{userPrefix user true false}}证书</h1>
+  {{/contentFor}}
+
+  {{#contentFor "popup"}}
+    {{>photoswipe}}
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      <div class="certificate-detail">
+
+        {{#if hasPicture}}
+          {{>pictureCarousel}}
+        {{/if}}
+
+        {{#ionList class='item-list'}}
+
+          {{#ionItem}}
+            <span class="label">真实姓名：</span>{{realName}}
+          {{/ionItem}}
+
+          {{#ionItem}}
+            <span class="label">组织名称：</span>{{orgName}}
+          {{/ionItem}}
+
+          {{#ionItem}}
+            <span class="label">证书等级：</span>{{level}}
+          {{/ionItem}}
+
+          {{#ionItem}}
+            <span class="label">证书编号：</span>{{num}}
+          {{/ionItem}}
+
+          {{#ionItem}}
+            <span class="label">颁证时间：</span>{{dateString date 'YYYY. M'}}
+          {{/ionItem}}
+
+          {{#ionItem}}
+            <span class="label">证书说明：</span>{{desc}}
+          {{/ionItem}}
+
+        {{/ionList}}
+
+      </div>
+
+    {{/ionContent}}
+
+  {{/ionView}}
+</template>

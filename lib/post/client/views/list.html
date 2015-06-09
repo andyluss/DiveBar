@@ -10,6 +10,18 @@
       {{>ionNavBackButton class="button-light" text=false}}
     {{/contentFor}}
 
+    {{#if currentUser}}
+
+      {{#contentFor "headerButtonRight"}}
+        {{#if isMe}}
+          <button class="button button-clear pull-right button-light" data-action="back-to-main" nav-direction="back" data-nav-direction>
+            {{> ionIcon icon='dive-icon-main' class='dive-icon'}}
+          </button>
+        {{/if}}
+      {{/contentFor}}
+
+    {{/if}}
+
   {{else}}
 
     {{#if favoritesby}}
@@ -31,6 +43,11 @@
           </button>
         {{/contentFor}}
 
+      {{else}}
+
+        {{#contentFor "headerButtonLeft"}}
+        {{/contentFor}}
+
       {{/if}}
 
       {{#contentFor "headerButtonRight"}}
@@ -38,7 +55,7 @@
           {{> ionIcon icon='ios-search'}}
         </button>
         <button class="button button-clear pull-right button-light" data-action="my-data">
-          {{> ionIcon icon='ios-person-outline'}}
+          {{> ionIcon icon='dive-icon-user' class='dive-icon'}}
         </button>
       {{/contentFor}}
 

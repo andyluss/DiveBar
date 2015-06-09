@@ -1,0 +1,20 @@
+<template name="verifyEmail">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">验证邮箱</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='verifyEmail'}}
+    {{#ionContent}}
+
+      {{> atForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+

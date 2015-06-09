@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'dive';
+	src:url('fonts/dive.eot?4fzb56');
+	src:url('fonts/dive.eot?#iefix4fzb56') format('embedded-opentype'),
+		url('fonts/dive.woff?4fzb56') format('woff'),
+		url('fonts/dive.ttf?4fzb56') format('truetype'),
+		url('fonts/dive.svg?4fzb56#dive') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="dive-icon-"], [class*=" dive-icon-"] {
+	font-family: 'dive';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.dive-icon-uniE600:before {
+	content: "\e600";
+}
+.dive-icon-uniE601:before {
+	content: "\e601";
+}
+.dive-icon-uniE602:before {
+	content: "\e602";
+}
+.dive-icon-uniE603:before {
+	content: "\e603";
+}
+.dive-icon-uniE604:before {
+	content: "\e604";
+}
+.dive-icon-uniE605:before {
+	content: "\e605";
+}

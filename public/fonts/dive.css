@@ -1,0 +1,46 @@
+@font-face {
+	font-family: 'dive';
+	src:url('dive.eot?-b6x84l');
+	src:url('dive.eot?#iefix-b6x84l') format('embedded-opentype'),
+		url('dive.woff?-b6x84l') format('woff'),
+		url('dive.ttf?-b6x84l') format('truetype'),
+		url('dive.svg?-b6x84l#dive') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.dive-icon {
+	font-family: 'dive';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ion-dive-icon-profile:before {
+	content: "\e606";
+}
+.ion-dive-icon-main:before {
+	content: "\e600";
+}
+.ion-dive-icon-user:before {
+	content: "\e601";
+}
+.ion-dive-icon-note:before {
+	content: "\e602";
+}
+.ion-dive-icon-journey:before {
+	content: "\e603";
+}
+.ion-dive-icon-product:before {
+	content: "\e604";
+}
+.ion-dive-icon-say:before {
+	content: "\e605";
+}

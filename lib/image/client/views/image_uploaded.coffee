@@ -2,7 +2,7 @@ Template.imageUploaded.onRendered ->
   @$('.progress-container').hide()
 
 Template.imageUploaded.helpers
-  thumbUrl: -> imageUrl @, {mode: 2, w: 96, h: 96, q: 100}
+  thumbUrl: -> imageUrl @, {mode: 2, w: 96, h: 96, q: 80}
 
 Template.imageUploaded.events
   'click .delete.button': (event, template)->

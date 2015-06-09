@@ -1,0 +1,20 @@
+<template name="forgotPwd">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">忘记密码？</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='forgotPwd'}}
+    {{#ionContent}}
+
+      {{> atForm}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>
+

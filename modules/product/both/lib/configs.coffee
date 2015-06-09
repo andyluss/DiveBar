@@ -1,6 +1,6 @@
 @productConfigs =
   label: '装备'
-  icon: "dive-product"
+  icon: "dive-icon-product"
   category2:
     official: 'official'
     user: 'user'

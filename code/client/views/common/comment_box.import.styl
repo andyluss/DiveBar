@@ -1,0 +1,39 @@
+.comments-box
+  padding 0
+  max-width 100%
+  .comments
+    padding-top 0
+  .comment-form
+    display block
+    position fixed
+    bottom 0
+    width 100%
+    padding 4px 6px
+    background #DDDDDD
+    .field
+      flex 1
+      input
+        padding-left 10px
+        padding-right 10px
+        border-radius 8px
+  .comment
+    display flex
+    padding 2px 10px
+    border-bottom solid 1px #f5f4f3
+    .avatar-container
+      size 56px
+      margin-right 10px
+      @import 'user_avatar.import.styl'
+    .right-box
+      .author-bar
+        display inline
+        .author
+          color #2b9ad5
+        .actions
+          display inline
+          color #959387
+      .comment-content
+        color #959387
+  .loadmore-action
+    margin 0
+    width 100%

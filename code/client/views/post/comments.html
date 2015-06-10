@@ -1,0 +1,19 @@
+<template name="postComments">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">留言（共 {{commentCount _id}} 条）</h1>
+  {{/contentFor}}
+
+  {{#ionView class="post-comments"}}
+    {{#ionContent}}
+
+      {{>commentsBox id=_id content=commentStrings customTemplate='commonCommentBox'}}
+
+    {{/ionContent}}
+
+  {{/ionView}}
+</template>

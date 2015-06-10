@@ -1,0 +1,23 @@
+<template name="profileLocation">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">地址</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-light" data-action="save-location">保存</button>
+  {{/contentFor}}
+
+  {{#ionView class='profile location'}}
+
+    {{#ionContent}}
+      <input class="profile-input" autofocus type="text" maxlength="20" placeholder="请输入您的地址，最多20个字" value={{location}}>
+    {{/ionContent}}
+
+  {{/ionView}}
+
+</template>

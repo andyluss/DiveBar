@@ -1,0 +1,47 @@
+<template name="sayDetailContent">
+
+  <div class='say-detail-content'>
+
+    <div class="top-container">
+
+      <div class="image-container">
+        {{#if hasElement images}}
+          {{>pictureCarousel}}
+        {{/if}}
+      </div>
+
+      <div class="info-bar">
+
+        <div class="info-bg"></div>
+        <label class="info-title">{{title}}</label>
+
+        <div class="info-line-2">
+
+          <div class="info-line-2-left">
+            <label class="info-date">{{dateString createdAt}}</label>
+          </div>
+
+          <div class="info-line-2-right info-user">
+            <label class="info-user-name">{{userName user}}</label>
+            <div class="info-user-avatar">{{>userAvatar user}}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="content">{{content}}</div>
+
+    <div class="bottom-bar">
+
+      {{>favoriteButton2 doc=_id category=category}}
+
+      <button class="comment-button">
+        <i class="icon ion-chatbox"></i>
+        {{commentCount _id}}
+      </button>
+
+    </div>
+  </div>
+
+</template>

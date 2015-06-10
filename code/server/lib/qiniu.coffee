@@ -1,0 +1,1 @@
+@qiniuServer = Meteor.npmRequire 'qiniu'

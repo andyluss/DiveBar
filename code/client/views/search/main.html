@@ -1,0 +1,45 @@
+<template name="search">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">搜索{{label}}</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#ionView class='search'}}
+    {{#ionContent}}
+
+      <div class="search-bar">
+        <div class="search-button">
+          <i class="icon ion-ios-search"></i>
+          {{>esInput index='Posts' placeholder=placeholder class='query-input' reactive='false' event='enter'}}
+        </div>
+      </div>
+
+      {{#ionList}}
+
+        {{#esEach index='Posts' options=searchOptions}}
+
+          {{#ionItem class='result-item post' id=_id category=category}}
+            {{title}}
+          {{/ionItem}}
+
+        {{/esEach}}
+      {{/ionList}}
+
+      {{>esLoadMoreButton index='Posts'}}
+
+      {{#ifEsHasNoResults index='Posts'}}
+        <div class="no-results">没有结果。</div>
+      {{/ifEsHasNoResults}}
+
+      {{#ifEsIsSearching index='Posts'}}
+        <div class="result-loading">加载中...</div>
+      {{/ifEsIsSearching}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

@@ -1,0 +1,24 @@
+<template name="journeyDetailContent">
+
+  <div class="journey-detail-content">
+    <div class="title">{{title}}</div>
+    <div class="top-container">
+      <div class="image-container">
+        {{#if hasElement images}}
+          <img src={{firstImage}}>
+        {{/if}}
+      </div>
+      <div class="right-box">
+        <div class="info-bar">
+          <div class="position">地点：{{location}}</div>
+          <div class="cost">花费：{{cost}}</div>
+          <div class="people">人数：{{peopleCount}}</div>
+          <div class="date">日期：{{dateString date}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="content-container">{{content}}</div>
+    <button class="comment-button">留言</button>
+  </div>
+
+</template>

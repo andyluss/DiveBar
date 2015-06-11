@@ -5,7 +5,9 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
-    <button class="more-button button button-clear pull-right button-light ion-more icon" data-action="certificate-more"></button>
+    {{#if currentUser}}
+      <button class="more-button button button-clear pull-right button-light ion-more icon" data-action="certificate-more"></button>
+    {{/if}}
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}

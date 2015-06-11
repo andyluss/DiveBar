@@ -25,14 +25,14 @@
     <div class="right-box">
       <div class="author-bar">
         <a class="author" href="{{userUrl userId}}">{{userName userId}}</a>
-        <div class="actions">
-          {{#if isOwnComment}}
-            <a class="remove-action">删除</a>
-          {{/if}}
-        </div>
       </div>
       <div class="text comment-content" data-id="{{commentId}}">
         {{content}}
+      </div>
+      <div class="actions">
+        {{#if isOwnComment}}
+          <a class="remove-action">删除</a>
+        {{/if}}
       </div>
     </div>
   </div>

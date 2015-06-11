@@ -24,6 +24,9 @@
 
   {{else}}
 
+    {{#contentFor "headerButtonLeft"}}
+    {{/contentFor}}
+
     {{#contentFor "headerButtonRight"}}
       <button class="button button-clear pull-right button-light" data-action="my-data">
         {{> ionIcon icon='dive-icon-user' class='dive-icon'}}

@@ -20,14 +20,23 @@ Template.profileMain.helpers
   certificatePath: -> "/certificate/list?user=#{@user}"
 
 Template.profileMain.events
-  'click [data-action=logout]': ()->
+  'click [data-action=logout]': ->
     Meteor.logout()
     Router.go '/'
 
 Template.ionNavBar.events
-  'click [data-action=back-to-main]': ()->
+
+  'click [data-action=back-to-main]': ->
     $("[data-action=back-to-main]").data('nav-direction', 'back')
     back()
+
+  'click [data-action=share]': ->
+    if Meteor.isCordova
+      window.plugins.socialsharing.share '', userPrefix(@user, true) + '潜水吧个人中心', avatarUrl @user, currentUrl()
+    else
+      alert '这是手机上才有的功能。'
+
+
 
 newAvatarKey = -> 'avatar-' + myId() + '-' + new Date().getTime()
 

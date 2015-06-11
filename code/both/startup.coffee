@@ -11,6 +11,7 @@ initSchemas = ->
   initJourneySchema()
   initProductSchema()
   initSaySchema()
+  initCertificateSchema()
 
 initQiniu = ->
   qiniuConfig.BUCKET = 'divebar'

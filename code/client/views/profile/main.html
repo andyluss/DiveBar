@@ -9,6 +9,11 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
+
+    <button class="button button-clear pull-right button-light" data-action="share">
+      {{> ionIcon icon='share'}}
+    </button>
+
     {{#if isMe}}
       <button class="button button-clear pull-right button-light" data-action="back-to-main" data-nav-direction>
         {{> ionIcon icon='dive-icon-main' class='dive-icon'}}

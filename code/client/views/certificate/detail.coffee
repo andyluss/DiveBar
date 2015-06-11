@@ -11,7 +11,6 @@ showActionSheet = (doc)->
       cancelText: '取消'
       destructiveText: '删除'
       buttons: [
-        {text: '分享'}
         {text: '编辑'}
       ]
       destructiveButtonClicked: ->
@@ -20,21 +19,7 @@ showActionSheet = (doc)->
       buttonClicked: (index)->
         switch index
           when 0
-            toShare(doc)
-          when 1
             editCertificate(doc)
-        return true
-  else
-    IonActionSheet.show
-      titleText: '选项'
-      cancelText: '取消'
-      buttons: [
-        {text: '分享'}
-      ]
-      buttonClicked: (index)->
-        switch index
-          when 0
-            toShare(doc)
         return true
 
 toShare = (doc)->

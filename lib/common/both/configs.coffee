@@ -1,2 +1,0 @@
-@Keys =
-  favoritesby: 'favoritesby'

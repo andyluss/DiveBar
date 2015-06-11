@@ -1,1 +1,0 @@
-Template.registerHelper 'postCategories', -> _.values PostCategory

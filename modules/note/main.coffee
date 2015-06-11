@@ -1,1 +1,0 @@
-createPostBase PostCategory.note

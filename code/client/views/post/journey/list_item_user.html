@@ -1,0 +1,23 @@
+<template name="journeyListItemUser">
+
+  <div class="journey-list-item-user list-item">
+    <div class="left-box">
+      {{>userAvatar user}}
+    </div>
+    <div class="right-box">
+      <div class="user-bar">{{userName user}}</div>
+      <div class="title-bar">{{title}}</div>
+      <table class="info-bar">
+        <tr>
+          <td class="location">地点：{{location}}</td>
+          <td class="cost">花费：{{cost}}</td>
+        </tr>
+        <tr>
+          <td class="people">人数：{{peopleCount}}人</td>
+          <td class="date">日期：{{dateString date}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</template>

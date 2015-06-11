@@ -1,0 +1,70 @@
+<template name="postList">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">{{title}}</h1>
+  {{/contentFor}}
+
+  {{#if user}}
+
+    {{#contentFor "headerButtonLeft"}}
+      {{>ionNavBackButton class="button-light" text=false}}
+    {{/contentFor}}
+
+    {{#if currentUser}}
+
+      {{#contentFor "headerButtonRight"}}
+        {{#if isMe}}
+          <button class="button button-clear pull-right button-light" data-action="back-to-main" nav-direction="back" data-nav-direction>
+            {{> ionIcon icon='dive-icon-main' class='dive-icon'}}
+          </button>
+        {{/if}}
+      {{/contentFor}}
+
+    {{/if}}
+
+  {{else}}
+
+    {{#contentFor "headerButtonRight"}}
+      <button class="button button-clear pull-right button-light" data-action="my-data">
+        {{> ionIcon icon='dive-icon-user' class='dive-icon'}}
+      </button>
+    {{/contentFor}}
+
+  {{/if}}
+
+  {{#ionView class='post-list'}}
+    {{#ionContent}}
+
+      {{#if showCategory2s}}
+
+        <div class="category2-container">
+          {{#each category2s}}
+            <div class="tab category2 {{../category}} {{this}} {{isSelect this}}">
+              <label>{{title2}}</label>
+            </div>
+          {{/each}}
+        </div>
+
+      {{/if}}
+
+      {{>searchBar}}
+
+      <div class='item-list'>
+        {{#each list}}
+          {{>Template.dynamic template=itemTemplate}}
+        {{/each}}
+      </div>
+
+      {{#if hasMore}}
+        <button class="loadmore-button">更多</button>
+      {{/if}}
+
+    {{/ionContent}}
+
+    {{#unless favoritesby}}
+      {{>tabBar}}
+    {{/unless}}
+
+  {{/ionView}}
+
+</template>

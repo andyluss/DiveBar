@@ -1,0 +1,15 @@
+<template name="productListItemOfficial">
+  <div class="product-list-item-official list-item">
+
+    <div class="title-bar">{{title}}</div>
+
+    <div class="image-container">
+      {{#if hasElement images}}
+        <img src={{firstImage}}>
+      {{/if}}
+    </div>
+
+    <div class="content-bar">{{content}}</div>
+
+  </div>
+</template>

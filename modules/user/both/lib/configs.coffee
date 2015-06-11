@@ -1,2 +1,0 @@
-@UserRoles =
-  admin: 'admin'

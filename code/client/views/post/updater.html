@@ -1,0 +1,28 @@
+<template name="postUpdater">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-light" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear pull-right button-light" data-action="update-post" form={{formId}}>更新</button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">编辑{{label}}</h1>
+  {{/contentFor}}
+
+  {{#ionView class="post-updater"}}
+    {{#ionContent}}
+
+      <div class='padding'>
+
+        {{>quickForm doc=this collection="Posts" schema=formSchema id=formId type="update" resetOnSuccess=false buttonContent=false omitFields=formOmitFields}}
+
+        {{>imageUploader}}
+
+      </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

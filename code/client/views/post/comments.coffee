@@ -1,3 +1,5 @@
+
+
 Template.postComments.helpers
   commentStrings: ->
     'add-button': '提交'

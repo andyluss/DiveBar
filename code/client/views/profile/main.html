@@ -5,7 +5,9 @@
   {{/contentFor}}
 
   {{#contentFor "headerButtonLeft"}}
-    {{>ionNavBackButton class="button-light" text=false}}
+    {{#unless isMe}}
+      {{>ionNavBackButton class="button-light" text=false}}
+    {{/unless}}
   {{/contentFor}}
 
   {{#contentFor "headerButtonRight"}}
@@ -25,14 +27,21 @@
     {{/if}}
   {{/contentFor}}
 
+  {{#contentFor "popup"}}
+    {{>photoswipe}}
+  {{/contentFor}}
+
   {{#ionView class='profile'}}
 
     {{#ionContent}}
 
       <div class="top">
-        <button class="avatar">
-          <img src={{avatarUrl user}}>
-        </button>
+        <div class="avatar">
+          <div class="progress-container">
+            <label class="progress">0%</label>
+          </div>
+          <img class="image" src={{avatarUrl user}}>
+        </div>
         <div class="base-info">
           <a href={{nicknameEditorUrl}}>{{nickname}}</a>
           <a href={{locationEditorUrl}}>{{location}}</a>
@@ -66,7 +75,7 @@
             <span class="label">重发验证邮件</span>
             {{>ionIcon icon='ios-arrow-right'}}
           {{/ionItem}}
-          {{#ionItem}}
+          {{#ionItem class='logout-item'}}
             <button class="logout button button-block button-assertive" data-action="logout">登出</button>
           {{/ionItem}}
         {{/if}}

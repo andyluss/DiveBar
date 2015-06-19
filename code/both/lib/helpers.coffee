@@ -86,9 +86,9 @@
   else
     return ''
 
-@avatarUrl = (userId)->
-  profile = userProfile userId
-  return imageUrl(profile?.avatar, {mode: 1, w: 96}) or defaultAvatarUrl
+@avatarKey = (userId)-> (userProfile userId)?.avatar
+
+@avatarUrl = (userId)-> imageUrl(avatarKey(userId), {mode: 1, w: 96}) or defaultAvatarUrl
 
 @selectFavorites = (selector)->
   if selector.favoritesby

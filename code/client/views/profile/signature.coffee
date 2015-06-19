@@ -1,3 +1,6 @@
+Template.profileSignature.onRendered ->
+  @find('.profile-input').focus()
+
 Template.ionNavBar.events
   'click [data-action=save-signature]': (event, template)->
     value = $('.profile.signature textarea').val()

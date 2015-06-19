@@ -1,7 +1,10 @@
+Template.search.onRendered ->
+  @find('.query-input').focus()
+
 Template.search.helpers
   label: -> label @category
   placeholder: -> "搜索#{label @category}..."
-  searchOptions: -> {category: @category}
+  index: -> pcap @category
 
 Template.search.events
   'click .result-item.post': (event, template)-> Router.go "/post/detail?category=#{@category}&id=#{@id}"

@@ -14,13 +14,13 @@
       <div class="search-bar">
         <div class="search-button">
           <i class="icon ion-ios-search"></i>
-          {{>esInput index='Posts' placeholder=placeholder class='query-input' reactive='false' event='enter'}}
+          {{>esInput index=index placeholder=placeholder class='query-input' reactive='false' event='enter'}}
         </div>
       </div>
 
       {{#ionList}}
 
-        {{#esEach index='Posts' options=searchOptions}}
+        {{#esEach index=index}}
 
           {{#ionItem class='result-item post' id=_id category=category}}
             {{title}}
@@ -29,13 +29,13 @@
         {{/esEach}}
       {{/ionList}}
 
-      {{>esLoadMoreButton index='Posts'}}
+      {{>esLoadMoreButton index=index}}
 
-      {{#ifEsHasNoResults index='Posts'}}
+      {{#ifEsHasNoResults index=index}}
         <div class="no-results">没有结果。</div>
       {{/ifEsHasNoResults}}
 
-      {{#ifEsIsSearching index='Posts'}}
+      {{#ifEsIsSearching index=index}}
         <div class="result-loading">加载中...</div>
       {{/ifEsIsSearching}}
 

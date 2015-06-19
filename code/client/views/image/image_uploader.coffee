@@ -77,7 +77,7 @@ showUploadProgress = (self, key, percent)->
 
 resetImageSrc = (self, key)->
   image = self.$(".image-uploaded[data-key='#{key}'] .image")
-  image.attr 'src', imageUrl(key, {mode: 2, w: 96, h: 96, q: 80})
+  image.attr 'src', imageUrl(key, {mode: 1, w: 96, h: 96, q: 80})
 
 hideImageLoading = (self, key)->
   imageContainer = self.$(".image-uploaded[data-key='#{key}'] .image-container")

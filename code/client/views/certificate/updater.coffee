@@ -2,6 +2,7 @@ formId = -> "certificateUpdateForm"
 
 Template.certificateUpdater.onRendered ->
   createAutoFormHooks @data
+  @find('.quick-form .form-group:first-child .form-control').focus()
 
 Template.certificateUpdater.helpers
   formCollection: -> Certificates

@@ -33,7 +33,6 @@ alanning:roles
 fortawesome:fontawesome
 useraccounts:ionic
 iron:router
-zimme:iron-router-active
 anti:fake
 matb33:collection-hooks
 dburles:collection-helpers
@@ -53,7 +52,6 @@ meteorhacks:subs-manager
 houston:admin
 sacha:spin
 spectrum:photoswipe
-multiply:iron-router-progress
 steeve:jquery-qrcode
 underscorestring:underscore.string
 tmeasday:publish-counts
@@ -62,3 +60,4 @@ meteorhacks:npm
 manuel:reactivearray
 iron:url
 matteodem:easy-search
+mquandalle:autofocus

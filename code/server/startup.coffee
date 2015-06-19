@@ -39,3 +39,4 @@ initRootUser = ->
       password: 'test1234'
       username: 'root'
     Roles.addUsersToRoles userId, UserRoles.admin
+

@@ -1,3 +1,6 @@
+Template.signIn.onRendered ->
+  @find('input[type=email]').focus()
+
 Template.ionNavBar.events
   'click [data-action=skip-sign-in]': (event, template)->
     Router.go "/post/list?category=#{PostCategory.note}"

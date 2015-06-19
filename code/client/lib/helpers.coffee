@@ -1,4 +1,4 @@
-@qiniuImageInfo = (key, info)->
+@qiniuImageInfo = (key, info, callback)->
   if info and key and Qiniu and qiniuConfig.DOMAIN
     info.src = Qiniu.getUrl(key)
     HTTP.get (info.src + '?imageInfo'), (error, result)->
@@ -7,6 +7,7 @@
       else if result.statusCode is 200
         info.w = result.data.width
         info.h = result.data.height
+        callback and (callback info)
 
 @subscribeMyFavorites = ->
   subsManager.subscribe 'favoritesByUser', myId()
@@ -32,7 +33,15 @@
     getConfigs(category)["listLimit_#{sel}"] = new ReactiveVar 10
   return getConfigs(category)["listLimit_#{sel}"]
 
-@back = -> window.history.back();
+@back = ->
+  window.history.back();
+  $('[data-nav-container]').addClass 'nav-view-direction-back'
+  $('[data-navbar-container]').addClass 'nav-bar-direction-back'
+
+@showPhotoSwipe = (container, index, imageInfos)->
+  options = {index: index}
+  gallery = new PhotoSwipe container, PhotoSwipeUI_Default, imageInfos, options
+  gallery.init()
 
 Template.registerHelper 'users', -> Users
 

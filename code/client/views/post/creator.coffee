@@ -4,6 +4,7 @@ formId = (category)-> "#{category}InsertForm"
 
 Template.postCreator.onRendered ->
   createAutoFormHooks @data
+  @find('.quick-form .form-group:first-child .form-control').focus()
 
 Template.postCreator.helpers
   formSchema: -> Schemas[@category]
@@ -26,7 +27,5 @@ createAutoFormHooks = (data)->
         $set:
           images: data.imagesToUpload.array()
       back()
-      $('[data-nav-container]').addClass 'nav-view-direction-back'
-      $('[data-navbar-container]').addClass 'nav-bar-direction-back'
   AutoForm.addHooks formId(data.category), hooks, true
 

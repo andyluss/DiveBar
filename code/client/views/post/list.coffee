@@ -10,7 +10,7 @@ Template.postList.helpers
 
   itemTemplate: -> "#{@category}ListItem#{cap @category2 or ''}"
 
-  title: -> userPrefix(@user, true, @favoritesby?) + getConfigs(@category).label
+  title: -> userPrefix(@user, true, @favoritesby?) + (getConfigs(@category).label or '')
 
   title2: -> getConfigs(Template.parentData().category).category2Label[@]
 
@@ -51,8 +51,6 @@ Template.postList.events
     limit.set limit.get() + 10
 
 getSelector = (context)->
-  return {
   category: context.category
   category2: context.category2
   user: context.user
-  }

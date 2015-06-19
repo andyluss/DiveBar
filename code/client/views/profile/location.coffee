@@ -1,3 +1,6 @@
+Template.profileLocation.onRendered ->
+  @find('.profile-input').focus()
+
 Template.ionNavBar.events
   'click [data-action=save-location]': (event, template)->
     value = $('.profile.location input').val()

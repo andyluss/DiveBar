@@ -73,9 +73,9 @@ mobile-status-bar@1.0.3
 momentjs:moment@2.10.3
 mongo@1.1.0
 mongo-livedata@1.0.8
+mquandalle:autofocus@1.0.0
 mquandalle:bower@1.4.1
 mquandalle:stylus@1.1.1
-multiply:iron-router-progress@1.0.1
 npm-bcrypt@0.7.8_2
 npm-container@1.0.0
 observe-sequence@1.0.6
@@ -111,4 +111,3 @@ useraccounts:core@1.11.1
 useraccounts:ionic@1.11.1
 webapp@1.2.0
 webapp-hashing@1.0.3
-zimme:iron-router-active@1.0.4

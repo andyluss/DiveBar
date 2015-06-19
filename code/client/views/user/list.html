@@ -12,7 +12,11 @@
   {{#ionView class='user-list'}}
     {{#ionContent}}
 
-      {{>listLoader}}
+      <div class='item-list'>
+        {{#each list}}
+          {{>userListItem}}
+        {{/each}}
+      </div>
 
     {{/ionContent}}
   {{/ionView}}

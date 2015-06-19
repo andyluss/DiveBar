@@ -2,10 +2,6 @@
 
 Router.configure
   layoutTemplate: 'layoutContent'
-  progressSpinner: false
-  progressDelay: 300
-  progressTick: false
-
 
 Router.route '/', ->
   if myId()

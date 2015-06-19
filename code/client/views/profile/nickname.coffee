@@ -1,3 +1,6 @@
+Template.profileNickname.onRendered ->
+  @find('.profile-input').focus()
+
 Template.ionNavBar.events
   'click [data-action=save-nickname]': (event, template)->
     value = $('.profile.nickname input').val()

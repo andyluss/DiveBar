@@ -21,7 +21,6 @@ pq = (context)-> paramsQuery context
     selector = selectFavorites(selector)
     selector = _.omit selector, 'category'
     data.list = Users.find selector
-    data.itemTemplate = 'userListItem'
     return data
 
 
@@ -67,11 +66,16 @@ pq = (context)-> paramsQuery context
 loading = false
 
 @PostListController = ContentController.extend
+  action: ->
+    if pq(@).user
+      @render 'postListUser'
+    else
+      @render 'postListAll'
   onAfterAction: ->
     setDefaultCategory2.call @
     selector = pq(@)
     if not loading
-      IonLoading.show()
+      IonLoading.show({customTemplate: '<i class="icon ion-loading-a"></i>'})
       loading = true
     subsManager.subscribe "postList", selector, getListLimit(selector).get(), ->
       gbl()["loadingMore"].set false
@@ -82,7 +86,7 @@ loading = false
     selector = pq(@)
     data = _.clone selector
     selector = selectFavorites(selector)
-    data.list = Posts.find selector, {sort: {date: -1}}
+    data.list = Posts.find selector, {sort: [['createdAt', 'desc']]}
     return data
 
 @PostDetailController = ContentController.extend

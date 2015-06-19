@@ -1,3 +1,6 @@
+Template.profileMobile.onRendered ->
+  @find('.profile-input').focus()
+
 Template.ionNavBar.events
   'click [data-action=save-mobile]': (event, template)->
     value = $('.profile.mobile input').val()

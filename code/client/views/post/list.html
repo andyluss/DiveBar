@@ -4,37 +4,6 @@
     <h1 class="title">{{title}}</h1>
   {{/contentFor}}
 
-  {{#if user}}
-
-    {{#contentFor "headerButtonLeft"}}
-      {{>ionNavBackButton class="button-light" text=false}}
-    {{/contentFor}}
-
-    {{#if currentUser}}
-
-      {{#contentFor "headerButtonRight"}}
-        {{#if isMe}}
-          <button class="button button-clear pull-right button-light" data-action="back-to-main" nav-direction="back" data-nav-direction>
-            {{> ionIcon icon='dive-icon-main' class='dive-icon'}}
-          </button>
-        {{/if}}
-      {{/contentFor}}
-
-    {{/if}}
-
-  {{else}}
-
-    {{#contentFor "headerButtonLeft"}}
-    {{/contentFor}}
-
-    {{#contentFor "headerButtonRight"}}
-      <button class="button button-clear pull-right button-light" data-action="my-data">
-        {{> ionIcon icon='dive-icon-user' class='dive-icon'}}
-      </button>
-    {{/contentFor}}
-
-  {{/if}}
-
   {{#ionView class='post-list'}}
     {{#ionContent}}
 
@@ -50,7 +19,9 @@
 
       {{/if}}
 
-      {{>searchBar}}
+      {{#unless user}}
+        {{>searchBar}}
+      {{/unless}}
 
       <div class='item-list'>
         {{#each list}}

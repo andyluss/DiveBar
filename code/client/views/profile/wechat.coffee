@@ -1,3 +1,6 @@
+Template.profileWechat.onRendered ->
+  @find('.profile-input').focus()
+
 Template.ionNavBar.events
   'click [data-action=save-wechat]': (event, template)->
     value = $('.profile.wechat input').val()

@@ -1,0 +1,23 @@
+<template name="postListUser">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{#unless isMe}}
+      {{>ionNavBackButton class="button-light" text=false}}
+    {{/unless}}
+  {{/contentFor}}
+
+  {{#if currentUser}}
+
+    {{#contentFor "headerButtonRight"}}
+      {{#if isMe}}
+        <button class="button button-clear pull-right button-light" data-action="back-to-main" nav-direction="back" data-nav-direction>
+          {{> ionIcon icon='dive-icon-main' class='dive-icon'}}
+        </button>
+      {{/if}}
+    {{/contentFor}}
+
+  {{/if}}
+
+  {{>postList}}
+
+</template>

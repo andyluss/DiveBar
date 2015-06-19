@@ -1,4 +1,5 @@
 Template.profileMain.onRendered ->
+  @$('.progress-container').hide()
   @$('.qr-code').qrcode
     text: userById(@data.user)
   if isMe(@data.user)
@@ -20,6 +21,12 @@ Template.profileMain.helpers
   certificatePath: -> "/certificate/list?user=#{@user}"
 
 Template.profileMain.events
+
+  'click .avatar': ->
+    key = avatarKey(@user)
+    if key and (not isMe(@user))
+      showBigAvatar(key)
+
   'click [data-action=logout]': ->
     Meteor.logout()
     Router.go '/'
@@ -67,9 +74,18 @@ initUploader = (self)->
             file.key = newAvatarKey self, file
             return file.key
 
+          'BeforeUpload': (up, file)->
+            resetImageSrc self, file.key
+            showUploadProgress self, file.key, 0
+
           'FileUploaded': (up, file, info)->
             info = JSON.parse info
             Profiles.update {_id: Meteor.user().profileId}, {$set: {avatar: info.key}}
+            hideUploadProgress self, file.key
+            resetImageSrc self, file.key
+
+          'UploadProgress': (up, file)->
+            showUploadProgress self, file.key, file.percent
 
           'Error': (up, err, errTip)->
             console.log err, errTip
@@ -80,3 +96,21 @@ getLine = (type, label)->
   href: isMe(@user) and "/profile?type=#{type}&user=#{@user}" or ''
   icon: isMe(@user) and "ios-arrow-right" or ''
 
+showUploadProgress = (self, key, percent)->
+  progressContainer = self.$(".progress-container")
+  progressLabel = self.$(".progress")
+  progressContainer.show()
+  progressLabel.html(percent + '%')
+
+hideUploadProgress = (self, key)->
+  progressContainer = self.$(".progress-container")
+  progressLabel = self.$(".progress")
+  progressContainer.hide()
+  progressLabel.html('0%')
+
+resetImageSrc = (self, key)->
+  image = self.$(".avatar .image")
+  image.attr 'src', imageUrl(key, {mode: 1, w: 96, h: 96, q: 80})
+
+showBigAvatar = (key)->
+  qiniuImageInfo key, {}, (info)-> showPhotoSwipe($('.pswp')[0], 1, [info])

@@ -15,9 +15,5 @@ Template.pictureCarousel.events
 
   'click .picture-container': (event, template)->
     index = parseInt(event.currentTarget.getAttribute 'index')
-    showPhotoSwipe(template.data, $('.pswp')[0], index)
+    showPhotoSwipe($('.pswp')[0], index, imageInfos)
 
-showPhotoSwipe = (doc, container, index)->
-  options = {index: index}
-  gallery = new PhotoSwipe container, PhotoSwipeUI_Default, imageInfos, options
-  gallery.init()

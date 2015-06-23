@@ -10,9 +10,9 @@ initAccounts = ->
     showForgotPasswordLink: true
     preSignUpHook: ->
       IonLoading and IonLoading.show({customTemplate: '<i class="icon ion-load-a"></i>'})
+      Accounts.onLogin -> IonLoading and IonLoading.hide()
 
   configAccountsTemplatesRoute()
-  Accounts.onLogin -> IonLoading and IonLoading.hide()
 
 initT9n = ->
   T9n.setLanguage 'zh-cn'

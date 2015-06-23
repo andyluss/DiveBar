@@ -55,6 +55,6 @@ deletePost = (doc)->
       buttons: []
       destructiveButtonClicked: ->
         back()
-        coln(doc.category).remove {_id: doc._id}
+        Posts.remove {_id: doc._id}
         return true
   Meteor.setTimeout showConfirm, 800

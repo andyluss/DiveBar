@@ -108,7 +108,10 @@ loading = false
 setDefaultCategory2 = ->
   if (not pq(@).category2?) and hasCategory2 pq(@).category
     config = getConfigs(pq(@).category)
-    pq(@).category2 = config.category2.official
+    if pq(@).user?
+      pq(@).category2 = config.category2.user
+    else
+      pq(@).category2 = config.category2.official
 
 getListItemTemplate = (selector)->
   cfg = getConfigs selector.category

@@ -6,6 +6,15 @@ Template.imageUploaded.helpers
 
 Template.imageUploaded.events
   'click .delete.button': (event, template)->
-    console.log Template.parentData()
-    arr = Template.parentData().imagesToUpload
-    arr.splice(arr.indexOf(template.data), 1)
+    imageKeys = Template.parentData().imagesToUpload
+    imageKeys.splice(imageKeys.indexOf(template.data), 1)
+    delete Template.parentData().imageInfos[template.data]
+
+  'click .image-container': (event, template)->
+    imageKeys = Template.parentData().imagesToUpload
+    index = imageKeys.indexOf template.data
+    imageInfos = Template.parentData().imageInfos
+    imageArray = []
+    _.each imageKeys, (imageKey)->
+      imageArray.push imageInfos[imageKey]
+    imageInfos and showPhotoSwipe($('.pswp')[0], index, imageArray)

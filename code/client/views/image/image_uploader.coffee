@@ -1,4 +1,5 @@
 imagesToUpload = new ReactiveArray()
+imageInfos = {}
 
 Template.imageUploader.helpers
   imagesToUpload: -> imagesToUpload.list()
@@ -9,9 +10,12 @@ Template.imageUploader.rendered = ->
 
 initImagesUploaded = (post)->
   imagesToUpload.clear()
+  imageInfos = {}
   post.imagesToUpload = imagesToUpload
+  post.imageInfos = imageInfos
   _.each post.images, (value)->
     imagesToUpload.push value
+  setImageInfos imagesToUpload
 
 getKey = (self, file)-> "#{new Date().getTime()}-#{('' + Math.random()).substr(0, 5)}-#{file.name}"
 
@@ -59,6 +63,7 @@ initQiniuUploader = (self)->
           'FileUploaded': (up, file, info)->
             hideUploadProgress self, file.key
             resetImageSrc self, file.key
+            setImageInfos(imagesToUpload)
 
           'Error': (up, err, errTip)->
             console.log err, errTip
@@ -88,3 +93,10 @@ showImageLoading = (self, key)->
   imageContainer.css {background: '#FFF url(/images/loading.gif) no-repeat center center'}
   imagesLoaded ".image-uploaded[data-key='#{key}'] .image-container img", ->
     imageContainer.css {background: '#FFF'}
+
+setImageInfos = (imageKeys)->
+  _.each imageKeys, (imageKey)->
+    if not (imageKey in imageInfos)
+      imageInfo = {}
+      qiniuImageInfo(imageKey, imageInfo)
+      imageInfos[imageKey] = imageInfo

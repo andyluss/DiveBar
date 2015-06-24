@@ -2,16 +2,16 @@
   <div class="comments-box">
     <div class="ui comments">
 
+      {{#if currentUser}}
+        {{> commonCommentTextarea }}
+      {{/if}}
+
       {{#each comment}}
         {{> commonCommentSingle }}
       {{/each}}
 
       {{#if hasMoreComments}}
         <div class="ui fluid green loadmore-action button">加载更多</div>
-      {{/if}}
-
-      {{#if currentUser}}
-        {{> commonCommentTextarea }}
       {{/if}}
     </div>
   </div>
@@ -45,8 +45,6 @@
         placeholder="你有什么想表达的..."
         class="create-comment">
     </div>
-    <!--<button type="submit" class="ui blue labeled submit icon button">-->
-      <!--<i class="icon edit"></i> 提交-->
-    <!--</button>-->
+    <button class="send-button button button-clear button-positive">发送</button>
   </form>
 </template>

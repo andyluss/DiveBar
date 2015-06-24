@@ -4,7 +4,7 @@ App.info({
   author: 'divebar',
   email: 'root@divebar.com',
   website: 'http://divebar.com',
-  version: '3.3.1'
+  version: '3.3.2'
 });
 
 App.icons({
@@ -42,5 +42,6 @@ App.launchScreens({
 //App.setPreference('StatusBarOverlaysWebView', 'false');
 //App.setPreference('StatusBarBackgroundColor', '#000000');
 App.setPreference('orientation', 'portrait');
+App.setPreference('fullscreen', 'true');
 
 App.accessRule("*");

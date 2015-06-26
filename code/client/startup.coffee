@@ -31,3 +31,9 @@ document.addEventListener "backbutton",
   (e)->
     e.preventDefault()
   , false
+
+
+Meteor.startup ->
+
+  Template.ionView.hooks
+    rendered: -> IonNavigation.skipTransitions = true
